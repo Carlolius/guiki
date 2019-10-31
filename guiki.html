@@ -12724,8 +12724,8 @@ very-muted-foreground: #888888</pre>
 <div created="20191029023642754" modified="20191029032557456" title="$:/state/ShowPaletteEditor">
 <pre>no</pre>
 </div>
-<div created="20191031012352854" modified="20191031012803734" title="$:/state/sidebar">
-<pre>yes</pre>
+<div created="20191031012352854" modified="20191031014332176" title="$:/state/sidebar">
+<pre>no</pre>
 </div>
 <div created="20191029023423181" modified="20191029025015787" title="$:/state/tab--1498284803">
 <pre>$:/core/ui/AdvancedSearch/Filter</pre>
@@ -12754,16 +12754,16 @@ very-muted-foreground: #888888</pre>
 <div created="20191029022322335" modified="20191030233858837" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/GitHub</pre>
 </div>
-<div created="20191029024854454" modified="20191031012842826" title="$:/state/tab/moresidebar-1850697562">
-<pre>$:/core/ui/MoreSideBar/Shadows</pre>
+<div created="20191029024854454" modified="20191031014246037" title="$:/state/tab/moresidebar-1850697562">
+<pre>$:/core/ui/MoreSideBar/All</pre>
 </div>
-<div created="20191029023556653" modified="20191031013654559" title="$:/state/tab/sidebar--595412856">
+<div created="20191029023556653" modified="20191031014313756" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
 <div created="20191029023943133" modified="20191029025217739" title="$:/state/tabs/controlpanel/toolbars-1345989671">
 <pre>$:/core/ui/ControlPanel/Toolbars/PageControls</pre>
 </div>
-<div created="20191031013623620" list="Hey!" modified="20191031014118449" title="$:/StoryList">
+<div created="20191031014314657" list="[[Arch installation]] Hey!" modified="20191031014314657" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20191029023423180" modified="20191029025015786" title="$:/temp/advancedsearch">
@@ -13583,8 +13583,8 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div author="JeremyRuston" core-version="&gt;=5.0.0" created="20191031011646926" dependents="" description="Basic theme" modified="20191031011646926" name="Vanilla" original-plugin-type="theme" original-tags="" original-title="$:/themes/tiddlywiki/vanilla" original-type="application/json" plugin-priority="0" server-url="https://tiddlywiki.com/library/v5.1.21/index.html" tags="$:/tags/RemoteAssetInfo" title="$:/temp/RemoteAssetInfo/https://tiddlywiki.com/library/v5.1.21/index.html/$:/themes/tiddlywiki/vanilla" type="text/vnd.tiddlywiki" version="5.1.21">
 <pre></pre>
 </div>
-<div created="20191031012809632" modified="20191031013539024" title="$:/temp/search">
-<pre>favicon</pre>
+<div created="20191031012809632" modified="20191031014234746" title="$:/temp/search">
+<pre></pre>
 </div>
 <div created="20191031011646899" modified="20191031011646899" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.21/index.html" url="https://tiddlywiki.com/library/v5.1.21/index.html">
 <pre>loaded</pre>
@@ -13707,8 +13707,131 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div author="Carlolius" created="20191029032845045" modified="20191029033009049" tags="Journal" title="29th October 2019">
 <pre>Hola hola! Una página en el diario de la Tiddler Wiki!</pre>
 </div>
-<div created="20191029025058144" modified="20191031012806591" tags="arch installation linux" title="Arch installation" type="text/x-markdown">
-<pre>Summary of the Arch Linux installation, refers to [[ArchWiki installation guide|https://wiki.archlinux.org/index.php/Installation_guide]]</pre>
+<div created="20191029025058144" modified="20191031015939624" tags="arch installation linux" title="Arch installation" type="text/x-markdown">
+<pre>My summary of the Arch Linux installation, refers to [ArchWiki installation guide](https://wiki.archlinux.org/index.php/Installation_guide &quot;Arch wiki&quot;)
+
+---
+
+**Keyboard distribution spanish**  
+`loadkeys es`
+
+**Check net adapters**  
+`ip link `
+
+**Bring the interface up**  
+`ip link set wlp3s0 up`
+
+**Check connection**  
+`iw dev wlp3s0 link`
+
+**Create and add this next lines to /etc/wpa_supplicant/wpa_supplicant.conf**  
+`ctrl_interface=/run/wpa_supplicant`
+`update_config=1`
+
+**Start wpa_supplicant**  
+`wpa_supplicant -B -i wlp3s0 -c /etc/wpa_supplicant/wpa_supplicant.conf`
+
+**Add network with wpa_cli**  
+`wpa_cli
+scan
+scan_results
+add_network
+set_network 0 ssid &quot;MYSSID&quot;
+set_network 0 psk &quot;passphrase&quot;
+enable_network 0
+save_config
+quit`
+
+**Get ip**  
+`dhcpcd wlp3s0`
+
+**Check if it's working**  
+`ping google.com`
+
+**Syncronize system clock**  
+`timedatectl set-ntp true`  
+`timedatectl status`
+
+**Check disks**
+`fdisk -l`
+
+**Disk with / and swap using fdisk in /dev/sda**  
+`fdisk /dev/sda`
+```
+o # new MBR partition table
+n # new partition
+p # primary partition
+1 # number of partition
+2048 # first sector
++106G # size of partition
+n # for swap
+p
+2
+default
+default
+w # write changes
+```
+
+**Format partitions**  
+`mkfs.ext4 /dev/sda1`  
+`mkswap /dev/sda2`  
+`swapon/dev/sda2 # start swap`
+
+**Mount file system**  
+`mount /dev/sda1 /mnt`
+
+**Rank mirrors, install reflector and use**  
+`pacman -Syu reflector`  
+`reflector --verbose --latest 200 --sort rate --save /etc/pacman.d/mirrorlist`
+
+**Install essential packages**  
+`pacstrap /mnt base base-devel linux linux-firmware`
+
+**Extra packages, personal selection**  
+`pacstrap /mnt exfat-utils dhcpcd dialog git grub man-db man-pages nano netctl nmap openssh smartmontools texinfo`  `vi vim wpa_supplicant`
+
+**Generate fstab**  
+`genfstab -U /mnt &gt;&gt; /mnt/etc/fstab`
+
+**Chroot**  
+`arch-chroot /mnt`
+
+**Time zone**
+`ln -sf /usr/share/zoneinfo/Europe/Madrid /etc/localtime`
+`hwclock --systohc`
+
+**Localization**  
+Uncoment the desires locales in /etc/locale.gen  
+`locale-gen`  
+Create /etc/locale.conf and write  
+LANG=es_ES.utf-8
+
+**Create /etc/vconsole.conf and write**  
+`KEYMAP=es`
+
+**Configure network**  
+Create /etc/hostname  
+`nibbler`  
+Create /etc/hosts  
+`127.0.0.1       localhost`  
+`::1             localhost`  
+`127.0.1.1       nibbler.localdomain nibbler`
+
+**Change root pasword**  
+`passwd`
+
+**Install microcode for intel**  
+`pacman -Syu intel-ucode`
+
+**Install grub**  
+`grub-install /dev/sda`  
+`grub-mkconfig -o /boot/grub/grub.cfg`
+
+**Exit and reboot**  
+`exit # exit chroot`  
+`umount -R /mnt`  
+`reboot`
+</pre>
 </div>
 <div created="20191029031913137" modified="20191029032533380" tags="" title="Hey!">
 <pre>Hello! This will be the Tiddler displayed at the startup for the moment.</pre>
