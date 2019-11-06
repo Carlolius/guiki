@@ -185,6 +185,12 @@ Error message and password prompt
 
 <li>$:/config/Toolbar/ButtonClass</li>
 
+<li>$:/config/ViewToolbarButtons/Visibility/$:/core/ui/Buttons/close-others</li>
+
+<li>$:/config/ViewToolbarButtons/Visibility/$:/core/ui/Buttons/fold</li>
+
+<li>$:/config/ViewToolbarButtons/Visibility/$:/core/ui/Buttons/fold-bar</li>
+
 <li>$:/config/ViewToolbarButtons/Visibility/$:/core/ui/Buttons/info</li>
 
 <li>$:/core</li>
@@ -222,6 +228,8 @@ Error message and password prompt
 <li>$:/palettes/Rocker</li>
 
 <li>$:/plugins/tiddlywiki/markdown</li>
+
+<li>$:/plugins/tiddlywiki/markdown/new-markdown-button</li>
 
 <li>$:/SiteSubtitle</li>
 
@@ -266,6 +274,8 @@ Error message and password prompt
 <li>$:/state/editpreviewtype</li>
 
 <li>$:/state/folded/$:/ControlPanel</li>
+
+<li>$:/state/folded/Hey!</li>
 
 <li>$:/state/folded/Packages</li>
 
@@ -322,6 +332,10 @@ Error message and password prompt
 <li>$:/state/tag-manager/linux</li>
 
 <li>$:/StoryList</li>
+
+<li>$:/tags/PageControls</li>
+
+<li>$:/tags/ViewToolbar</li>
 
 <li>$:/temp/advancedsearch</li>
 
@@ -585,7 +599,7 @@ Error message and password prompt
 <div created="20191106010425490" modified="20191106010426655" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/advanced-search">
 <pre>hide</pre>
 </div>
-<div created="20191029024813651" modified="20191029025228487" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/home">
+<div created="20191029024813651" modified="20191106193407530" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/home">
 <pre>show</pre>
 </div>
 <div created="20191106010316924" modified="20191106010428278" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/manager">
@@ -600,8 +614,8 @@ Error message and password prompt
 <div created="20191106010430900" modified="20191106010433309" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/palette">
 <pre>hide</pre>
 </div>
-<div created="20191031001153572" modified="20191031001153572" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/refresh">
-<pre>show</pre>
+<div created="20191031001153572" modified="20191106193415202" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/refresh">
+<pre>hide</pre>
 </div>
 <div created="20191106010345796" modified="20191106010345796" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/tag-manager">
 <pre>show</pre>
@@ -626,6 +640,15 @@ Error message and password prompt
 </div>
 <div created="20191106185919339" modified="20191106185931447" title="$:/config/Toolbar/ButtonClass">
 <pre>tc-btn-invisible</pre>
+</div>
+<div created="20191106193142601" modified="20191106193142601" title="$:/config/ViewToolbarButtons/Visibility/$:/core/ui/Buttons/close-others">
+<pre>show</pre>
+</div>
+<div created="20191106193147493" modified="20191106193147493" title="$:/config/ViewToolbarButtons/Visibility/$:/core/ui/Buttons/fold">
+<pre>show</pre>
+</div>
+<div created="20191106193153514" modified="20191106193159934" title="$:/config/ViewToolbarButtons/Visibility/$:/core/ui/Buttons/fold-bar">
+<pre>hide</pre>
 </div>
 <div created="20191029024017532" modified="20191029024026606" title="$:/config/ViewToolbarButtons/Visibility/$:/core/ui/Buttons/info">
 <pre>hide</pre>
@@ -12754,6 +12777,18 @@ very-muted-foreground: #888888</pre>
     }
 }</pre>
 </div>
+<div caption="{{$:/plugins/tiddlywiki/markdown/images/new-markdown-button}} {{$:/language/Buttons/NewMarkdown/Caption}}" created="20191106193335831" description="{{$:/language/Buttons/NewMarkdown/Hint}}" modified="20191106193335831" tags="$:/tags/PageControls" title="$:/plugins/tiddlywiki/markdown/new-markdown-button">
+<pre>&lt;$button tooltip={{$:/language/Buttons/NewMarkdown/Hint}} aria-label={{$:/language/Buttons/NewMarkdown/Caption}} class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;
+&lt;$action-sendmessage $message=&quot;tm-new-tiddler&quot; type=&quot;text/x-markdown&quot;/&gt;
+&lt;$list filter=&quot;[&lt;tv-config-toolbar-icons&gt;prefix[yes]]&quot;&gt;
+{{$:/plugins/tiddlywiki/markdown/images/new-markdown-button}}
+&lt;/$list&gt;
+&lt;$list filter=&quot;[&lt;tv-config-toolbar-text&gt;prefix[yes]]&quot;&gt;
+&lt;span class=&quot;tc-btn-text&quot;&gt;&lt;$text text={{$:/language/Buttons/NewMarkdown/Caption}}/&gt;&lt;/span&gt;
+&lt;/$list&gt;
+&lt;/$button&gt;
+</pre>
+</div>
 <div created="20191029023311308" modified="20191029023354213" title="$:/SiteSubtitle">
 <pre>a little bit less messy</pre>
 </div>
@@ -12817,7 +12852,10 @@ very-muted-foreground: #888888</pre>
 <div created="20191029025442801" modified="20191029025447507" title="$:/state/editpreviewtype">
 <pre>$:/core/ui/EditTemplate/body/preview/output</pre>
 </div>
-<div created="20191029025146203" modified="20191029025158687" title="$:/state/folded/$:/ControlPanel">
+<div created="20191029025146203" modified="20191106193311970" title="$:/state/folded/$:/ControlPanel">
+<pre>show</pre>
+</div>
+<div created="20191106193207288" modified="20191106193208500" title="$:/state/folded/Hey!">
 <pre>show</pre>
 </div>
 <div created="20191104161534710" modified="20191104161537700" title="$:/state/folded/Packages">
@@ -12865,8 +12903,8 @@ very-muted-foreground: #888888</pre>
 <div created="20191029024021148" modified="20191029024024285" title="$:/state/tab--1936963165">
 <pre>$:/core/ui/TiddlerInfo/List</pre>
 </div>
-<div created="20191029023545121" modified="20191106190013803" title="$:/state/tab--1963855381">
-<pre>$:/themes/tiddlywiki/vanilla/themetweaks</pre>
+<div created="20191029023545121" modified="20191106193123346" title="$:/state/tab--1963855381">
+<pre>$:/core/ui/ControlPanel/Toolbars</pre>
 </div>
 <div created="20191029023052839" modified="20191106184610527" title="$:/state/tab--2112689675">
 <pre>$:/core/ui/ControlPanel/Basics</pre>
@@ -12880,8 +12918,8 @@ very-muted-foreground: #888888</pre>
 <div created="20191029024150913" modified="20191106185016259" title="$:/state/tab-1342078386">
 <pre>$:/core/ui/ControlPanel/Plugins/Add/Languages</pre>
 </div>
-<div created="20191029022321243" modified="20191106190255340" title="$:/state/tab-1749438307">
-<pre>$:/core/ui/ControlPanel/Info</pre>
+<div created="20191029022321243" modified="20191106193118630" title="$:/state/tab-1749438307">
+<pre>$:/core/ui/ControlPanel/Appearance</pre>
 </div>
 <div created="20191029022322335" modified="20191104155147047" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/General</pre>
@@ -12889,11 +12927,11 @@ very-muted-foreground: #888888</pre>
 <div created="20191029024854454" modified="20191106192911028" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/Shadows</pre>
 </div>
-<div created="20191029023556653" modified="20191106192913624" title="$:/state/tab/sidebar--595412856">
-<pre>$:/core/ui/SideBar/Recent</pre>
+<div created="20191029023556653" modified="20191106193059160" title="$:/state/tab/sidebar--595412856">
+<pre>$:/core/ui/SideBar/Tools</pre>
 </div>
-<div created="20191029023943133" modified="20191106185729525" title="$:/state/tabs/controlpanel/toolbars-1345989671">
-<pre>$:/core/ui/ControlPanel/Toolbars/EditorToolbar</pre>
+<div created="20191029023943133" modified="20191106193324234" title="$:/state/tabs/controlpanel/toolbars-1345989671">
+<pre>$:/core/ui/ControlPanel/Toolbars/PageControls</pre>
 </div>
 <div created="20191106010410639" modified="20191106010412774" title="$:/state/tag-manager/after installation">
 <pre>closed</pre>
@@ -12901,7 +12939,13 @@ very-muted-foreground: #888888</pre>
 <div created="20191106184016830" modified="20191106184021034" title="$:/state/tag-manager/linux">
 <pre>closed</pre>
 </div>
-<div created="20191106190252199" list="" modified="20191106192531976" title="$:/StoryList">
+<div created="20191106193117080" list="$:/ControlPanel" modified="20191106193117080" title="$:/StoryList">
+<pre></pre>
+</div>
+<div created="20191106193335831" list="$:/core/ui/Buttons/more-page-actions $:/core/ui/Buttons/home $:/core/ui/Buttons/close-all $:/core/ui/Buttons/fold-all $:/core/ui/Buttons/unfold-all $:/core/ui/Buttons/permaview $:/core/ui/Buttons/new-tiddler $:/plugins/tiddlywiki/markdown/new-markdown-button $:/core/ui/Buttons/new-journal $:/core/ui/Buttons/new-image $:/core/ui/Buttons/import $:/core/ui/Buttons/export-page $:/core/ui/Buttons/control-panel $:/core/ui/Buttons/advanced-search $:/core/ui/Buttons/manager $:/core/ui/Buttons/tag-manager $:/core/ui/Buttons/language $:/core/ui/Buttons/palette $:/core/ui/Buttons/theme $:/core/ui/Buttons/storyview $:/core/ui/Buttons/encryption $:/core/ui/Buttons/timestamp $:/core/ui/Buttons/full-screen $:/core/ui/Buttons/print $:/core/ui/Buttons/save-wiki $:/core/ui/Buttons/refresh" modified="20191106193335831" title="$:/tags/PageControls">
+<pre></pre>
+</div>
+<div created="20191106193259697" list="$:/core/ui/Buttons/more-tiddler-actions $:/core/ui/Buttons/info $:/core/ui/Buttons/new-here $:/core/ui/Buttons/new-journal-here $:/core/ui/Buttons/clone $:/core/ui/Buttons/export-tiddler $:/core/ui/Buttons/edit $:/core/ui/Buttons/delete $:/core/ui/Buttons/permalink $:/core/ui/Buttons/permaview $:/core/ui/Buttons/open-window $:/core/ui/Buttons/close-others $:/core/ui/Buttons/fold-others $:/core/ui/Buttons/fold $:/core/ui/Buttons/fold-bar $:/core/ui/Buttons/close" modified="20191106193304882" title="$:/tags/ViewToolbar">
 <pre></pre>
 </div>
 <div created="20191029023423180" modified="20191106184715579" title="$:/temp/advancedsearch">
