@@ -149,6 +149,8 @@ Error message and password prompt
 
 <li>$:/config/Manager/System</li>
 
+<li>$:/config/NewJournal/Title</li>
+
 <li>$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/advanced-search</li>
 
 <li>$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/home</li>
@@ -497,6 +499,8 @@ Error message and password prompt
 
 <li>$:/themes/tiddlywiki/vanilla</li>
 
+<li>$:/themes/tiddlywiki/vanilla/metrics/sidebarwidth</li>
+
 <li>$:/themes/tiddlywiki/vanilla/metrics/storyright</li>
 
 <li>$:/themes/tiddlywiki/vanilla/metrics/storywidth</li>
@@ -536,6 +540,9 @@ Error message and password prompt
 </div>
 <div created="20191106010325189" modified="20191106010336084" title="$:/config/Manager/System">
 <pre>system</pre>
+</div>
+<div created="20191106031218560" modified="20191106031244344" title="$:/config/NewJournal/Title">
+<pre>DD MMM YYYY</pre>
 </div>
 <div created="20191106010425490" modified="20191106010426655" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/advanced-search">
 <pre>hide</pre>
@@ -12790,11 +12797,11 @@ very-muted-foreground: #888888</pre>
 <div created="20191029024021148" modified="20191029024024285" title="$:/state/tab--1936963165">
 <pre>$:/core/ui/TiddlerInfo/List</pre>
 </div>
-<div created="20191029023545121" modified="20191106023515399" title="$:/state/tab--1963855381">
-<pre>$:/themes/tiddlywiki/vanilla/themetweaks</pre>
+<div created="20191029023545121" modified="20191106030834165" title="$:/state/tab--1963855381">
+<pre>$:/core/ui/ControlPanel/Theme</pre>
 </div>
-<div created="20191029023052839" modified="20191106010154496" title="$:/state/tab--2112689675">
-<pre>$:/core/ui/ControlPanel/Advanced</pre>
+<div created="20191029023052839" modified="20191106024022311" title="$:/state/tab--2112689675">
+<pre>$:/core/ui/ControlPanel/Basics</pre>
 </div>
 <div created="20191029024143716" modified="20191031011945652" title="$:/state/tab--86143343">
 <pre>$:/core/ui/ControlPanel/Plugins/Installed/Plugins</pre>
@@ -12805,16 +12812,16 @@ very-muted-foreground: #888888</pre>
 <div created="20191029024150913" modified="20191031011647943" title="$:/state/tab-1342078386">
 <pre>$:/core/ui/ControlPanel/Plugins/Add/Plugins</pre>
 </div>
-<div created="20191029022321243" modified="20191106010215794" title="$:/state/tab-1749438307">
-<pre>$:/core/ui/ControlPanel/Appearance</pre>
+<div created="20191029022321243" modified="20191106031128279" title="$:/state/tab-1749438307">
+<pre>$:/core/ui/ControlPanel/Info</pre>
 </div>
 <div created="20191029022322335" modified="20191104155147047" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/General</pre>
 </div>
-<div created="20191029024854454" modified="20191031014246037" title="$:/state/tab/moresidebar-1850697562">
-<pre>$:/core/ui/MoreSideBar/All</pre>
+<div created="20191029024854454" modified="20191106024545426" title="$:/state/tab/moresidebar-1850697562">
+<pre>$:/core/ui/MoreSideBar/Orphans</pre>
 </div>
-<div created="20191029023556653" modified="20191031020355937" title="$:/state/tab/sidebar--595412856">
+<div created="20191029023556653" modified="20191106024849957" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Recent</pre>
 </div>
 <div created="20191029023943133" modified="20191106010306922" title="$:/state/tabs/controlpanel/toolbars-1345989671">
@@ -12823,7 +12830,7 @@ very-muted-foreground: #888888</pre>
 <div created="20191106010410639" modified="20191106010412774" title="$:/state/tag-manager/after installation">
 <pre>closed</pre>
 </div>
-<div created="20191106022053037" list="[[Arch after installation]]" modified="20191106023507443" title="$:/StoryList">
+<div created="20191106022053037" list="[[Arch after installation]]" modified="20191106025806189" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20191029023423180" modified="20191029025015786" title="$:/temp/advancedsearch">
@@ -13649,7 +13656,7 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20191031011646899" modified="20191031011646899" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.21/index.html" url="https://tiddlywiki.com/library/v5.1.21/index.html">
 <pre>loaded</pre>
 </div>
-<div created="20191029023909961" modified="20191106023513919" title="$:/theme">
+<div created="20191029023909961" modified="20191106030835116" title="$:/theme">
 <pre>$:/themes/tiddlywiki/vanilla</pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.21">
@@ -13761,11 +13768,14 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
     }
 }</pre>
 </div>
-<div created="20191106022131030" modified="20191106023540849" title="$:/themes/tiddlywiki/vanilla/metrics/storyright">
-<pre>75%</pre>
+<div created="20191106030723310" modified="20191106030729816" title="$:/themes/tiddlywiki/vanilla/metrics/sidebarwidth">
+<pre>350px</pre>
 </div>
-<div created="20191106022119326" modified="20191106023549999" title="$:/themes/tiddlywiki/vanilla/metrics/storywidth">
-<pre>75%</pre>
+<div created="20191106022131030" modified="20191106030747269" title="$:/themes/tiddlywiki/vanilla/metrics/storyright">
+<pre>83%</pre>
+</div>
+<div created="20191106022119326" modified="20191106030754530" title="$:/themes/tiddlywiki/vanilla/metrics/storywidth">
+<pre>83%</pre>
 </div>
 <div created="20191106022154514" modified="20191106023530286" title="$:/themes/tiddlywiki/vanilla/metrics/tiddlerwidth">
 <pre>99%</pre>
