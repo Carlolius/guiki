@@ -12775,7 +12775,7 @@ very-muted-foreground: #888888</pre>
 <div created="20191029023642754" modified="20191029032557456" title="$:/state/ShowPaletteEditor">
 <pre>no</pre>
 </div>
-<div created="20191031012352854" modified="20191105044314084" title="$:/state/sidebar">
+<div created="20191031012352854" modified="20191106014731446" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
 <div created="20191029023423181" modified="20191029025015787" title="$:/state/tab--1498284803">
@@ -12817,7 +12817,7 @@ very-muted-foreground: #888888</pre>
 <div created="20191106010410639" modified="20191106010412774" title="$:/state/tag-manager/after installation">
 <pre>closed</pre>
 </div>
-<div created="20191106005715573" list="[[Arch after installation]] Hey!" modified="20191106010347571" title="$:/StoryList">
+<div created="20191106005715573" list="Hey!" modified="20191106020016920" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20191029023423180" modified="20191029025015786" title="$:/temp/advancedsearch">
@@ -13761,7 +13761,7 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div author="Carlolius" created="20191029032845045" modified="20191029033009049" tags="Journal" title="29th October 2019">
 <pre>Hola hola! Una página en el diario de la Tiddler Wiki!</pre>
 </div>
-<div created="20191031020123363" modified="20191105044304811" tags="linux installation arch [[after installation]]" title="Arch after installation" type="text/x-markdown">
+<div created="20191031020123363" modified="20191106015936158" tags="linux installation arch [[after installation]]" title="Arch after installation" type="text/x-markdown">
 <pre>##Based on the [Arch general recomendations guide.](https://wiki.archlinux.org/index.php/General_recommendations)
 ----
 
@@ -13814,7 +13814,19 @@ Unfinished
 `pacman -S pulseaudio pulseaudio-alsa pulseaudio-bluetooth`  
 `yay pulsemixer`
 
-</pre>
+
+**SSD performace**  
+Enable the trim timer for weekly trim of the ssd.  
+`systemctl enable fstrim.timer`
+
+**Touchpad**  
+[Link](https://wiki.archlinux.org/index.php/Touchpad_Synaptics)  
+
+**Automount**  
+[Link](https://wiki.archlinux.org/index.php/USB_storage_devices)
+
+**Firewall**  
+[Link](https://wiki.archlinux.org/index.php/Category:Firewalls)</pre>
 </div>
 <div created="20191029025058144" modified="20191031020006492" tags="arch installation linux" title="Arch installation" type="text/x-markdown">
 <pre>My summary of the Arch Linux installation, refers to [ArchWiki installation guide](https://wiki.archlinux.org/index.php/Installation_guide &quot;Arch wiki&quot;)
@@ -13945,26 +13957,30 @@ Create /etc/hosts
 <div created="20191029031913137" modified="20191029032533380" tags="" title="Hey!">
 <pre>Hello! This will be the Tiddler displayed at the startup for the moment.</pre>
 </div>
-<div created="20191031020422364" modified="20191105044301229" tags="installation arch linux" title="Packages" type="text/x-markdown">
+<div created="20191031020422364" modified="20191106014808210" tags="installation arch linux" title="Packages" type="text/x-markdown">
 <pre>Packages intalled apart from the installation ones...
 
 bluez  
 bluez-utils  
+firefox  
 git  
+htop  
 i3-wm  
 i3blocks  
 i3lock  
-i3status 
+i3status   
 pulseaudio  
 pulseaudio-alsa  
 pulseaudio-bluetooth  
 python-virtualenv  
-python
+python  
+ranger  
 reflector  
+rofi  
 ttf-bitstream-vera  
-wget 
+wget  
 xorg-server  
-xorg-xinit 
+xorg-xinit  
 xterm  
 
 **From aur**  
