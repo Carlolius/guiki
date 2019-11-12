@@ -12943,7 +12943,7 @@ very-muted-foreground: #888888</pre>
 <div created="20191029023642754" modified="20191029032557456" title="$:/state/ShowPaletteEditor">
 <pre>no</pre>
 </div>
-<div created="20191031012352854" modified="20191112032753163" title="$:/state/sidebar">
+<div created="20191031012352854" modified="20191112194353153" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
 <div created="20191029023423181" modified="20191106184715580" title="$:/state/tab--1498284803">
@@ -14221,14 +14221,20 @@ Create /etc/hosts
 
 Con mucho queso.</pre>
 </div>
-<div created="20191112173328197" modified="20191112173636770" tags="Linux" title="Neomutt" type="text/x-markdown">
-<pre>Based on [this](http://stevelosh.com/blog/2012/10/the-homely-mutt/#how-i-use-email) and the ArchWiki pages of [Mutt](https://wiki.archlinux.org/index.php/Mutt) and [Offlineimap](https://wiki.archlinux.org/index.php/OfflineIMAP).
+<div created="20191112173328197" modified="20191112194210912" tags="Installation Linux" title="Neomutt" type="text/x-markdown">
+<pre>Based on [this manual](https://webgefrickel.de/blog/a-modern-mutt-setup), [this other](http://stevelosh.com/blog/2012/10/the-homely-mutt/#how-i-use-email) and the ArchWiki pages of [Mutt](https://wiki.archlinux.org/index.php/Mutt), [Isync](https://wiki.archlinux.org/index.php/Isync) and [Msmtp](https://wiki.archlinux.org/index.php/Msmtp).
 
-###**Installation**  
-`pacman -S neomutt offlineimap`
+###**Installation**
+`pacman -S neomutt msmtp isync`
 
-###**Configure Offlineimap**
-Configuration file `~/.offlineimaprc`</pre>
+###**Configure Isync**
+Configuration file `~/.mbsyncrc`
+
+###**Configure Msmtp**
+
+###**Configure Neomutt**
+Configuration folder
+</pre>
 </div>
 <div created="20191031020422364" modified="20191111224208265" tags="Linux Installation Arch" title="Packages" type="text/x-markdown">
 <pre>Packages intalled apart from the installation ones...
