@@ -12941,7 +12941,7 @@ very-muted-foreground: #888888</pre>
 <div created="20191029023642754" modified="20191029032557456" title="$:/state/ShowPaletteEditor">
 <pre>no</pre>
 </div>
-<div created="20191031012352854" modified="20191106023632598" title="$:/state/sidebar">
+<div created="20191031012352854" modified="20191112032753163" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
 <div created="20191029023423181" modified="20191106184715580" title="$:/state/tab--1498284803">
@@ -13007,7 +13007,7 @@ very-muted-foreground: #888888</pre>
 <div created="20191107023516372" modified="20191107023516876" title="$:/state/toc/TableOfContents-Linux--118161433">
 <pre>close</pre>
 </div>
-<div created="20191111125410497" list="MyGüiki Hey!" modified="20191111125410497" title="$:/StoryList">
+<div created="20191111221319483" list="[[Programs to check]] Hey!" modified="20191111224220318" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20191106193335831" list="$:/core/ui/Buttons/more-page-actions $:/core/ui/Buttons/home $:/core/ui/Buttons/close-all $:/core/ui/Buttons/fold-all $:/core/ui/Buttons/unfold-all $:/core/ui/Buttons/permaview $:/core/ui/Buttons/new-tiddler $:/plugins/tiddlywiki/markdown/new-markdown-button $:/core/ui/Buttons/new-journal $:/core/ui/Buttons/new-image $:/core/ui/Buttons/import $:/core/ui/Buttons/export-page $:/core/ui/Buttons/control-panel $:/core/ui/Buttons/advanced-search $:/core/ui/Buttons/manager $:/core/ui/Buttons/tag-manager $:/core/ui/Buttons/language $:/core/ui/Buttons/palette $:/core/ui/Buttons/theme $:/core/ui/Buttons/storyview $:/core/ui/Buttons/encryption $:/core/ui/Buttons/timestamp $:/core/ui/Buttons/full-screen $:/core/ui/Buttons/print $:/core/ui/Buttons/save-wiki $:/core/ui/Buttons/refresh" modified="20191106193335831" title="$:/tags/PageControls">
@@ -13979,7 +13979,7 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 
 &lt;/div&gt;</pre>
 </div>
-<div created="20191031020123363" modified="20191107023152903" tags="[[After installation]] Installation Arch Linux" title="Arch after installation" type="text/x-markdown">
+<div created="20191031020123363" modified="20191111224708600" tags="[[After installation]] Installation Arch Linux" title="Arch after installation" type="text/x-markdown">
 <pre>##Based on the [Arch general recomendations guide.](https://wiki.archlinux.org/index.php/General_recommendations)
 ----
 
@@ -14036,6 +14036,10 @@ Unfinished
 **SSD performace**  
 Enable the trim timer for weekly trim of the ssd.  
 `systemctl enable fstrim.timer`
+
+**SSH**  
+`pacman -S openssh`  
+`systemctl enable sshd.service`
 
 **Touchpad**  
 [Link](https://wiki.archlinux.org/index.php/Touchpad_Synaptics)  
@@ -14215,7 +14219,7 @@ Create /etc/hosts
 
 Con mucho queso.</pre>
 </div>
-<div created="20191031020422364" modified="20191109232033627" tags="Linux Installation Arch" title="Packages" type="text/x-markdown">
+<div created="20191031020422364" modified="20191111224208265" tags="Linux Installation Arch" title="Packages" type="text/x-markdown">
 <pre>Packages intalled apart from the installation ones...
 
 bluez  
@@ -14226,7 +14230,8 @@ htop
 i3-wm  
 i3blocks  
 i3lock  
-i3status   
+i3status  
+openssh  
 pulseaudio  
 pulseaudio-alsa  
 pulseaudio-bluetooth  
@@ -14251,10 +14256,12 @@ yay
 pulsemixer  
 </pre>
 </div>
-<div created="20191108010354860" modified="20191108010600220" tags="Arch" title="Programs to check" type="text/x-markdown">
-<pre>[Zathura](https://pwmt.org/projects/zathura/)  
-[Dunst](https://dunst-project.org/)  
-[Neomutt](https://neomutt.org/)</pre>
+<div created="20191108010354860" modified="20191112032754373" tags="Arch" title="Programs to check" type="text/x-markdown">
+<pre>1. [Zathura](https://pwmt.org/projects/zathura/)  
+1. [Dunst](https://dunst-project.org/)  
+1. [Neomutt](https://neomutt.org/)  
+    + http://stevelosh.com/blog/2012/10/the-homely-mutt/#how-i-use-email  
+1. [Mpv](https://mpv.io/)</pre>
 </div>
 <div caption="Things" color="" created="20191107000416261" list="Arch Installation i3wm Linux Journal" list-before="$:/core/ui/SideBar/Open" modified="20191107024324896" tags="$:/tags/SideBar" title="TableOfContents" type="text/vnd.tiddlywiki">
 <pre>&lt;div class=&quot;tc-table-of-contents&quot;&gt;
