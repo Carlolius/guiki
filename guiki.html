@@ -49,7 +49,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE." />
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <title> MyGüiki — a little bit less messy. 
 
-13 Nov 2019 at 17:27
+15 Nov 2019 at 02:39
 
 </title>
 <!--~~ This is a Tiddlywiki file. The points of interest in the file are marked with this pattern ~~-->
@@ -146,6 +146,8 @@ Error message and password prompt
 <p>This <a class="tc-tiddlylink-external" href="https://tiddlywiki.com" rel="noopener noreferrer" target="_blank">TiddlyWiki</a> contains the following tiddlers:</p><p><ul>
 
 <li>$:/config/AutoSave</li>
+
+<li>$:/config/codemirror/lineNumbers</li>
 
 <li>$:/config/ColourPicker/Recent</li>
 
@@ -321,7 +323,17 @@ Error message and password prompt
 
 <li>$:/state/plugin-info--896887961-$:/core</li>
 
+<li>$:/state/plugin-info--896887961-$:/plugins/tiddlywiki/codemirror</li>
+
+<li>$:/state/plugin-info--896887961-$:/plugins/tiddlywiki/codemirror---1125263437</li>
+
 <li>$:/state/plugin-info--896887961-$:/plugins/tiddlywiki/codemirror-mode-markdown</li>
+
+<li>$:/state/plugin-info--896887961-$:/plugins/tiddlywiki/codemirror-mode-markdown---613922201</li>
+
+<li>$:/state/plugin-info--896887961-$:/plugins/tiddlywiki/codemirror-mode-xml</li>
+
+<li>$:/state/plugin-info--896887961-$:/plugins/tiddlywiki/codemirror-mode-xml---667808559</li>
 
 <li>$:/state/plugin-info--896887961-$:/plugins/tiddlywiki/markdown</li>
 
@@ -348,6 +360,8 @@ Error message and password prompt
 <li>$:/state/tab--1963855381</li>
 
 <li>$:/state/tab--2112689675</li>
+
+<li>$:/state/tab--697582678</li>
 
 <li>$:/state/tab--85981348</li>
 
@@ -617,8 +631,6 @@ Error message and password prompt
 
 <li>Arch installation</li>
 
-<li>Draft of 'Neomutt'</li>
-
 <li>Enable tap to click in i3wm</li>
 
 <li>Hey!</li>
@@ -657,6 +669,9 @@ Error message and password prompt
 <div id="storeArea" style="display:none;">
 <div created="20191104155148368" modified="20191104155148368" title="$:/config/AutoSave">
 <pre>no</pre>
+</div>
+<div created="20191115005456974" modified="20191115005456974" title="$:/config/codemirror/lineNumbers" type="bool">
+<pre>true</pre>
 </div>
 <div created="20191031013308858" list="White" modified="20191031013308858" title="$:/config/ColourPicker/Recent">
 <pre></pre>
@@ -13339,8 +13354,23 @@ very-muted-foreground: #888888</pre>
 <div created="20191029024141910" modified="20191029024143174" title="$:/state/plugin-info--896887961-$:/core">
 <pre>no</pre>
 </div>
-<div created="20191115004844902" modified="20191115005255047" title="$:/state/plugin-info--896887961-$:/plugins/tiddlywiki/codemirror-mode-markdown">
+<div created="20191115005342381" modified="20191115005547098" title="$:/state/plugin-info--896887961-$:/plugins/tiddlywiki/codemirror">
 <pre>no</pre>
+</div>
+<div created="20191115005344747" modified="20191115005344747" title="$:/state/plugin-info--896887961-$:/plugins/tiddlywiki/codemirror---1125263437">
+<pre>usage</pre>
+</div>
+<div created="20191115004844902" modified="20191115005551476" title="$:/state/plugin-info--896887961-$:/plugins/tiddlywiki/codemirror-mode-markdown">
+<pre>no</pre>
+</div>
+<div created="20191115005549545" modified="20191115005550777" title="$:/state/plugin-info--896887961-$:/plugins/tiddlywiki/codemirror-mode-markdown---613922201">
+<pre>readme</pre>
+</div>
+<div created="20191115005552363" modified="20191115005555708" title="$:/state/plugin-info--896887961-$:/plugins/tiddlywiki/codemirror-mode-xml">
+<pre>no</pre>
+</div>
+<div created="20191115005553153" modified="20191115005555245" title="$:/state/plugin-info--896887961-$:/plugins/tiddlywiki/codemirror-mode-xml---667808559">
+<pre>readme</pre>
 </div>
 <div created="20191031012004947" modified="20191031012042587" title="$:/state/plugin-info--896887961-$:/plugins/tiddlywiki/markdown">
 <pre>no</pre>
@@ -13360,13 +13390,13 @@ very-muted-foreground: #888888</pre>
 <div created="20191031011955754" modified="20191031012000108" title="$:/state/plugin-info-896098052-$:/plugins/tiddlywiki/markdown--436478829">
 <pre>readme</pre>
 </div>
-<div created="20191029025421827" modified="20191029025426238" title="$:/state/showeditpreview">
+<div created="20191029025421827" modified="20191115013912689" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
 <div created="20191029023642754" modified="20191029032557456" title="$:/state/ShowPaletteEditor">
 <pre>no</pre>
 </div>
-<div created="20191031012352854" modified="20191113033821632" title="$:/state/sidebar">
+<div created="20191031012352854" modified="20191115013933449" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
 <div created="20191029023423181" modified="20191106184715580" title="$:/state/tab--1498284803">
@@ -13381,6 +13411,9 @@ very-muted-foreground: #888888</pre>
 <div created="20191029023052839" modified="20191106184610527" title="$:/state/tab--2112689675">
 <pre>$:/core/ui/ControlPanel/Basics</pre>
 </div>
+<div created="20191115005427771" modified="20191115005427771" title="$:/state/tab--697582678">
+<pre>$:/core/ui/ControlPanel/Settings/CodeMirror</pre>
+</div>
 <div created="20191107025011538" modified="20191107025041589" title="$:/state/tab--85981348">
 <pre>$:/core/ui/TiddlerInfo/Fields</pre>
 </div>
@@ -13393,7 +13426,7 @@ very-muted-foreground: #888888</pre>
 <div created="20191029024150913" modified="20191115004348329" title="$:/state/tab-1342078386">
 <pre>$:/core/ui/ControlPanel/Plugins/Add/Plugins</pre>
 </div>
-<div created="20191029022321243" modified="20191115004342941" title="$:/state/tab-1749438307">
+<div created="20191029022321243" modified="20191115005531242" title="$:/state/tab-1749438307">
 <pre>$:/core/ui/ControlPanel/Plugins</pre>
 </div>
 <div created="20191029022322335" modified="20191109215714175" title="$:/state/tab-2065006209">
@@ -13438,7 +13471,7 @@ very-muted-foreground: #888888</pre>
 <div created="20191107023516372" modified="20191113162659992" title="$:/state/toc/TableOfContents-Linux--118161433">
 <pre>open</pre>
 </div>
-<div created="20191115005252313" list="$:/ControlPanel Hey!" modified="20191115005252313" title="$:/StoryList">
+<div created="20191115005340508" list="Neomutt" modified="20191115005453417" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20191106193335831" list="$:/core/ui/Buttons/more-page-actions $:/core/ui/Buttons/home $:/core/ui/Buttons/close-all $:/core/ui/Buttons/fold-all $:/core/ui/Buttons/unfold-all $:/core/ui/Buttons/permaview $:/core/ui/Buttons/new-tiddler $:/plugins/tiddlywiki/markdown/new-markdown-button $:/core/ui/Buttons/new-journal $:/core/ui/Buttons/new-image $:/core/ui/Buttons/import $:/core/ui/Buttons/export-page $:/core/ui/Buttons/control-panel $:/core/ui/Buttons/advanced-search $:/core/ui/Buttons/manager $:/core/ui/Buttons/tag-manager $:/core/ui/Buttons/language $:/core/ui/Buttons/palette $:/core/ui/Buttons/theme $:/core/ui/Buttons/storyview $:/core/ui/Buttons/encryption $:/core/ui/Buttons/timestamp $:/core/ui/Buttons/full-screen $:/core/ui/Buttons/print $:/core/ui/Buttons/save-wiki $:/core/ui/Buttons/refresh" modified="20191106193335831" title="$:/tags/PageControls">
@@ -14607,54 +14640,6 @@ Create /etc/hosts
 `reboot`
 </pre>
 </div>
-<div created="20191112173328197" draft.of="Neomutt" draft.title="Neomutt" modified="20191115004326039" tags="Installation Linux" title="Draft of 'Neomutt'" type="text/x-markdown">
-<pre>Based on [this manual](https://webgefrickel.de/blog/a-modern-mutt-setup), [this other](http://stevelosh.com/blog/2012/10/the-homely-mutt/#how-i-use-email) and the ArchWiki pages of [Mutt](https://wiki.archlinux.org/index.php/Mutt), [Isync](https://wiki.archlinux.org/index.php/Isync) and [Msmtp](https://wiki.archlinux.org/index.php/Msmtp).
-
-[Other link](https://gist.github.com/chandraratnam/f00ab7d4a5298830f692021964fdb99f)
-
-###**Installation**
-`pacman -S neomutt msmtp isync`
-
-###**Configure Isync**
-Configuration file `~/.mbsyncrc`
-
-```IMAPStore gmail-remote
-Host imap.gmail.com
-Port  993
-User carloshcr2@gmail.com
-PassCmd &quot;gpg2 -q --for-your-eyes-only --no-tty -d ~/Mail/passwords/gmail.gpg&quot;
-SSLType IMAPS
-CertificateFile /etc/ssl/certs/ca-certificates.crt
-```
-MaildirStore gmail-local
-Subfolders Verbatim
-Path ~/Mail/gmail/
-Inbox ~/Mail/gmail/INBOX
-Flatten .
-
-Channel gmail-default
-Expunge Slave
-Master :gmail-remote:
-Slave :gmail-local:
-Patterns * !&quot;[Gmail]/*&quot; !blogabet !ccpadrones
-Create Both
-SyncState *
-MaxMessages 0
-
-Channel gmail-drafts
-Master :gmail-remote:&quot;[Gmail]/Borradores&quot;
-Slave :gmail-local:Borradores
-Create Both
-SyncState *
-MaxMessages 0```
-
-
-###**Configure Msmtp**
-
-###**Configure Neomutt**
-Configuration folder
-</pre>
-</div>
 <div created="20191106230408624" modified="20191107023327202" tags="i3wm Arch" title="Enable tap to click in i3wm" type="text/x-markdown">
 <pre>https://cravencode.com/post/essentials/enable-tap-to-click-in-i3wm/</pre>
 </div>
@@ -14705,18 +14690,82 @@ Configuration folder
 
 Con mucho queso.</pre>
 </div>
-<div created="20191112173328197" modified="20191113162727258" tags="Installation Linux" title="Neomutt" type="text/x-markdown">
+<div created="20191112173328197" modified="20191115013931551" tags="Installation Linux" title="Neomutt" type="text/x-markdown">
 <pre>Based on [this manual](https://webgefrickel.de/blog/a-modern-mutt-setup), [this other](http://stevelosh.com/blog/2012/10/the-homely-mutt/#how-i-use-email) and the ArchWiki pages of [Mutt](https://wiki.archlinux.org/index.php/Mutt), [Isync](https://wiki.archlinux.org/index.php/Isync) and [Msmtp](https://wiki.archlinux.org/index.php/Msmtp).
-
-[Other link](https://gist.github.com/chandraratnam/f00ab7d4a5298830f692021964fdb99f)
 
 ###**Installation**
 `pacman -S neomutt msmtp isync`
 
+###**Secure password**
+I created an app password for Gmail then put it in a file `gmail` and encripted it with:  
+`gpg2 -e -o gmail.gpg gmail`  
+Then I can decrypt in the config files with something like:  
+`gpg2 --quiet --for-your-eyes-only --no-tty --decrypt ~/path/to/gmail.gpg`
+
 ###**Configure Isync**
-Configuration file `~/.mbsyncrc`
+Configuration file `~/.mbsyncrc`  
+
+Need to write better this example:
+
+	IMAPStore gmail-remote
+	Host imap.gmail.com
+	Port  993
+	User carloshcr2@gmail.com
+	PassCmd &quot;gpg2 -q --for-your-eyes-only --no-tty -d ~/Mail/passwords/gmail.gpg&quot;
+	SSLType IMAPS
+	CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+	MaildirStore gmail-local
+	Subfolders Verbatim
+	Path ~/Mail/gmail/
+	Inbox ~/Mail/gmail/INBOX
+	Flatten .
+
+	Channel gmail-default
+	Expunge Slave
+	Master :gmail-remote:
+	Slave :gmail-local:
+	Patterns * !&quot;[Gmail]/*&quot; !blogabet !ccpadrones
+	Create Both
+	SyncState *
+	MaxMessages 0
+
+	Channel gmail-drafts
+	Master :gmail-remote:&quot;[Gmail]/Borradores&quot;
+	Slave :gmail-local:Borradores
+	Create Both
+	SyncState *
+	MaxMessages 0
+	
+	Group gmail
+	Channel gmail-default
+	Channel gmail-drafts
+	Channel gmail-starred
+
+
 
 ###**Configure Msmtp**
+Configuration file `~/.msmtprc`  
+Need to have just &quot;user read/write&quot; permisions `chmod 600 ~/.msmtprc`  
+
+	# Set default values for all following accounts.
+	defaults
+	auth            on
+	tls             on
+	tls_trust_file  /etc/ssl/certs/ca-certificates.crt
+	logfile         ~/.msmtp.log
+
+	# Gmail
+	account         gmail
+	host            smtp.gmail.com
+	port            587
+	from            carloshcr2@gmail.com
+	user            carloshcr2
+	passwordeval    gpg2 --for-your-eyes-only --no-tty -q -d ~/Mail/passwords/gmail.gpg
+
+	# Set a default account
+	account default : gmail
+
 
 ###**Configure Neomutt**
 Configuration folder
