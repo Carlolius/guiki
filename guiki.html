@@ -239,6 +239,8 @@ Error message and password prompt
 
 <li>$:/plugins/tiddlywiki/codemirror-mode-markdown</li>
 
+<li>$:/plugins/tiddlywiki/codemirror-mode-xml</li>
+
 <li>$:/plugins/tiddlywiki/markdown</li>
 
 <li>$:/plugins/tiddlywiki/markdown/new-markdown-button</li>
@@ -13014,6 +13016,22 @@ very-muted-foreground: #888888</pre>
     }
 }</pre>
 </div>
+<div author="JeremyRuston" dependents="" description="CodeMirror Mode: XML Highlighting" list="readme" plugin-type="plugin" title="$:/plugins/tiddlywiki/codemirror-mode-xml" type="application/json" version="5.1.21">
+<pre>{
+    &quot;tiddlers&quot;: {
+        &quot;$:/plugins/tiddlywiki/codemirror/mode/xml/xml.js&quot;: {
+            &quot;text&quot;: &quot;// CodeMirror, copyright (c) by Marijn Haverbeke and others\n// Distributed under an MIT license: http://codemirror.net/LICENSE\n!function(t){\&quot;object\&quot;==typeof exports&amp;&amp;\&quot;object\&quot;==typeof module?t(require(\&quot;../../lib/codemirror\&quot;)):\&quot;function\&quot;==typeof define&amp;&amp;define.amd?define([\&quot;../../lib/codemirror\&quot;],t):t(CodeMirror)}(function(t){\&quot;use strict\&quot;;var e={autoSelfClosers:{area:!0,base:!0,br:!0,col:!0,command:!0,embed:!0,frame:!0,hr:!0,img:!0,input:!0,keygen:!0,link:!0,meta:!0,param:!0,source:!0,track:!0,wbr:!0,menuitem:!0},implicitlyClosed:{dd:!0,li:!0,optgroup:!0,option:!0,p:!0,rp:!0,rt:!0,tbody:!0,td:!0,tfoot:!0,th:!0,tr:!0},contextGrabbers:{dd:{dd:!0,dt:!0},dt:{dd:!0,dt:!0},li:{li:!0},option:{option:!0,optgroup:!0},optgroup:{optgroup:!0},p:{address:!0,article:!0,aside:!0,blockquote:!0,dir:!0,div:!0,dl:!0,fieldset:!0,footer:!0,form:!0,h1:!0,h2:!0,h3:!0,h4:!0,h5:!0,h6:!0,header:!0,hgroup:!0,hr:!0,menu:!0,nav:!0,ol:!0,p:!0,pre:!0,section:!0,table:!0,ul:!0},rp:{rp:!0,rt:!0},rt:{rp:!0,rt:!0},tbody:{tbody:!0,tfoot:!0},td:{td:!0,th:!0},tfoot:{tbody:!0},th:{td:!0,th:!0},thead:{tbody:!0,tfoot:!0},tr:{tr:!0}},doNotIndent:{pre:!0},allowUnquoted:!0,allowMissing:!0,caseFold:!0},n={autoSelfClosers:{},implicitlyClosed:{},contextGrabbers:{},doNotIndent:{},allowUnquoted:!1,allowMissing:!1,allowMissingTagName:!1,caseFold:!1};t.defineMode(\&quot;xml\&quot;,function(r,o){var a,i,l=r.indentUnit,u={},d=o.htmlMode?e:n;for(var c in d)u[c]=d[c];for(var c in o)u[c]=o[c];function s(t,e){function n(n){return e.tokenize=n,n(t,e)}var r=t.next();return\&quot;&lt;\&quot;==r?t.eat(\&quot;!\&quot;)?t.eat(\&quot;[\&quot;)?t.match(\&quot;CDATA[\&quot;)?n(m(\&quot;atom\&quot;,\&quot;]]&gt;\&quot;)):null:t.match(\&quot;--\&quot;)?n(m(\&quot;comment\&quot;,\&quot;--\\x3e\&quot;)):t.match(\&quot;DOCTYPE\&quot;,!0,!0)?(t.eatWhile(/[\\w\\._\\-]/),n(function t(e){return function(n,r){for(var o;null!=(o=n.next());){if(\&quot;&lt;\&quot;==o)return r.tokenize=t(e+1),r.tokenize(n,r);if(\&quot;&gt;\&quot;==o){if(1==e){r.tokenize=s;break}return r.tokenize=t(e-1),r.tokenize(n,r)}}return\&quot;meta\&quot;}}(1))):null:t.eat(\&quot;?\&quot;)?(t.eatWhile(/[\\w\\._\\-]/),e.tokenize=m(\&quot;meta\&quot;,\&quot;?&gt;\&quot;),\&quot;meta\&quot;):(a=t.eat(\&quot;/\&quot;)?\&quot;closeTag\&quot;:\&quot;openTag\&quot;,e.tokenize=f,\&quot;tag bracket\&quot;):\&quot;&amp;\&quot;==r?(t.eat(\&quot;#\&quot;)?t.eat(\&quot;x\&quot;)?t.eatWhile(/[a-fA-F\\d]/)&amp;&amp;t.eat(\&quot;;\&quot;):t.eatWhile(/[\\d]/)&amp;&amp;t.eat(\&quot;;\&quot;):t.eatWhile(/[\\w\\.\\-:]/)&amp;&amp;t.eat(\&quot;;\&quot;))?\&quot;atom\&quot;:\&quot;error\&quot;:(t.eatWhile(/[^&amp;&lt;]/),null)}function f(t,e){var n,r,o=t.next();if(\&quot;&gt;\&quot;==o||\&quot;/\&quot;==o&amp;&amp;t.eat(\&quot;&gt;\&quot;))return e.tokenize=s,a=\&quot;&gt;\&quot;==o?\&quot;endTag\&quot;:\&quot;selfcloseTag\&quot;,\&quot;tag bracket\&quot;;if(\&quot;=\&quot;==o)return a=\&quot;equals\&quot;,null;if(\&quot;&lt;\&quot;==o){e.tokenize=s,e.state=h,e.tagName=e.tagStart=null;var i=e.tokenize(t,e);return i?i+\&quot; tag error\&quot;:\&quot;tag error\&quot;}return/[\\'\\\&quot;]/.test(o)?(e.tokenize=(n=o,(r=function(t,e){for(;!t.eol();)if(t.next()==n){e.tokenize=f;break}return\&quot;string\&quot;}).isInAttribute=!0,r),e.stringStartCol=t.column(),e.tokenize(t,e)):(t.match(/^[^\\s\\u00a0=&lt;&gt;\\\&quot;\\']*[^\\s\\u00a0=&lt;&gt;\\\&quot;\\'\\/]/),\&quot;word\&quot;)}function m(t,e){return function(n,r){for(;!n.eol();){if(n.match(e)){r.tokenize=s;break}n.next()}return t}}function g(t){t.context&amp;&amp;(t.context=t.context.prev)}function p(t,e){for(var n;;){if(!t.context)return;if(n=t.context.tagName,!u.contextGrabbers.hasOwnProperty(n)||!u.contextGrabbers[n].hasOwnProperty(e))return;g(t)}}function h(t,e,n){return\&quot;openTag\&quot;==t?(n.tagStart=e.column(),x):\&quot;closeTag\&quot;==t?b:h}function x(t,e,n){return\&quot;word\&quot;==t?(n.tagName=e.current(),i=\&quot;tag\&quot;,v):u.allowMissingTagName&amp;&amp;\&quot;endTag\&quot;==t?(i=\&quot;tag bracket\&quot;,v(t,e,n)):(i=\&quot;error\&quot;,x)}function b(t,e,n){if(\&quot;word\&quot;==t){var r=e.current();return n.context&amp;&amp;n.context.tagName!=r&amp;&amp;u.implicitlyClosed.hasOwnProperty(n.context.tagName)&amp;&amp;g(n),n.context&amp;&amp;n.context.tagName==r||!1===u.matchClosing?(i=\&quot;tag\&quot;,k):(i=\&quot;tag error\&quot;,w)}return u.allowMissingTagName&amp;&amp;\&quot;endTag\&quot;==t?(i=\&quot;tag bracket\&quot;,k(t,e,n)):(i=\&quot;error\&quot;,w)}function k(t,e,n){return\&quot;endTag\&quot;!=t?(i=\&quot;error\&quot;,k):(g(n),h)}function w(t,e,n){return i=\&quot;error\&quot;,k(t,0,n)}function v(t,e,n){if(\&quot;word\&quot;==t)return i=\&quot;attribute\&quot;,T;if(\&quot;endTag\&quot;==t||\&quot;selfcloseTag\&quot;==t){var r=n.tagName,o=n.tagStart;return n.tagName=n.tagStart=null,\&quot;selfcloseTag\&quot;==t||u.autoSelfClosers.hasOwnProperty(r)?p(n,r):(p(n,r),n.context=new function(t,e,n){this.prev=t.context,this.tagName=e,this.indent=t.indented,this.startOfLine=n,(u.doNotIndent.hasOwnProperty(e)||t.context&amp;&amp;t.context.noIndent)&amp;&amp;(this.noIndent=!0)}(n,r,o==n.indented)),h}return i=\&quot;error\&quot;,v}function T(t,e,n){return\&quot;equals\&quot;==t?y:(u.allowMissing||(i=\&quot;error\&quot;),v(t,0,n))}function y(t,e,n){return\&quot;string\&quot;==t?N:\&quot;word\&quot;==t&amp;&amp;u.allowUnquoted?(i=\&quot;string\&quot;,v):(i=\&quot;error\&quot;,v(t,0,n))}function N(t,e,n){return\&quot;string\&quot;==t?N:v(t,0,n)}return s.isInText=!0,{startState:function(t){var e={tokenize:s,state:h,indented:t||0,tagName:null,tagStart:null,context:null};return null!=t&amp;&amp;(e.baseIndent=t),e},token:function(t,e){if(!e.tagName&amp;&amp;t.sol()&amp;&amp;(e.indented=t.indentation()),t.eatSpace())return null;a=null;var n=e.tokenize(t,e);return(n||a)&amp;&amp;\&quot;comment\&quot;!=n&amp;&amp;(i=null,e.state=e.state(a||n,t,e),i&amp;&amp;(n=\&quot;error\&quot;==i?n+\&quot; error\&quot;:i)),n},indent:function(e,n,r){var o=e.context;if(e.tokenize.isInAttribute)return e.tagStart==e.indented?e.stringStartCol+1:e.indented+l;if(o&amp;&amp;o.noIndent)return t.Pass;if(e.tokenize!=f&amp;&amp;e.tokenize!=s)return r?r.match(/^(\\s*)/)[0].length:0;if(e.tagName)return!1!==u.multilineTagIndentPastTag?e.tagStart+e.tagName.length+2:e.tagStart+l*(u.multilineTagIndentFactor||1);if(u.alignCDATA&amp;&amp;/&lt;!\\[CDATA\\[/.test(n))return 0;var a=n&amp;&amp;/^&lt;(\\/)?([\\w_:\\.-]*)/.exec(n);if(a&amp;&amp;a[1])for(;o;){if(o.tagName==a[2]){o=o.prev;break}if(!u.implicitlyClosed.hasOwnProperty(o.tagName))break;o=o.prev}else if(a)for(;o;){var i=u.contextGrabbers[o.tagName];if(!i||!i.hasOwnProperty(a[2]))break;o=o.prev}for(;o&amp;&amp;o.prev&amp;&amp;!o.startOfLine;)o=o.prev;return o?o.indent+l:e.baseIndent||0},electricInput:/&lt;\\/[\\s\\w:]+&gt;$/,blockCommentStart:\&quot;\\x3c!--\&quot;,blockCommentEnd:\&quot;--\\x3e\&quot;,configuration:u.htmlMode?\&quot;html\&quot;:\&quot;xml\&quot;,helperType:u.htmlMode?\&quot;html\&quot;:\&quot;xml\&quot;,skipAttribute:function(t){t.state==y&amp;&amp;(t.state=v)}}}),t.defineMIME(\&quot;text/xml\&quot;,\&quot;xml\&quot;),t.defineMIME(\&quot;application/xml\&quot;,\&quot;xml\&quot;),t.mimeModes.hasOwnProperty(\&quot;text/html\&quot;)||t.defineMIME(\&quot;text/html\&quot;,{name:\&quot;xml\&quot;,htmlMode:!0})});&quot;,
+            &quot;type&quot;: &quot;application/javascript&quot;,
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/codemirror/mode/xml/xml.js&quot;,
+            &quot;module-type&quot;: &quot;codemirror&quot;
+        },
+        &quot;$:/plugins/tiddlywiki/codemirror-mode-xml/readme&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tiddlywiki/codemirror-mode-xml/readme&quot;,
+            &quot;text&quot;: &quot;This plugin is a requirement for other Syntax-highlighting plugins and adds Highlighting for XML tiddlers (application/xml) to the [[CodeMirror|http://codemirror.net]] text editor. It needs the latest [[CodeMirror plugin|$:/plugins/tiddlywiki/codemirror]] to be installed\n\n&quot;
+        }
+    }
+}</pre>
+</div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="" description="Markdown parser" list="readme usage" plugin-type="plugin" title="$:/plugins/tiddlywiki/markdown" type="application/json" version="5.1.21">
 <pre>{
     &quot;tiddlers&quot;: {
@@ -13231,8 +13249,8 @@ very-muted-foreground: #888888</pre>
 <div created="20191031011829495" modified="20191031011833315" title="$:/state/add-plugin-info/$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.21/index.html/$:/temp/RemoteAssetInfo/https://tiddlywiki.com/library/v5.1.21/index.html/$:/plugins/tiddlywiki/classictools">
 <pre>no</pre>
 </div>
-<div created="20191031012101920" modified="20191115004431137" title="$:/state/add-plugin-info/$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.21/index.html/$:/temp/RemoteAssetInfo/https://tiddlywiki.com/library/v5.1.21/index.html/$:/plugins/tiddlywiki/codemirror">
-<pre>yes</pre>
+<div created="20191031012101920" modified="20191115005258731" title="$:/state/add-plugin-info/$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.21/index.html/$:/temp/RemoteAssetInfo/https://tiddlywiki.com/library/v5.1.21/index.html/$:/plugins/tiddlywiki/codemirror">
+<pre>no</pre>
 </div>
 <div created="20191031012222591" modified="20191031012226186" title="$:/state/add-plugin-info/$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.21/index.html/$:/temp/RemoteAssetInfo/https://tiddlywiki.com/library/v5.1.21/index.html/$:/plugins/tiddlywiki/codemirror-keymap-sublime-text">
 <pre>no</pre>
@@ -13321,8 +13339,8 @@ very-muted-foreground: #888888</pre>
 <div created="20191029024141910" modified="20191029024143174" title="$:/state/plugin-info--896887961-$:/core">
 <pre>no</pre>
 </div>
-<div created="20191115004844902" modified="20191115004844902" title="$:/state/plugin-info--896887961-$:/plugins/tiddlywiki/codemirror-mode-markdown">
-<pre>yes</pre>
+<div created="20191115004844902" modified="20191115005255047" title="$:/state/plugin-info--896887961-$:/plugins/tiddlywiki/codemirror-mode-markdown">
+<pre>no</pre>
 </div>
 <div created="20191031012004947" modified="20191031012042587" title="$:/state/plugin-info--896887961-$:/plugins/tiddlywiki/markdown">
 <pre>no</pre>
@@ -13420,7 +13438,7 @@ very-muted-foreground: #888888</pre>
 <div created="20191107023516372" modified="20191113162659992" title="$:/state/toc/TableOfContents-Linux--118161433">
 <pre>open</pre>
 </div>
-<div created="20191115004922405" list="$:/ControlPanel Hey!" modified="20191115004922405" title="$:/StoryList">
+<div created="20191115005252313" list="$:/ControlPanel Hey!" modified="20191115005252313" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20191106193335831" list="$:/core/ui/Buttons/more-page-actions $:/core/ui/Buttons/home $:/core/ui/Buttons/close-all $:/core/ui/Buttons/fold-all $:/core/ui/Buttons/unfold-all $:/core/ui/Buttons/permaview $:/core/ui/Buttons/new-tiddler $:/plugins/tiddlywiki/markdown/new-markdown-button $:/core/ui/Buttons/new-journal $:/core/ui/Buttons/new-image $:/core/ui/Buttons/import $:/core/ui/Buttons/export-page $:/core/ui/Buttons/control-panel $:/core/ui/Buttons/advanced-search $:/core/ui/Buttons/manager $:/core/ui/Buttons/tag-manager $:/core/ui/Buttons/language $:/core/ui/Buttons/palette $:/core/ui/Buttons/theme $:/core/ui/Buttons/storyview $:/core/ui/Buttons/encryption $:/core/ui/Buttons/timestamp $:/core/ui/Buttons/full-screen $:/core/ui/Buttons/print $:/core/ui/Buttons/save-wiki $:/core/ui/Buttons/refresh" modified="20191106193335831" title="$:/tags/PageControls">
@@ -14249,7 +14267,7 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20191031012809632" modified="20191109231737600" title="$:/temp/search">
 <pre></pre>
 </div>
-<div created="20191115004607524" modified="20191115004607524" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.21/index.html" url="https://tiddlywiki.com/library/v5.1.21/index.html">
+<div created="20191115005309412" modified="20191115005309412" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.21/index.html" url="https://tiddlywiki.com/library/v5.1.21/index.html">
 <pre>loaded</pre>
 </div>
 <div created="20191029023909961" modified="20191106030835116" title="$:/theme">
