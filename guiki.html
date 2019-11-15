@@ -49,7 +49,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE." />
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <title> MyGüiki — a little bit less messy. 
 
-15 Nov 2019 at 02:52
+15 Nov 2019 at 03:23
 
 </title>
 <!--~~ This is a Tiddlywiki file. The points of interest in the file are marked with this pattern ~~-->
@@ -13402,7 +13402,7 @@ very-muted-foreground: #888888</pre>
 <div created="20191029023642754" modified="20191029032557456" title="$:/state/ShowPaletteEditor">
 <pre>no</pre>
 </div>
-<div created="20191031012352854" modified="20191115014812039" title="$:/state/sidebar">
+<div created="20191031012352854" modified="20191115021957363" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
 <div created="20191029023423181" modified="20191106184715580" title="$:/state/tab--1498284803">
@@ -13483,10 +13483,10 @@ very-muted-foreground: #888888</pre>
 <div created="20191115015137753" modified="20191115015138309" title="$:/state/toc/TableOfContents/Linux-i3wm--118161433">
 <pre>close</pre>
 </div>
-<div created="20191115015115205" modified="20191115015217970" title="$:/state/toc/TableOfContents/Linux-Installation--118161433">
-<pre>close</pre>
+<div created="20191115015115205" modified="20191115021748841" title="$:/state/toc/TableOfContents/Linux-Installation--118161433">
+<pre>open</pre>
 </div>
-<div created="20191115005340508" list="Neomutt" modified="20191115015140408" title="$:/StoryList">
+<div created="20191115005340508" list="Neomutt" modified="20191115021750286" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20191106193335831" list="$:/core/ui/Buttons/more-page-actions $:/core/ui/Buttons/home $:/core/ui/Buttons/close-all $:/core/ui/Buttons/fold-all $:/core/ui/Buttons/unfold-all $:/core/ui/Buttons/permaview $:/core/ui/Buttons/new-tiddler $:/plugins/tiddlywiki/markdown/new-markdown-button $:/core/ui/Buttons/new-journal $:/core/ui/Buttons/new-image $:/core/ui/Buttons/import $:/core/ui/Buttons/export-page $:/core/ui/Buttons/control-panel $:/core/ui/Buttons/advanced-search $:/core/ui/Buttons/manager $:/core/ui/Buttons/tag-manager $:/core/ui/Buttons/language $:/core/ui/Buttons/palette $:/core/ui/Buttons/theme $:/core/ui/Buttons/storyview $:/core/ui/Buttons/encryption $:/core/ui/Buttons/timestamp $:/core/ui/Buttons/full-screen $:/core/ui/Buttons/print $:/core/ui/Buttons/save-wiki $:/core/ui/Buttons/refresh" modified="20191106193335831" title="$:/tags/PageControls">
@@ -14529,7 +14529,7 @@ Enable the trim timer for weekly trim of the ssd.
 **Firewall**  
 [Link](https://wiki.archlinux.org/index.php/Category:Firewalls)</pre>
 </div>
-<div created="20191029025058144" modified="20191115014947723" tags="Installation Arch" title="Arch installation" type="text/x-markdown">
+<div created="20191029025058144" modified="20191115022143746" tags="Installation Arch" title="Arch installation" type="text/x-markdown">
 <pre>My summary of the Arch Linux installation, refers to [ArchWiki installation guide](https://wiki.archlinux.org/index.php/Installation_guide &quot;Arch wiki&quot;)
 
 ---
@@ -14547,22 +14547,23 @@ Enable the trim timer for weekly trim of the ssd.
 `iw dev wlp3s0 link`
 
 **Create and add this next lines to /etc/wpa_supplicant/wpa_supplicant.conf**  
-`ctrl_interface=/run/wpa_supplicant`
+`ctrl_interface=/run/wpa_supplicant`  
 `update_config=1`
 
 **Start wpa_supplicant**  
 `wpa_supplicant -B -i wlp3s0 -c /etc/wpa_supplicant/wpa_supplicant.conf`
 
 **Add network with wpa_cli**  
-`wpa_cli
-scan
-scan_results
-add_network
-set_network 0 ssid &quot;MYSSID&quot;
-set_network 0 psk &quot;passphrase&quot;
-enable_network 0
-save_config
-quit`
+
+	wpa_cli
+	scan
+	scan_results
+	add_network
+	set_network 0 ssid &quot;MYSSID&quot;
+	set_network 0 psk &quot;passphrase&quot;
+	enable_network 0
+	save_config
+	quit
 
 **Get ip**  
 `dhcpcd wlp3s0`
@@ -14579,20 +14580,20 @@ quit`
 
 **Disk with / and swap using fdisk in /dev/sda**  
 `fdisk /dev/sda`
-```
-o # new MBR partition table
-n # new partition
-p # primary partition
-1 # number of partition
-2048 # first sector
-+106G # size of partition
-n # for swap
-p
-2
-default
-default
-w # write changes
-```
+
+	o # new MBR partition table
+	n # new partition
+	p # primary partition
+	1 # number of partition
+	2048 # first sector
+	+106G # size of partition
+	n # for swap
+	p
+	2
+	default
+	default
+	w # write changes
+
 
 **Format partitions**  
 `mkfs.ext4 /dev/sda1`  
@@ -14610,7 +14611,8 @@ w # write changes
 `pacstrap /mnt base base-devel linux linux-firmware`
 
 **Extra packages, personal selection**  
-`pacstrap /mnt exfat-utils dhcpcd dialog git grub man-db man-pages nano netctl nmap openssh smartmontools texinfo`  `vi vim wpa_supplicant`
+
+	pacstrap /mnt exfat-utils dhcpcd dialog git grub man-db man-pages nano netctl nmap openssh smartmontools texinfo vi vim wpa_supplicant
 
 **Generate fstab**  
 `genfstab -U /mnt &gt;&gt; /mnt/etc/fstab`
@@ -14705,16 +14707,16 @@ Create /etc/hosts
 
 Con mucho queso.</pre>
 </div>
-<div created="20191112173328197" modified="20191115015213878" tags="Installation Linux" title="Neomutt" type="text/x-markdown">
+<div created="20191112173328197" modified="20191115022327116" tags="Installation Linux" title="Neomutt" type="text/x-markdown">
 <pre>Based on [this manual](https://webgefrickel.de/blog/a-modern-mutt-setup), [this other](http://stevelosh.com/blog/2012/10/the-homely-mutt/#how-i-use-email) and the ArchWiki pages of [Mutt](https://wiki.archlinux.org/index.php/Mutt), [Isync](https://wiki.archlinux.org/index.php/Isync) and [Msmtp](https://wiki.archlinux.org/index.php/Msmtp).
 
 ###**Installation**
 `pacman -S neomutt msmtp isync`
 
 ###**Secure password**
-I created an app password for Gmail then put it in a file `gmail` and encripted it with:  
+Create an app password for Gmail then put it in a file `gmail` and encript it with:  
 `gpg2 -e -o gmail.gpg gmail`  
-Then I can decrypt in the config files with something like:  
+Then you can decrypt in the config files with something like:  
 `gpg2 --quiet --for-your-eyes-only --no-tty --decrypt ~/path/to/gmail.gpg`
 
 ###**Configure Isync**
@@ -14761,7 +14763,7 @@ I need to write better this example:
 
 ###**Configure Msmtp**
 Configuration file `~/.msmtprc`  
-Need to have just &quot;user read/write&quot; permisions `chmod 600 ~/.msmtprc`  
+It need to have just &quot;user read/write&quot; permisions `chmod 600 ~/.msmtprc`  
 
 	# Set default values for all following accounts.
 	defaults
@@ -14788,7 +14790,7 @@ Configuration folder
 ###**Useful links**
 [Mutt wizard by Luke Smith](https://github.com/LukeSmithxyz/mutt-wizard)</pre>
 </div>
-<div created="20191031020422364" modified="20191113024841240" tags="Linux Installation Arch" title="Packages" type="text/x-markdown">
+<div created="20191031020422364" modified="20191115022314155" tags="Linux Installation Arch" title="Packages" type="text/x-markdown">
 <pre>Packages intalled apart from the installation ones...
 
 bluez  
@@ -14800,7 +14802,8 @@ i3-wm
 i3blocks  
 i3lock  
 i3status 
-isync   
+isync  
+neovim  
 openssh  
 pulseaudio  
 pulseaudio-alsa  
