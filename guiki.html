@@ -49,7 +49,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE." />
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <title> MyGüiki — a little bit less messy. 
 
-15 Nov 2019 at 21:50
+16 Nov 2019 at 02:43
 
 </title>
 <!--~~ This is a Tiddlywiki file. The points of interest in the file are marked with this pattern ~~-->
@@ -13410,7 +13410,7 @@ very-muted-foreground: #888888</pre>
 <div created="20191029023642754" modified="20191029032557456" title="$:/state/ShowPaletteEditor">
 <pre>no</pre>
 </div>
-<div created="20191031012352854" modified="20191115035201930" title="$:/state/sidebar">
+<div created="20191031012352854" modified="20191116014322689" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
 <div created="20191029023423181" modified="20191106184715580" title="$:/state/tab--1498284803">
@@ -13497,7 +13497,7 @@ very-muted-foreground: #888888</pre>
 <div created="20191115015115205" modified="20191115130600629" title="$:/state/toc/TableOfContents/Linux-Installation--118161433">
 <pre>close</pre>
 </div>
-<div created="20191115152945095" list="Neomutt Hey!" modified="20191115203903110" title="$:/StoryList">
+<div created="20191116004933279" list="Neomutt Hey!" modified="20191116014047492" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20191106193335831" list="$:/core/ui/Buttons/more-page-actions $:/core/ui/Buttons/home $:/core/ui/Buttons/close-all $:/core/ui/Buttons/fold-all $:/core/ui/Buttons/unfold-all $:/core/ui/Buttons/permaview $:/core/ui/Buttons/new-tiddler $:/plugins/tiddlywiki/markdown/new-markdown-button $:/core/ui/Buttons/new-journal $:/core/ui/Buttons/new-image $:/core/ui/Buttons/import $:/core/ui/Buttons/export-page $:/core/ui/Buttons/control-panel $:/core/ui/Buttons/advanced-search $:/core/ui/Buttons/manager $:/core/ui/Buttons/tag-manager $:/core/ui/Buttons/language $:/core/ui/Buttons/palette $:/core/ui/Buttons/theme $:/core/ui/Buttons/storyview $:/core/ui/Buttons/encryption $:/core/ui/Buttons/timestamp $:/core/ui/Buttons/full-screen $:/core/ui/Buttons/print $:/core/ui/Buttons/save-wiki $:/core/ui/Buttons/refresh" modified="20191106193335831" title="$:/tags/PageControls">
@@ -14728,15 +14728,8 @@ Create /etc/hosts
 
 Con mucho queso.</pre>
 </div>
-<div created="20191112173328197" modified="20191115205053800" tags="Installation Linux" title="Neomutt" type="text/x-markdown">
-<pre># Doing
-
-Mirar como hacer para que sincronizando sin traducir con los channels en el sidebar de neomutt se vea solo el nombre como sería &quot;Borradores&quot; en vez de [Gmail]/Borradores
-
-Resolviendo lo anterior
-No aparecen OVH ni Fotos
-
-Based on [this manual](https://webgefrickel.de/blog/a-modern-mutt-setup), [this other](http://stevelosh.com/blog/2012/10/the-homely-mutt/#how-i-use-email) and the ArchWiki pages of [Mutt](https://wiki.archlinux.org/index.php/Mutt), [Isync](https://wiki.archlinux.org/index.php/Isync) and [Msmtp](https://wiki.archlinux.org/index.php/Msmtp).
+<div created="20191112173328197" modified="20191116014318315" tags="Installation Linux" title="Neomutt" type="text/x-markdown">
+<pre>Based on [this manual](https://webgefrickel.de/blog/a-modern-mutt-setup), [this other](http://stevelosh.com/blog/2012/10/the-homely-mutt/#how-i-use-email) and the ArchWiki pages of [Mutt](https://wiki.archlinux.org/index.php/Mutt), [Isync](https://wiki.archlinux.org/index.php/Isync) and [Msmtp](https://wiki.archlinux.org/index.php/Msmtp).
 
 ###**Installation**
 `pacman -S neomutt msmtp isync`
@@ -14749,8 +14742,6 @@ Then you can decrypt in the config files with something like:
 
 ###**Configure Isync**
 Configuration file `~/.mbsyncrc`  
-
-I need to write better this example:
 
 	IMAPStore gmail-remote
 	Host imap.gmail.com
@@ -14767,27 +14758,72 @@ I need to write better this example:
 	Flatten .
 
 	Channel gmail-default
-	Expunge Slave
+	Expunge Both 
 	Master :gmail-remote:
 	Slave :gmail-local:
-	Patterns * !&quot;[Gmail]/*&quot; !blogabet !ccpadrones
+	Patterns * !&quot;[Gmail]/*&quot; !Borradores !Destacados !Enviados !Importantes !Papelera !Spam
 	Create Both
 	SyncState *
 	MaxMessages 0
 
 	Channel gmail-drafts
+	Expunge Both 
 	Master :gmail-remote:&quot;[Gmail]/Borradores&quot;
 	Slave :gmail-local:Borradores
 	Create Both
 	SyncState *
 	MaxMessages 0
-	
+
+	Channel gmail-starred
+	Expunge Both 
+	Master :gmail-remote:&quot;[Gmail]/Destacados&quot;
+	Slave :gmail-local:Destacados
+	Create Both
+	SyncState *
+	MaxMessages 0
+
+	Channel gmail-sent
+	Expunge Both 
+	Master :gmail-remote:&quot;[Gmail]/Enviados&quot;
+	Slave :gmail-local:Enviados
+	Create Both
+	SyncState *
+	MaxMessages 0
+
+	Channel gmail-important
+	Expunge Both 
+	Master :gmail-remote:&quot;[Gmail]/Importantes&quot;
+	Slave :gmail-local:Importantes
+	Create Both
+	SyncState *
+	MaxMessages 0
+
+	Channel gmail-trash
+	Expunge Both 
+	Master :gmail-remote:&quot;[Gmail]/Papelera&quot;
+	Slave :gmail-local:Papelera
+	Create Both
+	SyncState *
+	MaxMessages 0
+
+	Channel gmail-spam
+	Expunge Both 
+	Master :gmail-remote:&quot;[Gmail]/Spam&quot;
+	Slave :gmail-local:Spam
+	Create Both
+	SyncState *
+	MaxMessages 0
+
 	Group gmail
 	Channel gmail-default
 	Channel gmail-drafts
 	Channel gmail-starred
+	Channel gmail-sent
+	Channel gmail-important
+	Channel gmail-trash
+	Channel gmail-spam
 
-
+	# End profile gmail
 
 ###**Configure Msmtp**
 Configuration file `~/.msmtprc`  
@@ -14806,11 +14842,10 @@ It need to have just &quot;user read/write&quot; permisions `chmod 600 ~/.msmtpr
 	port            587
 	from            carloshcr2@gmail.com
 	user            carloshcr2
-	passwordeval    gpg2 --for-your-eyes-only --no-tty -q -d ~/Mail/passwords/gmail.gpg
+	passwordeval    &quot;gpg2 -q --for-your-eyes-only --no-tty -d ~/Mail/passwords/gmail.gpg&quot;
 
 	# Set a default account
 	account default : gmail
-
 
 ###**Configure Neomutt**
 
