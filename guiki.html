@@ -49,7 +49,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE." />
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <title> MyGüiki — a little bit less messy. 
 
-16 Nov 2019 at 04:15
+16 Nov 2019 at 04:21
 
 </title>
 <!--~~ This is a Tiddlywiki file. The points of interest in the file are marked with this pattern ~~-->
@@ -13410,7 +13410,7 @@ very-muted-foreground: #888888</pre>
 <div created="20191029023642754" modified="20191029032557456" title="$:/state/ShowPaletteEditor">
 <pre>no</pre>
 </div>
-<div created="20191031012352854" modified="20191116031516181" title="$:/state/sidebar">
+<div created="20191031012352854" modified="20191116032126667" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
 <div created="20191029023423181" modified="20191106184715580" title="$:/state/tab--1498284803">
@@ -13497,7 +13497,7 @@ very-muted-foreground: #888888</pre>
 <div created="20191115015115205" modified="20191115130600629" title="$:/state/toc/TableOfContents/Linux-Installation--118161433">
 <pre>close</pre>
 </div>
-<div created="20191116004933279" list="Hey!" modified="20191116014047492" title="$:/StoryList">
+<div created="20191116032034207" list="Neomutt Hey!" modified="20191116032034208" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20191106193335831" list="$:/core/ui/Buttons/more-page-actions $:/core/ui/Buttons/home $:/core/ui/Buttons/close-all $:/core/ui/Buttons/fold-all $:/core/ui/Buttons/unfold-all $:/core/ui/Buttons/permaview $:/core/ui/Buttons/new-tiddler $:/plugins/tiddlywiki/markdown/new-markdown-button $:/core/ui/Buttons/new-journal $:/core/ui/Buttons/new-image $:/core/ui/Buttons/import $:/core/ui/Buttons/export-page $:/core/ui/Buttons/control-panel $:/core/ui/Buttons/advanced-search $:/core/ui/Buttons/manager $:/core/ui/Buttons/tag-manager $:/core/ui/Buttons/language $:/core/ui/Buttons/palette $:/core/ui/Buttons/theme $:/core/ui/Buttons/storyview $:/core/ui/Buttons/encryption $:/core/ui/Buttons/timestamp $:/core/ui/Buttons/full-screen $:/core/ui/Buttons/print $:/core/ui/Buttons/save-wiki $:/core/ui/Buttons/refresh" modified="20191106193335831" title="$:/tags/PageControls">
@@ -13550,19 +13550,19 @@ very-muted-foreground: #888888</pre>
         },
         &quot;$:/info/url/origin&quot;: {
             &quot;title&quot;: &quot;$:/info/url/origin&quot;,
-            &quot;text&quot;: &quot;file://&quot;
+            &quot;text&quot;: &quot;null&quot;
         },
         &quot;$:/info/browser/screen/width&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/width&quot;,
-            &quot;text&quot;: &quot;1920&quot;
+            &quot;text&quot;: &quot;1280&quot;
         },
         &quot;$:/info/browser/screen/height&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/height&quot;,
-            &quot;text&quot;: &quot;1080&quot;
+            &quot;text&quot;: &quot;800&quot;
         },
         &quot;$:/info/browser/language&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/language&quot;,
-            &quot;text&quot;: &quot;es&quot;
+            &quot;text&quot;: &quot;es-ES&quot;
         }
     }
 }</pre>
@@ -14728,7 +14728,7 @@ Create /etc/hosts
 
 Con mucho queso.</pre>
 </div>
-<div created="20191112173328197" modified="20191116031511662" tags="Installation Linux" title="Neomutt" type="text/x-markdown">
+<div created="20191112173328197" modified="20191116032125577" tags="Installation Linux" title="Neomutt" type="text/x-markdown">
 <pre># DOING
 **Gmail**  
 ¿Cambiar nombre de INBOX a Inbox?  
@@ -14787,7 +14787,7 @@ This is a configuration example for Spanish Gmail accounts:
 	Master :gmail-remote:
 	Slave :gmail-local:
 	# Syncronize everything except the &quot;!&quot; ones. Dunno why need to write the ones in channels.
-	Patterns * !&quot;[Gmail]/*&quot; !Borradores !Destacados !Enviados !Importantes !Papelera !Spam !Electrotecnia !Tecnologia !&quot;Clase/Electrotecnia&quot; !&quot;Clase/Tecnologia&quot;
+	Patterns * !&quot;[Gmail]/*&quot; !Borradores !Destacados !Enviados !Importantes !Papelera !Spam
 	# Automatically create missing mailboxes, both locally and on the server
 	Create Both
 	# Save the synchronization state files in the relevant directory
@@ -14846,22 +14846,6 @@ This is a configuration example for Spanish Gmail accounts:
 	SyncState *
 	MaxMessages 0
 
-	Channel gmail-electrotecnia
-	Expunge Both
-	Master :gmail-remote:&quot;Clase/Electrotecnia&quot;
-	Slave :gmail-local:Electrotecnia
-	Create Both
-	SyncState *
-	MaxMessages 0
-
-	Channel gmail-tecnologia
-	Expunge Both
-	Master :gmail-remote:&quot;Clase/Tecnologia&quot;
-	Slave :gmail-local:Tecnologia
-	Create Both
-	SyncState *
-	MaxMessages 0
-
 	# Groups are used to syncronize all the channels.
 	Group gmail
 	Channel gmail-default
@@ -14871,8 +14855,6 @@ This is a configuration example for Spanish Gmail accounts:
 	Channel gmail-important
 	Channel gmail-trash
 	Channel gmail-spam
-	Channel gmail-electrotecnia
-	Channel gmail-tecnologia
 
 	# End profile gmail
 
