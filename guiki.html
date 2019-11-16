@@ -49,7 +49,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE." />
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <title> MyGüiki — a little bit less messy. 
 
-16 Nov 2019 at 02:43
+16 Nov 2019 at 04:15
 
 </title>
 <!--~~ This is a Tiddlywiki file. The points of interest in the file are marked with this pattern ~~-->
@@ -13410,7 +13410,7 @@ very-muted-foreground: #888888</pre>
 <div created="20191029023642754" modified="20191029032557456" title="$:/state/ShowPaletteEditor">
 <pre>no</pre>
 </div>
-<div created="20191031012352854" modified="20191116014322689" title="$:/state/sidebar">
+<div created="20191031012352854" modified="20191116031516181" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
 <div created="20191029023423181" modified="20191106184715580" title="$:/state/tab--1498284803">
@@ -13497,7 +13497,7 @@ very-muted-foreground: #888888</pre>
 <div created="20191115015115205" modified="20191115130600629" title="$:/state/toc/TableOfContents/Linux-Installation--118161433">
 <pre>close</pre>
 </div>
-<div created="20191116004933279" list="Neomutt Hey!" modified="20191116014047492" title="$:/StoryList">
+<div created="20191116004933279" list="Hey!" modified="20191116014047492" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20191106193335831" list="$:/core/ui/Buttons/more-page-actions $:/core/ui/Buttons/home $:/core/ui/Buttons/close-all $:/core/ui/Buttons/fold-all $:/core/ui/Buttons/unfold-all $:/core/ui/Buttons/permaview $:/core/ui/Buttons/new-tiddler $:/plugins/tiddlywiki/markdown/new-markdown-button $:/core/ui/Buttons/new-journal $:/core/ui/Buttons/new-image $:/core/ui/Buttons/import $:/core/ui/Buttons/export-page $:/core/ui/Buttons/control-panel $:/core/ui/Buttons/advanced-search $:/core/ui/Buttons/manager $:/core/ui/Buttons/tag-manager $:/core/ui/Buttons/language $:/core/ui/Buttons/palette $:/core/ui/Buttons/theme $:/core/ui/Buttons/storyview $:/core/ui/Buttons/encryption $:/core/ui/Buttons/timestamp $:/core/ui/Buttons/full-screen $:/core/ui/Buttons/print $:/core/ui/Buttons/save-wiki $:/core/ui/Buttons/refresh" modified="20191106193335831" title="$:/tags/PageControls">
@@ -14728,20 +14728,43 @@ Create /etc/hosts
 
 Con mucho queso.</pre>
 </div>
-<div created="20191112173328197" modified="20191116014318315" tags="Installation Linux" title="Neomutt" type="text/x-markdown">
-<pre>Based on [this manual](https://webgefrickel.de/blog/a-modern-mutt-setup), [this other](http://stevelosh.com/blog/2012/10/the-homely-mutt/#how-i-use-email) and the ArchWiki pages of [Mutt](https://wiki.archlinux.org/index.php/Mutt), [Isync](https://wiki.archlinux.org/index.php/Isync) and [Msmtp](https://wiki.archlinux.org/index.php/Msmtp).
+<div created="20191112173328197" modified="20191116031511662" tags="Installation Linux" title="Neomutt" type="text/x-markdown">
+<pre># DOING
+**Gmail**  
+¿Cambiar nombre de INBOX a Inbox?  
+
+**Hotmail**  
+Falta por traducir los nombres de hotmail (si eso) en el mbsync.  
+Meter las carpetas que falten en la sidebar.  
+Añadir al msmtp.
+
+**Resto**  
+Meter el resto de correos (no explorado sólo el de la UDC)
+
+---
+
+---
+
+---
+
+Based on [this manual](https://webgefrickel.de/blog/a-modern-mutt-setup), [this other](http://stevelosh.com/blog/2012/10/the-homely-mutt/#how-i-use-email) and the ArchWiki pages of [Mutt](https://wiki.archlinux.org/index.php/Mutt), [Isync](https://wiki.archlinux.org/index.php/Isync) and [Msmtp](https://wiki.archlinux.org/index.php/Msmtp).
 
 ###**Installation**
 `pacman -S neomutt msmtp isync`
 
 ###**Secure password**
-Create an app password for Gmail then put it in a file `gmail` and encript it with:  
+Create an [app password for Gmail](https://support.google.com/mail/answer/185833?) then write it in a file `gmail` and encript it with:  
 `gpg2 -e -o gmail.gpg gmail`  
+You might need to [create your keyring](https://help.github.com/en/github/authenticating-to-github/generating-a-new-gpg-key).  
 Then you can decrypt in the config files with something like:  
 `gpg2 --quiet --for-your-eyes-only --no-tty --decrypt ~/path/to/gmail.gpg`
 
 ###**Configure Isync**
+Isync is the name of the [mbsync](http://isync.sourceforge.net/mbsync.html) packag, it syncronizes email accounts with a folder in your computer `~/Mail` you need this to be able to read your email when you're offline with Neomutt. To syncronize your accounts without using Neomutt or to test it `mbsync -a`
+
 Configuration file `~/.mbsyncrc`  
+
+This is a configuration example for Spanish Gmail accounts:
 
 	IMAPStore gmail-remote
 	Host imap.gmail.com
@@ -14752,30 +14775,39 @@ Configuration file `~/.mbsyncrc`
 	CertificateFile /etc/ssl/certs/ca-certificates.crt
 
 	MaildirStore gmail-local
+	# The way to manage the sort of the mail folders.
 	Subfolders Verbatim
 	Path ~/Mail/gmail/
 	Inbox ~/Mail/gmail/INBOX
 	Flatten .
 
 	Channel gmail-default
-	Expunge Both 
+	# Apply deletion changes in master (remote) and slave (local).
+	Expunge Both
 	Master :gmail-remote:
 	Slave :gmail-local:
-	Patterns * !&quot;[Gmail]/*&quot; !Borradores !Destacados !Enviados !Importantes !Papelera !Spam
+	# Syncronize everything except the &quot;!&quot; ones. Dunno why need to write the ones in channels.
+	Patterns * !&quot;[Gmail]/*&quot; !Borradores !Destacados !Enviados !Importantes !Papelera !Spam !Electrotecnia !Tecnologia !&quot;Clase/Electrotecnia&quot; !&quot;Clase/Tecnologia&quot;
+	# Automatically create missing mailboxes, both locally and on the server
 	Create Both
+	# Save the synchronization state files in the relevant directory
 	SyncState *
 	MaxMessages 0
 
+	# Channels are used to &quot;translate&quot; from the name on the server (master) and the client (local).
+	# Name of the channel, used later.
 	Channel gmail-drafts
-	Expunge Both 
+	Expunge Both
+	# Name of the folder in the server.
 	Master :gmail-remote:&quot;[Gmail]/Borradores&quot;
+	# Translation to the local.
 	Slave :gmail-local:Borradores
 	Create Both
 	SyncState *
 	MaxMessages 0
 
 	Channel gmail-starred
-	Expunge Both 
+	Expunge Both
 	Master :gmail-remote:&quot;[Gmail]/Destacados&quot;
 	Slave :gmail-local:Destacados
 	Create Both
@@ -14783,7 +14815,7 @@ Configuration file `~/.mbsyncrc`
 	MaxMessages 0
 
 	Channel gmail-sent
-	Expunge Both 
+	Expunge Both
 	Master :gmail-remote:&quot;[Gmail]/Enviados&quot;
 	Slave :gmail-local:Enviados
 	Create Both
@@ -14791,7 +14823,7 @@ Configuration file `~/.mbsyncrc`
 	MaxMessages 0
 
 	Channel gmail-important
-	Expunge Both 
+	Expunge Both
 	Master :gmail-remote:&quot;[Gmail]/Importantes&quot;
 	Slave :gmail-local:Importantes
 	Create Both
@@ -14799,7 +14831,7 @@ Configuration file `~/.mbsyncrc`
 	MaxMessages 0
 
 	Channel gmail-trash
-	Expunge Both 
+	Expunge Both
 	Master :gmail-remote:&quot;[Gmail]/Papelera&quot;
 	Slave :gmail-local:Papelera
 	Create Both
@@ -14807,13 +14839,30 @@ Configuration file `~/.mbsyncrc`
 	MaxMessages 0
 
 	Channel gmail-spam
-	Expunge Both 
+	Expunge Both
 	Master :gmail-remote:&quot;[Gmail]/Spam&quot;
 	Slave :gmail-local:Spam
 	Create Both
 	SyncState *
 	MaxMessages 0
 
+	Channel gmail-electrotecnia
+	Expunge Both
+	Master :gmail-remote:&quot;Clase/Electrotecnia&quot;
+	Slave :gmail-local:Electrotecnia
+	Create Both
+	SyncState *
+	MaxMessages 0
+
+	Channel gmail-tecnologia
+	Expunge Both
+	Master :gmail-remote:&quot;Clase/Tecnologia&quot;
+	Slave :gmail-local:Tecnologia
+	Create Both
+	SyncState *
+	MaxMessages 0
+
+	# Groups are used to syncronize all the channels.
 	Group gmail
 	Channel gmail-default
 	Channel gmail-drafts
@@ -14822,6 +14871,8 @@ Configuration file `~/.mbsyncrc`
 	Channel gmail-important
 	Channel gmail-trash
 	Channel gmail-spam
+	Channel gmail-electrotecnia
+	Channel gmail-tecnologia
 
 	# End profile gmail
 
@@ -14848,9 +14899,10 @@ It need to have just &quot;user read/write&quot; permisions `chmod 600 ~/.msmtpr
 	account default : gmail
 
 ###**Configure Neomutt**
-
+Before long in [GitHub](https://github.com/Carlolius/dots).
 ###**Useful links**
-[Mutt wizard by Luke Smith](https://github.com/LukeSmithxyz/mutt-wizard)</pre>
+[Mutt wizard by Luke Smith](https://github.com/LukeSmithxyz/mutt-wizard)  
+[Other site with good config](http://fengxia.co.s3-website-us-east-1.amazonaws.com/mbsync%20mu4e%20email.html)</pre>
 </div>
 <div created="20191031020422364" modified="20191115022314155" tags="Linux Installation Arch" title="Packages" type="text/x-markdown">
 <pre>Packages intalled apart from the installation ones...
