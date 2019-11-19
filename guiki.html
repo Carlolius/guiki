@@ -49,7 +49,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE." />
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <title> MyGüiki — a little bit less messy. 
 
-18 Nov 2019 at 05:27
+19 Nov 2019 at 01:23
 
 </title>
 <!--~~ This is a Tiddlywiki file. The points of interest in the file are marked with this pattern ~~-->
@@ -13410,7 +13410,7 @@ very-muted-foreground: #888888</pre>
 <div created="20191029023642754" modified="20191029032557456" title="$:/state/ShowPaletteEditor">
 <pre>no</pre>
 </div>
-<div created="20191031012352854" modified="20191116031516181" title="$:/state/sidebar">
+<div created="20191031012352854" modified="20191119002328389" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
 <div created="20191029023423181" modified="20191106184715580" title="$:/state/tab--1498284803">
@@ -13494,10 +13494,10 @@ very-muted-foreground: #888888</pre>
 <div created="20191115015137753" modified="20191115015138309" title="$:/state/toc/TableOfContents/Linux-i3wm--118161433">
 <pre>close</pre>
 </div>
-<div created="20191115015115205" modified="20191117232100737" title="$:/state/toc/TableOfContents/Linux-Installation--118161433">
+<div created="20191115015115205" modified="20191118232010937" title="$:/state/toc/TableOfContents/Linux-Installation--118161433">
 <pre>open</pre>
 </div>
-<div created="20191117232101939" list="Hey!" modified="20191118042101484" title="$:/StoryList">
+<div created="20191118163915971" list="Neomutt" modified="20191118163915971" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20191106193335831" list="$:/core/ui/Buttons/more-page-actions $:/core/ui/Buttons/home $:/core/ui/Buttons/close-all $:/core/ui/Buttons/fold-all $:/core/ui/Buttons/unfold-all $:/core/ui/Buttons/permaview $:/core/ui/Buttons/new-tiddler $:/plugins/tiddlywiki/markdown/new-markdown-button $:/core/ui/Buttons/new-journal $:/core/ui/Buttons/new-image $:/core/ui/Buttons/import $:/core/ui/Buttons/export-page $:/core/ui/Buttons/control-panel $:/core/ui/Buttons/advanced-search $:/core/ui/Buttons/manager $:/core/ui/Buttons/tag-manager $:/core/ui/Buttons/language $:/core/ui/Buttons/palette $:/core/ui/Buttons/theme $:/core/ui/Buttons/storyview $:/core/ui/Buttons/encryption $:/core/ui/Buttons/timestamp $:/core/ui/Buttons/full-screen $:/core/ui/Buttons/print $:/core/ui/Buttons/save-wiki $:/core/ui/Buttons/refresh" modified="20191106193335831" title="$:/tags/PageControls">
@@ -14728,24 +14728,11 @@ Create /etc/hosts
 
 Con mucho queso.</pre>
 </div>
-<div created="20191112173328197" modified="20191118042705502" tags="Installation Linux" title="Neomutt" type="text/x-markdown">
-<pre># DOING
-**Hotmail**  
-Añadir al msmtp.
-
-**Resto**  
-Meter el resto de correos (no explorado sólo el de la UDC)
-
----
-
----
-
----
-
-Based on [this manual](https://webgefrickel.de/blog/a-modern-mutt-setup), [this other](http://stevelosh.com/blog/2012/10/the-homely-mutt/#how-i-use-email) and the ArchWiki pages of [Mutt](https://wiki.archlinux.org/index.php/Mutt), [Isync](https://wiki.archlinux.org/index.php/Isync) and [Msmtp](https://wiki.archlinux.org/index.php/Msmtp).
+<div created="20191112173328197" modified="20191119002327198" tags="Installation Linux" title="Neomutt" type="text/x-markdown">
+<pre>Based on [this manual](https://webgefrickel.de/blog/a-modern-mutt-setup), [this other](http://stevelosh.com/blog/2012/10/the-homely-mutt/#how-i-use-email) and the ArchWiki pages of [Mutt](https://wiki.archlinux.org/index.php/Mutt), [Isync](https://wiki.archlinux.org/index.php/Isync) and [Msmtp](https://wiki.archlinux.org/index.php/Msmtp).
 
 ###**Installation**
-`pacman -S neomutt msmtp isync`
+`pacman -S neomutt msmtp isync w3m`
 
 ###**Secure password**
 Create an [app password for Gmail](https://support.google.com/mail/answer/185833?) then write it in a file `gmail` and encript it with:  
@@ -14759,7 +14746,7 @@ Isync is the name of the [mbsync](http://isync.sourceforge.net/mbsync.html) pack
 
 Configuration file `~/.mbsyncrc`  
 
-This is a configuration example for Spanish Gmail accounts:
+This is a configuration example for Spanish Gmail accounts:  
 
 	IMAPStore gmail-remote
 	Host imap.gmail.com
@@ -14773,6 +14760,8 @@ This is a configuration example for Spanish Gmail accounts:
 	# The way to manage the sort of the mail folders.
 	Subfolders Verbatim
 	Path ~/Mail/gmail/
+	# Inbox is the same folder as the parent folder so it's well indented in Neomutt Sidebar.
+	# It might fail if there aren't emails at the inbox, manually create the cur, new and tmp folders.
 	Inbox ~/Mail/gmail/
 
 	Channel gmail-default
@@ -14781,7 +14770,7 @@ This is a configuration example for Spanish Gmail accounts:
 	Master :gmail-remote:
 	Slave :gmail-local:
 	# Syncronize everything except the &quot;!&quot; ones. Dunno why need to write the ones in channels.
-	Patterns * !&quot;[Gmail]/*&quot; !Borradores !Destacados !Enviados !Importantes !Papelera !Spam !Electrotecnia !Tecnologia !&quot;Clase/Electrotecnia&quot; !&quot;Clase/Tecnologia&quot;
+	Patterns * !&quot;[Gmail]/*&quot; !Borradores !Destacados !Enviados !Importantes !Papelera !Spam
 	# Automatically create missing mailboxes, both locally and on the server
 	Create Both
 	# Save the synchronization state files in the relevant directory
@@ -14840,22 +14829,6 @@ This is a configuration example for Spanish Gmail accounts:
 	SyncState *
 	MaxMessages 0
 
-	Channel gmail-electrotecnia
-	Expunge Both
-	Master :gmail-remote:&quot;Clase/Electrotecnia&quot;
-	Slave :gmail-local:Electrotecnia
-	Create Both
-	SyncState *
-	MaxMessages 0
-
-	Channel gmail-tecnologia
-	Expunge Both
-	Master :gmail-remote:&quot;Clase/Tecnologia&quot;
-	Slave :gmail-local:Tecnologia
-	Create Both
-	SyncState *
-	MaxMessages 0
-
 	# Groups are used to syncronize all the channels.
 	Group gmail
 	Channel gmail-default
@@ -14865,10 +14838,90 @@ This is a configuration example for Spanish Gmail accounts:
 	Channel gmail-important
 	Channel gmail-trash
 	Channel gmail-spam
-	Channel gmail-electrotecnia
-	Channel gmail-tecnologia
 
 	# End profile gmail
+
+Example for **Hotmail** and **Outlook365** accounts:  
+
+	# Hotmail account
+	IMAPAccount hotmail
+	# Address to connect to
+	Host outlook.office365.com
+	User carloshcr2@hotmail.com
+	PassCmd &quot;gpg2 -q --for-your-eyes-only --no-tty -d ~/Mail/passwords/hotmail.gpg&quot;
+	SSLType IMAPS
+	CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+	IMAPStore hotmail-remote
+	Account hotmail
+
+	# LOCAL STORAGE
+	MaildirStore hotmail-local
+	# The trailing &quot;/&quot; is important
+	SubFolders Verbatim
+	Path ~/Mail/hotmail/
+	Inbox ~/Mail/hotmail/
+
+	Channel hotmail-default
+	Expunge Both
+	Master :hotmail-remote:
+	Slave :hotmail-local:
+	Patterns Graciosos
+	Create Both
+	SyncState *
+	MaxMessages 0
+
+	Channel hotmail-inbox
+	Expunge Both
+	Master :hotmail-remote:&quot;Inbox&quot;
+	Slave :hotmail-local:.
+	Create Both
+	SyncState *
+	MaxMessages 0
+
+	Channel hotmail-deleted
+	Expunge Both
+	Master :hotmail-remote:&quot;Deleted&quot;
+	Slave :hotmail-local:Papelera
+	Create Both
+	SyncState *
+	MaxMessages 0
+
+	Channel hotmail-drafts
+	Expunge Both
+	Master :hotmail-remote:&quot;Drafts&quot;
+	Slave :hotmail-local:Borradores
+	Create Both
+	SyncState *
+	MaxMessages 0
+
+	Channel hotmail-junk
+	Expunge Both
+	Master :hotmail-remote:&quot;Junk&quot;
+	Slave :hotmail-local:Spam
+	Create Both
+	SyncState *
+	MaxMessages 0
+
+	Channel hotmail-sent
+	Expunge Both
+	Master :hotmail-remote:&quot;Sent&quot;
+	Slave :hotmail-local:Enviados
+	Create Both
+	SyncState *
+	MaxMessages 0
+
+	Group hotmail
+	Channel hotmail-default
+	Channel hotmail-inbox
+	Channel hotmail-deleted
+	Channel hotmail-drafts
+	Channel hotmail-junk
+	Channel hotmail-sent
+
+	#### End profile hotmail ####
+
+The other accounts and the ones that have specific settings are quite similar to this ones.
 
 ###**Configure Msmtp**
 Configuration file `~/.msmtprc`  
@@ -14891,12 +14944,27 @@ It need to have just &quot;user read/write&quot; permisions `chmod 600 ~/.msmtpr
 
 	# Set a default account
 	account default : gmail
+	
+	# Hotmail
+	account         hotmail
+	host            smtp.Office365.com
+	port            587
+	from            carloshcr2@hotmail.com
+	user            carloshcr2
+	passwordeval    &quot;gpg2 -q --for-your-eyes-only --no-tty -d ~/Mail/passwords/hotmail.gpg&quot;
+
 
 ###**Configure Neomutt**
-Before long in [GitHub](https://github.com/Carlolius/dots).
+Before long in [GitHub](https://github.com/Carlolius/dots) you can see my config files.  
+Neomutt has one config file `neomuttrc` this is quite long with a lot of different settings here you can see how to configure it in [the Neomutt website](https://neomutt.org/man/neomuttrc).  
+I also use 2 more files that I source from `neomuttrc` that are for the `colors` and the `keybindings` to simplify the main file.  
+Finally if you wanna see the attachments or the emails that you recieve in HTML form you must use a script that you even need to understand, [here](https://bitbucket.org/sjl/dotfiles/src/tip/mutt/view_attachment.sh).  
+This is all if you only have one account for your Neomutt, but if you have more, when you change the mailbox or you wanna reply some email you desire that is the sending email is the same as the recieved one. For this you must use `folder-hook` and create different files for your different accounts.
+
 ###**Useful links**
 [Mutt wizard by Luke Smith](https://github.com/LukeSmithxyz/mutt-wizard)  
-[Other site with good config](http://fengxia.co.s3-website-us-east-1.amazonaws.com/mbsync%20mu4e%20email.html)</pre>
+[Other site with good config](http://fengxia.co.s3-website-us-east-1.amazonaws.com/mbsync%20mu4e%20email.html)  
+[Neomutt website](https://neomutt.org/)</pre>
 </div>
 <div created="20191031020422364" modified="20191115022314155" tags="Linux Installation Arch" title="Packages" type="text/x-markdown">
 <pre>Packages intalled apart from the installation ones...
