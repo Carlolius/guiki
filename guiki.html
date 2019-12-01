@@ -49,7 +49,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE." />
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <title> MyGüiki — a little bit less messy. 
 
-1 Dec 2019 at 15:57
+1 Dec 2019 at 16:12
 
 </title>
 <!--~~ This is a Tiddlywiki file. The points of interest in the file are marked with this pattern ~~-->
@@ -13444,7 +13444,7 @@ very-muted-foreground: #888888</pre>
 <div created="20191029023642754" modified="20191029032557456" title="$:/state/ShowPaletteEditor">
 <pre>no</pre>
 </div>
-<div created="20191031012352854" modified="20191119002328389" title="$:/state/sidebar">
+<div created="20191031012352854" modified="20191201151255891" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
 <div created="20191029023423181" modified="20191125020900219" title="$:/state/tab--1498284803">
@@ -13537,7 +13537,7 @@ very-muted-foreground: #888888</pre>
 <div created="20191124025203940" modified="20191125002527026" title="$:/state/toc/TableOfContents/Linux-XresourcesColors--118161433">
 <pre>close</pre>
 </div>
-<div created="20191201144510392" list="Packages [[Arch after installation]] Bullets [[Programs to check]] Hey!" modified="20191201145507093" title="$:/StoryList">
+<div created="20191201144510392" list="[[Arch after installation]] Bullets [[Programs to check]] Hey!" modified="20191201145507093" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20191106193335831" list="$:/core/ui/Buttons/more-page-actions $:/core/ui/Buttons/home $:/core/ui/Buttons/close-all $:/core/ui/Buttons/fold-all $:/core/ui/Buttons/unfold-all $:/core/ui/Buttons/permaview $:/core/ui/Buttons/new-tiddler $:/plugins/tiddlywiki/markdown/new-markdown-button $:/core/ui/Buttons/new-journal $:/core/ui/Buttons/new-image $:/core/ui/Buttons/import $:/core/ui/Buttons/export-page $:/core/ui/Buttons/control-panel $:/core/ui/Buttons/advanced-search $:/core/ui/Buttons/manager $:/core/ui/Buttons/tag-manager $:/core/ui/Buttons/language $:/core/ui/Buttons/palette $:/core/ui/Buttons/theme $:/core/ui/Buttons/storyview $:/core/ui/Buttons/encryption $:/core/ui/Buttons/timestamp $:/core/ui/Buttons/full-screen $:/core/ui/Buttons/print $:/core/ui/Buttons/save-wiki $:/core/ui/Buttons/refresh" modified="20191106193335831" title="$:/tags/PageControls">
@@ -14509,7 +14509,7 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 
 &lt;/div&gt;</pre>
 </div>
-<div created="20191031020123363" modified="20191115014940006" tags="[[After installation]] Installation Arch" title="Arch after installation" type="text/x-markdown">
+<div created="20191031020123363" modified="20191201151253357" tags="[[After installation]] Installation Arch" title="Arch after installation" type="text/x-markdown">
 <pre>##Based on the [Arch general recomendations guide.](https://wiki.archlinux.org/index.php/General_recommendations)
 ----
 
@@ -14572,7 +14572,12 @@ Enable the trim timer for weekly trim of the ssd.
 `systemctl enable sshd.service`
 
 **Touchpad**  
-[Link](https://wiki.archlinux.org/index.php/Touchpad_Synaptics)  
+Install `xf86-input-libinput` and `xorg-xinput`.  
+Check the devices with: `xinput list`  
+Find touchpad (number) and check propierties: `xinput list-props device (number)`  
+Change touchpad setting: `xinput set-prop device option setting`
+
+`xinput set-prop 11 296 1`
 
 **Automount**  
 [Link](https://wiki.archlinux.org/index.php/USB_storage_devices)
