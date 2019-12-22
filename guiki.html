@@ -49,7 +49,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE." />
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <title> MyGüiki — a little bit less messy. 
 
-21 Dec 2019 at 17:16
+22 Dec 2019 at 05:12
 
 </title>
 <!--~~ This is a Tiddlywiki file. The points of interest in the file are marked with this pattern ~~-->
@@ -690,6 +690,8 @@ Error message and password prompt
 <li>Personal first try</li>
 
 <li>Programs to check</li>
+
+<li>Script for locksreen</li>
 
 <li>Script for update all</li>
 
@@ -13541,7 +13543,7 @@ very-muted-foreground: #888888</pre>
 <div created="20191124025203940" modified="20191125002527026" title="$:/state/toc/TableOfContents/Linux-XresourcesColors--118161433">
 <pre>close</pre>
 </div>
-<div list="[[Change network configuration]] Bullets [[Netctl configuration tiddler]] Hey!" title="$:/StoryList">
+<div created="20191222040743507" list="[[Script for locksreen]] Hey!" modified="20191222041223050" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20191106193335831" list="$:/core/ui/Buttons/more-page-actions $:/core/ui/Buttons/home $:/core/ui/Buttons/close-all $:/core/ui/Buttons/fold-all $:/core/ui/Buttons/unfold-all $:/core/ui/Buttons/permaview $:/core/ui/Buttons/new-tiddler $:/plugins/tiddlywiki/markdown/new-markdown-button $:/core/ui/Buttons/new-journal $:/core/ui/Buttons/new-image $:/core/ui/Buttons/import $:/core/ui/Buttons/export-page $:/core/ui/Buttons/control-panel $:/core/ui/Buttons/advanced-search $:/core/ui/Buttons/manager $:/core/ui/Buttons/tag-manager $:/core/ui/Buttons/language $:/core/ui/Buttons/palette $:/core/ui/Buttons/theme $:/core/ui/Buttons/storyview $:/core/ui/Buttons/encryption $:/core/ui/Buttons/timestamp $:/core/ui/Buttons/full-screen $:/core/ui/Buttons/print $:/core/ui/Buttons/save-wiki $:/core/ui/Buttons/refresh" modified="20191106193335831" title="$:/tags/PageControls">
@@ -13594,19 +13596,19 @@ very-muted-foreground: #888888</pre>
         },
         &quot;$:/info/url/origin&quot;: {
             &quot;title&quot;: &quot;$:/info/url/origin&quot;,
-            &quot;text&quot;: &quot;file://&quot;
+            &quot;text&quot;: &quot;null&quot;
         },
         &quot;$:/info/browser/screen/width&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/width&quot;,
-            &quot;text&quot;: &quot;1920&quot;
+            &quot;text&quot;: &quot;1280&quot;
         },
         &quot;$:/info/browser/screen/height&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/height&quot;,
-            &quot;text&quot;: &quot;1080&quot;
+            &quot;text&quot;: &quot;800&quot;
         },
         &quot;$:/info/browser/language&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/language&quot;,
-            &quot;text&quot;: &quot;es&quot;
+            &quot;text&quot;: &quot;es-ES&quot;
         }
     }
 }</pre>
@@ -14367,7 +14369,7 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div author="JeremyRuston" core-version="&gt;=5.0.0" created="20191031011646926" dependents="" description="Basic theme" modified="20191031011646926" name="Vanilla" original-plugin-type="theme" original-tags="" original-title="$:/themes/tiddlywiki/vanilla" original-type="application/json" plugin-priority="0" server-url="https://tiddlywiki.com/library/v5.1.21/index.html" tags="$:/tags/RemoteAssetInfo" title="$:/temp/RemoteAssetInfo/https://tiddlywiki.com/library/v5.1.21/index.html/$:/themes/tiddlywiki/vanilla" type="text/vnd.tiddlywiki" version="5.1.21">
 <pre></pre>
 </div>
-<div created="20191031012809632" modified="20191125020745923" title="$:/temp/search">
+<div created="20191031012809632" modified="20191222040713448" title="$:/temp/search">
 <pre></pre>
 </div>
 <div created="20191115005309412" modified="20191115005309412" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.21/index.html" url="https://tiddlywiki.com/library/v5.1.21/index.html">
@@ -15207,6 +15209,12 @@ xidlehook  </pre>
 1. [Dunst](https://dunst-project.org/)  
 1. [Mpv](https://mpv.io/)
 1. [Xrandr](https://wiki.archlinux.org/index.php/Xrandr)</pre>
+</div>
+<div created="20191222040746654" modified="20191222041211911" tags="Task" title="Script for locksreen" type="text/x-markdown">
+<pre>Make a script to use with:  
+- py3status  
+- shortcut  
+- automatic with xidlehook</pre>
 </div>
 <div created="20191204184250946" modified="20191204184515085" tags="Task" title="Script for update all" type="text/x-markdown">
 <pre>One Script where I can choose what to update or update all.
