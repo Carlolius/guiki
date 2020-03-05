@@ -461,6 +461,8 @@ Error message and password prompt
 
 <li>$:/state/toc/TableOfContents/Linux-Installation--118161433</li>
 
+<li>$:/state/toc/TableOfContents/Linux-Installation-756472543</li>
+
 <li>$:/state/toc/TableOfContents/Linux-Programs--118161433</li>
 
 <li>$:/state/toc/TableOfContents/Linux-Programs--1335084432</li>
@@ -730,6 +732,8 @@ Error message and password prompt
 <li>Conky</li>
 
 <li>Dracula</li>
+
+<li>Draft of 'Arch after installation'</li>
 
 <li>Draft of 'Tmux'</li>
 
@@ -13828,6 +13832,9 @@ very-muted-foreground: #888888</pre>
 <div created="20191115015115205" modified="20200217012103493" title="$:/state/toc/TableOfContents/Linux-Installation--118161433">
 <pre>close</pre>
 </div>
+<div created="20200305172632844" modified="20200305172632844" title="$:/state/toc/TableOfContents/Linux-Installation-756472543">
+<pre>open</pre>
+</div>
 <div created="20200120171452321" modified="20200217152523378" title="$:/state/toc/TableOfContents/Linux-Programs--118161433">
 <pre>close</pre>
 </div>
@@ -13837,7 +13844,7 @@ very-muted-foreground: #888888</pre>
 <div created="20191124025203940" modified="20200219190154162" title="$:/state/toc/TableOfContents/Linux-XresourcesColors--118161433">
 <pre>close</pre>
 </div>
-<div created="20200303160702250" list="Hey!" modified="20200303162226420" title="$:/StoryList">
+<div created="20200305155924878" list="[[Draft of 'Arch after installation']] [[Programs that I forget the name]] Hey!" modified="20200305172634552" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20191106193335831" list="$:/core/ui/Buttons/more-page-actions $:/core/ui/Buttons/home $:/core/ui/Buttons/close-all $:/core/ui/Buttons/fold-all $:/core/ui/Buttons/unfold-all $:/core/ui/Buttons/permaview $:/core/ui/Buttons/new-tiddler $:/plugins/tiddlywiki/markdown/new-markdown-button $:/core/ui/Buttons/new-journal $:/core/ui/Buttons/new-image $:/core/ui/Buttons/import $:/core/ui/Buttons/export-page $:/core/ui/Buttons/control-panel $:/core/ui/Buttons/advanced-search $:/core/ui/Buttons/manager $:/core/ui/Buttons/tag-manager $:/core/ui/Buttons/language $:/core/ui/Buttons/palette $:/core/ui/Buttons/theme $:/core/ui/Buttons/storyview $:/core/ui/Buttons/encryption $:/core/ui/Buttons/timestamp $:/core/ui/Buttons/full-screen $:/core/ui/Buttons/print $:/core/ui/Buttons/save-wiki $:/core/ui/Buttons/refresh" modified="20191106193335831" title="$:/tags/PageControls">
@@ -15203,6 +15210,96 @@ Also I need to change the Arch after instalation to add this new networkconfigur
 *.color14:    #9AEDFE
 *.color7:     #BFBFBF
 *.color15:    #E6E6E6</pre>
+</div>
+<div created="20191031020123363" draft.of="Arch after installation" draft.title="Arch after installation" modified="20200305172821431" tags="[[After installation]] Installation Arch" title="Draft of 'Arch after installation'" type="text/x-markdown">
+<pre>##Based on the [Arch general recomendations guide.](https://wiki.archlinux.org/index.php/General_recommendations)
+----
+
+**Create user**  
+`useradd -m carlos`  
+`passwd carlos`
+
+**Install sudo**  
+edit with visudo add next line under root  
+ `ALL=(ALL) ALL`  
+`carlos ALL=(ALL) ALL`
+
+**Edit /etc/pacman.conf**  
+Uncoment Color  
+Uncoment TotalDownload  
+Uncoment [multilib]
+
+**Rank mirrors**  
+`sudo pacman -Syu reflector`  
+`sudo reflector --verbose --latest 200 --sort rate --save /etc/pacman.d/mirrorlist`
+
+**Install packages from the packages file**  
+`pacman -Syu ...`
+
+**Install yay**  
+`git clone https://aur.archlinux.org/yay.git`  
+`cd yay`  
+`makepkg -si`
+
+**Install Xorg**  
+`pacman -S xorg-server xorg-xinit`  
+`pacamn -S xf86-video-intel` The intel drivers, may change.
+
+**Configure xinit**  
+`cp /etc/X11/xinit/xinitrc ~/.xinitrc` For the user config  
+
+
+**Install i3**  
+`pacman -S i3-wm i3blocks i3lock i3status`  
+`pacman -S ttf-bitstream-vera`
+
+**Download config**  
+Download config from [dots.](https://github.com/Carlolius/dots &quot;Repository of dots files&quot;)
+
+**Bluetooth**  
+`pacman -S bluez bluez-utils pulseaudio-bluetooth`  
+[How to use bluetooth](https://wiki.archlinux.org/index.php/Bluetooth_headset)
+
+**Sound**  
+`pacman -S pulseaudio pulseaudio-alsa pulseaudio-bluetooth`  
+`yay pulsemixer`
+
+
+**SSD performace**  
+Enable the trim timer for weekly trim of the ssd.  
+`systemctl enable fstrim.timer`
+
+**SSH**  
+`pacman -S openssh`  
+`systemctl enable sshd.service`
+
+**Touchpad**  
+No permanent  
+Install `xf86-input-libinput` and `xorg-xinput`.  
+Check the devices with: `xinput list`  
+Find touchpad (number) and check propierties: `xinput list-props device (number)`  
+Change touchpad setting: `xinput set-prop device option setting`
+Example:  
+`xinput set-prop 11 296 1`
+
+Permanent  
+Create `/etc/X11/xorg.conf.d/30-touchpad.conf`  
+Add `Option Tapping on`:  
+
+	Section InputClass                       
+					Identifier libinput touchpad catchall
+					MatchIsTouchpad on
+					MatchDevicePath /dev/input/event*
+					Driver libinput
+					Option Tapping
+	EndSection
+
+**Automount**  
+Install [udisks2](https://www.archlinux.org/packages/extra/x86_64/udisks2/) and [udiskie](https://github.com/coldfix/udiskie) then the external devices will be automounted in `/run/media`  
+[Wiki of **udisks**](https://wiki.archlinux.org/index.php/Udisks)
+
+**Firewall**  
+[Link](https://wiki.archlinux.org/index.php/Category:Firewalls)</pre>
 </div>
 <div created="20200128124435802" modified="20200128124435802" title="Draft of 'Tmux'">
 <pre>!!! ''__Commands__''
