@@ -12818,7 +12818,7 @@ Error message and password prompt
 <div created="20191029023549377" modified="20200407112808256" title="$:/palette">
 <pre>$:/palettes/Moonnight</pre>
 </div>
-<div created="20200405113002232" description="Dark moon colors" modified="20200407125629810" name="Moon night" tags="$:/tags/Palette" title="$:/palettes/Moonnight" type="application/x-tiddler-dictionary">
+<div created="20200405113002232" description="Dark moon colors" modified="20200407131829612" name="Moon night" tags="$:/tags/Palette" title="$:/palettes/Moonnight" type="application/x-tiddler-dictionary">
 <pre>alert-background: &lt;&lt;colour background&gt;&gt;
 alert-border: &lt;&lt;colour very-muted-foreground&gt;&gt;
 alert-highlight: &lt;&lt;colour very-muted-foreground&gt;&gt;
@@ -12870,23 +12870,22 @@ sidebar-button-foreground: &lt;&lt;colour foreground&gt;&gt;
 sidebar-controls-foreground-hover: #00a908
 sidebar-controls-foreground: #959595
 sidebar-foreground-shadow: transparent
-sidebar-foreground: rgba(255, 255, 255, 0.54)
 sidebar-muted-foreground-hover: rgba(255, 255, 255, 0.54)
-sidebar-muted-foreground: #rgba(255, 255, 255, 0.38)
+sidebar-muted-foreground: rgba(255, 255, 255, 0.38)
 sidebar-tab-background-selected: &lt;&lt;colour page-background&gt;&gt;
 sidebar-tab-background: transparent
-sidebar-tab-border-selected: &lt;&lt;colour table-border&gt;&gt;
+sidebar-tab-border-selected: &lt;&lt;colour sidebar-controls-foreground-hover&gt;&gt;
 sidebar-tab-border: transparent
 sidebar-tab-divider: &lt;&lt;colour table-border&gt;&gt;
 sidebar-tab-foreground-selected: rgba(255, 255, 255, 0.87)
 sidebar-tab-foreground: rgba(255, 255, 255, 0.54)
-sidebar-tiddler-link-foreground-hover: rgba(255, 255, 255, 0.7)
-sidebar-tiddler-link-foreground: rgba(255, 255, 255, 0.54)
+sidebar-tiddler-link-foreground-hover: &lt;&lt;color sidebar-controls-foreground-hover&gt;&gt;
+sidebar-tiddler-link-foreground: #f5f5f5
 site-title-foreground: rgba(255, 255, 255, 0.7)
 static-alert-foreground: #aaaaaa
 tab-background-selected: &lt;&lt;colour background&gt;&gt;
 tab-background: transparent
-tab-border-selected: &lt;&lt;colour table-border&gt;&gt;
+tab-border-selected: &lt;&lt;colour sidebar-controls-foreground-hover&gt;&gt;
 tab-border: transparent
 tab-divider: &lt;&lt;colour table-border&gt;&gt;
 tab-foreground-selected: rgba(255, 255, 255, 0.87)
@@ -12923,7 +12922,8 @@ toolbar-delete-button:
 toolbar-cancel-button: 
 toolbar-done-button: 
 untagged-background: &lt;&lt;colour very-muted-foreground&gt;&gt;
-very-muted-foreground: rgba(255, 255, 255, 0.12)</pre>
+very-muted-foreground: rgba(255, 255, 255, 0.12)
+sidebar-foreground: #4ada00</pre>
 </div>
 <div created="20191029023727448" description="A dark theme" modified="20191029023926004" name="Rocker" tags="$:/tags/Palette" title="$:/palettes/Rocker" type="application/x-tiddler-dictionary">
 <pre>alert-background: #ffe476
@@ -13855,10 +13855,10 @@ very-muted-foreground: #888888</pre>
 <div created="20191029025421827" modified="20200210161451619" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
-<div created="20191029023642754" modified="20200405161623159" title="$:/state/ShowPaletteEditor">
-<pre>yes</pre>
+<div created="20191029023642754" modified="20200407131843280" title="$:/state/ShowPaletteEditor">
+<pre>no</pre>
 </div>
-<div created="20191031012352854" modified="20200405160404828" title="$:/state/sidebar">
+<div created="20191031012352854" modified="20200407131046040" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
 <div created="20191029023423181" modified="20200405113129101" title="$:/state/tab--1498284803">
@@ -13873,8 +13873,8 @@ very-muted-foreground: #888888</pre>
 <div created="20191029024021148" modified="20191029024024285" title="$:/state/tab--1936963165">
 <pre>$:/core/ui/TiddlerInfo/List</pre>
 </div>
-<div created="20191029023545121" modified="20200407112446755" title="$:/state/tab--1963855381">
-<pre>$:/core/ui/ControlPanel/Palette</pre>
+<div created="20191029023545121" modified="20200407131857762" title="$:/state/tab--1963855381">
+<pre>$:/themes/tiddlywiki/vanilla/themetweaks</pre>
 </div>
 <div created="20191029023052839" modified="20191106184610527" title="$:/state/tab--2112689675">
 <pre>$:/core/ui/ControlPanel/Basics</pre>
@@ -13894,8 +13894,8 @@ very-muted-foreground: #888888</pre>
 <div created="20200405113144264" modified="20200407111545880" title="$:/state/tab-1163638994">
 <pre>$:/core/ui/MoreSideBar/Plugins/Theme</pre>
 </div>
-<div created="20200120173739617" modified="20200120173804352" title="$:/state/tab-1312958443">
-<pre>$:/core/ui/TiddlerInfo/Fields</pre>
+<div created="20200120173739617" modified="20200407131543318" title="$:/state/tab-1312958443">
+<pre>$:/core/ui/TiddlerInfo/Tools</pre>
 </div>
 <div created="20191029024150913" modified="20191115004348329" title="$:/state/tab-1342078386">
 <pre>$:/core/ui/ControlPanel/Plugins/Add/Plugins</pre>
@@ -13906,7 +13906,7 @@ very-muted-foreground: #888888</pre>
 <div created="20200328222331357" modified="20200328222335574" title="$:/state/tab-1409201298">
 <pre>$:/core/ui/TiddlerInfo/Advanced</pre>
 </div>
-<div created="20191029022321243" modified="20200405113625463" title="$:/state/tab-1749438307">
+<div created="20191029022321243" modified="20200407131856268" title="$:/state/tab-1749438307">
 <pre>$:/core/ui/ControlPanel/Appearance</pre>
 </div>
 <div created="20191029022322335" modified="20200404092513529" title="$:/state/tab-2065006209">
@@ -13915,10 +13915,10 @@ very-muted-foreground: #888888</pre>
 <div created="20191107025147342" modified="20191107025200504" title="$:/state/tab-801928395">
 <pre>$:/core/ui/TiddlerInfo/Fields</pre>
 </div>
-<div created="20191029024854454" modified="20200407111548043" title="$:/state/tab/moresidebar-1850697562">
-<pre>$:/core/ui/MoreSideBar/All</pre>
+<div created="20191029024854454" modified="20200407131107853" title="$:/state/tab/moresidebar-1850697562">
+<pre>$:/core/ui/MoreSideBar/Missing</pre>
 </div>
-<div created="20191029023556653" modified="20200407125434101" title="$:/state/tab/sidebar--595412856">
+<div created="20191029023556653" modified="20200407131108667" title="$:/state/tab/sidebar--595412856">
 <pre>TableOfContentsSideBar</pre>
 </div>
 <div created="20191029023943133" modified="20200309183612350" title="$:/state/tabs/controlpanel/toolbars-1345989671">
@@ -13996,7 +13996,7 @@ very-muted-foreground: #888888</pre>
 <div created="20200303115728422" modified="20200403101122440" title="$:/state/toc/TableOfContents-Notes-756472543">
 <pre>close</pre>
 </div>
-<div created="20200403103306145" modified="20200405161157732" title="$:/state/toc/TableOfContents-TFG-756472543">
+<div created="20200403103306145" modified="20200407131145053" title="$:/state/toc/TableOfContents-TFG-756472543">
 <pre>close</pre>
 </div>
 <div created="20200128131457762" modified="20200128131458725" title="$:/state/toc/TableOfContents/Cheatsheets-Tmux--118161433">
@@ -14038,7 +14038,7 @@ very-muted-foreground: #888888</pre>
 <div created="20200402102202466" modified="20200405111137836" title="$:/state/toc/TableOfContents/Linux-XresourcesColors-756472543">
 <pre>close</pre>
 </div>
-<div created="20200407124505746" list="[[Arch after installation]] $:/ControlPanel Hey!" modified="20200407124542377" title="$:/StoryList">
+<div created="20200407124505746" list="Hey!" modified="20200407131921373" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20191106193335831" list="$:/core/ui/Buttons/more-page-actions $:/core/ui/Buttons/home $:/core/ui/Buttons/close-all $:/core/ui/Buttons/fold-all $:/core/ui/Buttons/unfold-all $:/core/ui/Buttons/permaview $:/core/ui/Buttons/new-tiddler $:/plugins/tiddlywiki/markdown/new-markdown-button $:/core/ui/Buttons/new-journal $:/core/ui/Buttons/new-image $:/core/ui/Buttons/import $:/core/ui/Buttons/export-page $:/core/ui/Buttons/control-panel $:/core/ui/Buttons/advanced-search $:/core/ui/Buttons/manager $:/core/ui/Buttons/tag-manager $:/core/ui/Buttons/language $:/core/ui/Buttons/palette $:/core/ui/Buttons/theme $:/core/ui/Buttons/storyview $:/core/ui/Buttons/encryption $:/core/ui/Buttons/timestamp $:/core/ui/Buttons/full-screen $:/core/ui/Buttons/print $:/core/ui/Buttons/save-wiki $:/core/ui/Buttons/refresh" modified="20191106193335831" title="$:/tags/PageControls">
@@ -15000,7 +15000,7 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20191106022154514" modified="20191106023530286" title="$:/themes/tiddlywiki/vanilla/metrics/tiddlerwidth">
 <pre>99%</pre>
 </div>
-<div created="20200405111104010" modified="20200406175233698" title="$:/themes/tiddlywiki/vanilla/settings/backgroundimage">
+<div created="20200405111104010" modified="20200407131924206" title="$:/themes/tiddlywiki/vanilla/settings/backgroundimage">
 <pre>Breaking bad rv sunset</pre>
 </div>
 <div created="20200405111315265" modified="20200405111327675" title="$:/themes/tiddlywiki/vanilla/settings/backgroundimageattachment">
