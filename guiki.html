@@ -49,7 +49,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE." />
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <title> MyGüiki — a little bit less messy. 
 
-8 Apr 2020 at 18:22
+8 Apr 2020 at 19:01
 
 </title>
 <!--~~ This is a Tiddlywiki file. The points of interest in the file are marked with this pattern ~~-->
@@ -15538,7 +15538,7 @@ Also I need to change the Arch after instalation to add this new networkconfigur
 *.color7:     #BFBFBF
 *.color15:    #E6E6E6</pre>
 </div>
-<div caption="Tasks" created="20200408162110718" draft.of="New Tiddler 1" draft.title="BulletTasks" modified="20200408162150126" tags="" title="Draft of 'New Tiddler 1'">
+<div caption="Tasks" created="20200408162110718" draft.of="New Tiddler 1" draft.title="BulletTasks" modified="20200408170108755" tags="TemplateTasks" title="Draft of 'New Tiddler 1'">
 <pre>{{BulletTasks||TemplateTasks}}</pre>
 </div>
 <div created="20191106230408624" modified="20191115015154736" tags="i3wm" title="Enable tap to click in i3wm" type="text/x-markdown">
@@ -16227,10 +16227,10 @@ Partially done, the functions that I use for the cases shouldn't work outside th
 <div created="20191120013408348" modified="20200309183215010" tags="configuration" title="TaskManagement" type="text/vnd.tiddlywiki">
 <pre>&lt;$checkbox tag=&quot;done&quot;&gt; &lt;$link to={{!!title}}&gt;&lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;&lt;/$checkbox&gt;</pre>
 </div>
-<div created="20200408161749865" modified="20200408162201032" tags="" title="TemplateTasks">
+<div created="20200408161749865" modified="20200408170113916" tags="" title="TemplateTasks">
 <pre>!! ''To do''
 
-&lt;&lt;list-tagged-draggable tag:&quot;Task&quot; subFilter:&quot;!has[draft.of]!tag[done]&quot; itemTemplate:&quot;TaskManagement&quot; emptyMessage:&quot;You don't have any active tasks&quot;&gt;&gt;
+&lt;&lt;list-tagged-draggable tag:&quot;{{!!title}}&quot; subFilter:&quot;!has[draft.of]!tag[done]&quot; itemTemplate:&quot;TaskManagement&quot; emptyMessage:&quot;You don't have any active tasks&quot;&gt;&gt;
 
 !! ''Done''
 
