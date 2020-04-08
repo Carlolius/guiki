@@ -49,7 +49,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE." />
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <title> MyGüiki — a little bit less messy. 
 
-8 Apr 2020 at 18:18
+8 Apr 2020 at 18:22
 
 </title>
 <!--~~ This is a Tiddlywiki file. The points of interest in the file are marked with this pattern ~~-->
@@ -801,7 +801,7 @@ Error message and password prompt
 
 <li>Dracula</li>
 
-<li>Draft of 'New Tiddler'</li>
+<li>Draft of 'New Tiddler 1'</li>
 
 <li>Enable tap to click in i3wm</li>
 
@@ -877,7 +877,7 @@ Error message and password prompt
 
 <li>TaskManagement</li>
 
-<li>testing</li>
+<li>TemplateTasks</li>
 
 <li>TFG</li>
 
@@ -10222,11 +10222,16 @@ Error message and password prompt
 <div created="20191029022324213" modified="20191109231932509" title="$:/GitHub/Username">
 <pre>carlolius</pre>
 </div>
-<div status="complete" title="$:/Import">
-<pre>The following tiddlers were imported:
-
-# [[Untitled]]
-# [[$:/plugins/kookma/todolist]]</pre>
+<div plugin-type="import" status="pending" title="$:/Import" type="application/json">
+<pre>{
+    &quot;tiddlers&quot;: {
+        &quot;Untitled 1&quot;: {
+            &quot;title&quot;: &quot;Untitled 1&quot;,
+            &quot;text&quot;: &quot;{{MyTiddler||TemplateTitle}}&quot;,
+            &quot;type&quot;: &quot;text/plain&quot;
+        }
+    }
+}</pre>
 </div>
 <div created="20191031013328916" modified="20191031014059600" title="$:/Import!!popup-104631-200.png">
 <pre>yes</pre>
@@ -14125,7 +14130,7 @@ very-muted-foreground: #888888</pre>
 <div created="20200402102202466" modified="20200405111137836" title="$:/state/toc/TableOfContents/Linux-XresourcesColors-756472543">
 <pre>close</pre>
 </div>
-<div created="20200408154827770" list="testing [[Draft of 'New Tiddler']] Bullets Hey!" modified="20200408161713755" title="$:/StoryList">
+<div created="20200408154827770" list="[[Draft of 'New Tiddler 1']] TemplateTasks Bullets Hey!" modified="20200408161713755" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20191106193335831" list="$:/core/ui/Buttons/more-page-actions $:/core/ui/Buttons/home $:/core/ui/Buttons/close-all $:/core/ui/Buttons/fold-all $:/core/ui/Buttons/unfold-all $:/core/ui/Buttons/permaview $:/core/ui/Buttons/new-tiddler $:/plugins/tiddlywiki/markdown/new-markdown-button $:/core/ui/Buttons/new-journal $:/core/ui/Buttons/new-image $:/core/ui/Buttons/import $:/core/ui/Buttons/export-page $:/core/ui/Buttons/control-panel $:/core/ui/Buttons/advanced-search $:/core/ui/Buttons/manager $:/core/ui/Buttons/tag-manager $:/core/ui/Buttons/language $:/core/ui/Buttons/palette $:/core/ui/Buttons/theme $:/core/ui/Buttons/storyview $:/core/ui/Buttons/encryption $:/core/ui/Buttons/timestamp $:/core/ui/Buttons/full-screen $:/core/ui/Buttons/print $:/core/ui/Buttons/save-wiki $:/core/ui/Buttons/refresh" modified="20191106193335831" title="$:/tags/PageControls">
@@ -15533,18 +15538,8 @@ Also I need to change the Arch after instalation to add this new networkconfigur
 *.color7:     #BFBFBF
 *.color15:    #E6E6E6</pre>
 </div>
-<div created="20200408161749865" draft.of="New Tiddler" draft.title="TemplateTasks" eo="ao" modified="20200408161835355" tags="" title="Draft of 'New Tiddler'">
-<pre>!! ''To do''
-
-&lt;&lt;list-tagged-draggable eo:&quot;ao&quot; subFilter:&quot;!has[draft.of]!tag[done]&quot; itemTemplate:&quot;TaskManagement&quot; emptyMessage:&quot;You don't have any active tasks&quot;&gt;&gt;
-
-!! ''Done''
-
-&lt;$list filter=&quot;[!has[draft.of]tag[Task]tag[done]sort[created]]&quot;&gt;
-&lt;div&gt;
-&lt;$checkbox tag=&quot;done&quot;&gt; ~~&lt;$link to={{!!title}}&gt;&lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;~~&lt;/$checkbox&gt;
-&lt;/div&gt;
-&lt;/$list&gt;</pre>
+<div caption="Tasks" created="20200408162110718" draft.of="New Tiddler 1" draft.title="BulletTasks" modified="20200408162150126" tags="" title="Draft of 'New Tiddler 1'">
+<pre>{{BulletTasks||TemplateTasks}}</pre>
 </div>
 <div created="20191106230408624" modified="20191115015154736" tags="i3wm" title="Enable tap to click in i3wm" type="text/x-markdown">
 <pre>https://cravencode.com/post/essentials/enable-tap-to-click-in-i3wm/</pre>
@@ -16232,8 +16227,18 @@ Partially done, the functions that I use for the cases shouldn't work outside th
 <div created="20191120013408348" modified="20200309183215010" tags="configuration" title="TaskManagement" type="text/vnd.tiddlywiki">
 <pre>&lt;$checkbox tag=&quot;done&quot;&gt; &lt;$link to={{!!title}}&gt;&lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;&lt;/$checkbox&gt;</pre>
 </div>
-<div created="20200408161839519" eo="ao" modified="20200408161855089" tags="" title="testing">
-<pre>asfsdfas</pre>
+<div created="20200408161749865" modified="20200408162201032" tags="" title="TemplateTasks">
+<pre>!! ''To do''
+
+&lt;&lt;list-tagged-draggable tag:&quot;Task&quot; subFilter:&quot;!has[draft.of]!tag[done]&quot; itemTemplate:&quot;TaskManagement&quot; emptyMessage:&quot;You don't have any active tasks&quot;&gt;&gt;
+
+!! ''Done''
+
+&lt;$list filter=&quot;[!has[draft.of]tag[Task]tag[done]sort[created]]&quot;&gt;
+&lt;div&gt;
+&lt;$checkbox tag=&quot;done&quot;&gt; ~~&lt;$link to={{!!title}}&gt;&lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;~~&lt;/$checkbox&gt;
+&lt;/div&gt;
+&lt;/$list&gt;</pre>
 </div>
 <div created="20200403101139330" modified="20200403101212873" tags="TableOfContents" title="TFG" type="text/vnd.tiddlywiki">
 <pre>&lt;div class=&quot;tc-table-of-contents&quot;&gt;
