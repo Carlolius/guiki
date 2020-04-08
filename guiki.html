@@ -49,7 +49,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE." />
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <title> MyGüiki — a little bit less messy. 
 
-8 Apr 2020 at 18:05
+8 Apr 2020 at 18:13
 
 </title>
 <!--~~ This is a Tiddlywiki file. The points of interest in the file are marked with this pattern ~~-->
@@ -256,6 +256,14 @@ Error message and password prompt
 <li>$:/plugins/kookma/todolist/data/base/status</li>
 
 <li>$:/plugins/kookma/todolist/data/base/tasks</li>
+
+<li>$:/plugins/kookma/todolist/data/Task/done</li>
+
+<li>$:/plugins/kookma/todolist/data/Task/state</li>
+
+<li>$:/plugins/kookma/todolist/data/Task/status</li>
+
+<li>$:/plugins/kookma/todolist/data/Task/tasks</li>
 
 <li>$:/plugins/tiddlywiki/codemirror</li>
 
@@ -793,8 +801,6 @@ Error message and password prompt
 
 <li>Dracula</li>
 
-<li>Draft of 'BulletTasks'</li>
-
 <li>Enable tap to click in i3wm</li>
 
 <li>ffmpeg</li>
@@ -876,6 +882,8 @@ Error message and password prompt
 <li>Tiddlywiki</li>
 
 <li>Tmux</li>
+
+<li>todolist - Archived Items - Task</li>
 
 <li>touchpad</li>
 
@@ -13174,6 +13182,27 @@ very-muted-foreground: #888888</pre>
 <div created="20200408155609018" modified="20200408155908579" title="$:/plugins/kookma/todolist/data/base/tasks" type="application/json">
 <pre>{}</pre>
 </div>
+<div created="20200408160540093" modified="20200408160558450" title="$:/plugins/kookma/todolist/data/Task/done" type="application/json">
+<pre>{}</pre>
+</div>
+<div created="20200408160510249" modified="20200408161307014" title="$:/plugins/kookma/todolist/data/Task/state" type="application/json">
+<pre>{
+    &quot;editview&quot;: &quot;view&quot;,
+    &quot;itemtext&quot;: &quot;&quot;,
+    &quot;option&quot;: &quot;no&quot;,
+    &quot;markall&quot;: &quot;no&quot;
+}</pre>
+</div>
+<div created="20200408160535479" modified="20200408160827454" title="$:/plugins/kookma/todolist/data/Task/status" type="application/json">
+<pre>{
+    &quot;2020.04.08-180825164&quot;: &quot;undone&quot;
+}</pre>
+</div>
+<div created="20200408160535478" modified="20200408161305199" title="$:/plugins/kookma/todolist/data/Task/tasks" type="application/json">
+<pre>{
+    &quot;2020.04.08-180825164&quot;: &quot;[[Bullets]]&quot;
+}</pre>
+</div>
 <div author="JeremyRuston" dependents="" description="CodeMirror _Editor" list="readme usage keyboard license" plugin-type="plugin" title="$:/plugins/tiddlywiki/codemirror" type="application/json" version="5.1.21">
 <pre>{
     &quot;tiddlers&quot;: {
@@ -13852,11 +13881,11 @@ very-muted-foreground: #888888</pre>
 <div created="20200120144627408" modified="20200120144637512" title="$:/state/plugin-info--896887961-$:/plugins/danielo/encryptTiddler--12300068">
 <pre>Encrypt-Tiddler</pre>
 </div>
-<div created="20200408154904760" modified="20200408160458294" title="$:/state/plugin-info--896887961-$:/plugins/kookma/todolist">
-<pre>no</pre>
+<div created="20200408154904760" modified="20200408160707532" title="$:/state/plugin-info--896887961-$:/plugins/kookma/todolist">
+<pre>yes</pre>
 </div>
-<div created="20200408154909401" modified="20200408154919963" title="$:/state/plugin-info--896887961-$:/plugins/kookma/todolist---977409187">
-<pre>readme</pre>
+<div created="20200408154909401" modified="20200408160748872" title="$:/state/plugin-info--896887961-$:/plugins/kookma/todolist---977409187">
+<pre>internals</pre>
 </div>
 <div created="20191115005342381" modified="20191115005547098" title="$:/state/plugin-info--896887961-$:/plugins/tiddlywiki/codemirror">
 <pre>no</pre>
@@ -14089,7 +14118,7 @@ very-muted-foreground: #888888</pre>
 <div created="20200402102202466" modified="20200405111137836" title="$:/state/toc/TableOfContents/Linux-XresourcesColors-756472543">
 <pre>close</pre>
 </div>
-<div created="20200408154827770" list="[[Draft of 'BulletTasks']] Bullets Hey!" modified="20200408160209081" title="$:/StoryList">
+<div created="20200408154827770" list="BulletTasks Bullets Hey!" modified="20200408160831604" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20191106193335831" list="$:/core/ui/Buttons/more-page-actions $:/core/ui/Buttons/home $:/core/ui/Buttons/close-all $:/core/ui/Buttons/fold-all $:/core/ui/Buttons/unfold-all $:/core/ui/Buttons/permaview $:/core/ui/Buttons/new-tiddler $:/plugins/tiddlywiki/markdown/new-markdown-button $:/core/ui/Buttons/new-journal $:/core/ui/Buttons/new-image $:/core/ui/Buttons/import $:/core/ui/Buttons/export-page $:/core/ui/Buttons/control-panel $:/core/ui/Buttons/advanced-search $:/core/ui/Buttons/manager $:/core/ui/Buttons/tag-manager $:/core/ui/Buttons/language $:/core/ui/Buttons/palette $:/core/ui/Buttons/theme $:/core/ui/Buttons/storyview $:/core/ui/Buttons/encryption $:/core/ui/Buttons/timestamp $:/core/ui/Buttons/full-screen $:/core/ui/Buttons/print $:/core/ui/Buttons/save-wiki $:/core/ui/Buttons/refresh" modified="20191106193335831" title="$:/tags/PageControls">
@@ -15423,7 +15452,7 @@ Site with several cheatsheets [Devhits](https://devhints.io/bash).</pre>
 &lt;/$list&gt;
 </pre>
 </div>
-<div caption="Tasks" created="20200408155429690" modified="20200408160159573" tags="Bullet" title="BulletTasks">
+<div caption="Tasks" created="20200408155429690" modified="20200408161307870" tags="Bullet" title="BulletTasks">
 <pre>&lt;&lt;todolist-ui caption:Tasks&quot;&quot; width:50%&quot;&quot; base:Task&quot;&quot;&gt;&gt;</pre>
 </div>
 <div created="20200403101302932" modified="20200403103040810" tags="TFG" title="Caos" type="text/x-markdown">
@@ -15499,9 +15528,6 @@ Also I need to change the Arch after instalation to add this new networkconfigur
 *.color14:    #9AEDFE
 *.color7:     #BFBFBF
 *.color15:    #E6E6E6</pre>
-</div>
-<div caption="Tasks" created="20200408155429690" draft.of="BulletTasks" draft.title="BulletTasks" modified="20200408160202652" tags="Bullet" title="Draft of 'BulletTasks'">
-<pre>&lt;&lt;todolist-ui caption:Tasks&quot;&quot; width:50%&quot;&quot; base:Task&quot;&quot;&gt;&gt;</pre>
 </div>
 <div created="20191106230408624" modified="20191115015154736" tags="i3wm" title="Enable tap to click in i3wm" type="text/x-markdown">
 <pre>https://cravencode.com/post/essentials/enable-tap-to-click-in-i3wm/</pre>
@@ -16243,6 +16269,15 @@ Shortcut | Action
 &lt;Ctrl+b&gt; + o | Go to the next pane          
 &lt;Ctrl+b&gt; + ; | Toggle between the current and previous pane
 &lt;Ctrl+b&gt; + x | Close the current pane
+</pre>
+</div>
+<div archive-tiddler="$:/plugins/kookma/todolist/data/Task/archive" created="20190716084402662" modified="20200408160544668" tags="" title="todolist - Archived Items - Task" type="text/vnd.tiddlywiki">
+<pre>!! Archive of completed (done) items
+
+&lt;$macrocall $name=&quot;todolist-delete-archived-tiddler&quot; archiveTiddler={{!!archive-tiddler}} /&gt;
+
+&gt; &lt;$macrocall $name=&quot;todolist-list-archived-items&quot; archiveTiddler={{!!archive-tiddler}} /&gt;
+
 </pre>
 </div>
 <div created="20191122025446265" modified="20191203000803063" tags="Task done" title="touchpad">
