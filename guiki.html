@@ -211,6 +211,8 @@ Error message and password prompt
 
 <li>$:/core</li>
 
+<li>$:/core/macros/list</li>
+
 <li>$:/DefaultTiddlers</li>
 
 <li>$:/favicon.ico</li>
@@ -806,6 +808,8 @@ Error message and password prompt
 <li>Dracula</li>
 
 <li>Draft of 'BulletTasks'</li>
+
+<li>Draft of 'TemplateTasks'</li>
 
 <li>Enable tap to click in i3wm</li>
 
@@ -10208,6 +10212,138 @@ Error message and password prompt
     }
 }</pre>
 </div>
+<div created="20200408201519032" modified="20200408201718839" tags="$:/tags/Macro" title="$:/core/macros/list">
+<pre>\define list-links(filter,type:&quot;ul&quot;,subtype:&quot;li&quot;,class:&quot;&quot;,emptyMessage)
+\whitespace trim
+&lt;$type$ class=&quot;$class$&quot;&gt;
+&lt;$list filter=&quot;$filter$&quot; emptyMessage=&lt;&lt;__emptyMessage__&gt;&gt;&gt;
+&lt;$subtype$&gt;
+&lt;$link to={{!!title}}&gt;
+&lt;$transclude field=&quot;caption&quot;&gt;
+&lt;$view field=&quot;title&quot;/&gt;
+&lt;/$transclude&gt;
+&lt;/$link&gt;
+&lt;/$subtype$&gt;
+&lt;/$list&gt;
+&lt;/$type$&gt;
+\end
+
+\define list-links-draggable-drop-actions()
+&lt;$action-listops $tiddler=&lt;&lt;targetTiddler&gt;&gt; $field=&lt;&lt;targetField&gt;&gt; $subfilter=&quot;+[insertbefore:currentTiddler&lt;actionTiddler&gt;]&quot;/&gt;
+\end
+
+\define list-links-draggable(tiddler,field:&quot;list&quot;,type:&quot;ul&quot;,subtype:&quot;li&quot;,class:&quot;&quot;,itemTemplate)
+\whitespace trim
+&lt;span class=&quot;tc-links-draggable-list&quot;&gt;
+&lt;$vars targetTiddler=&quot;&quot;&quot;$tiddler$&quot;&quot;&quot; targetField=&quot;&quot;&quot;$field$&quot;&quot;&quot;&gt;
+&lt;$type$ class=&quot;$class$&quot;&gt;
+&lt;$list filter=&quot;[list[$tiddler$!!$field$]]&quot;&gt;
+&lt;$droppable actions=&lt;&lt;list-links-draggable-drop-actions&gt;&gt; tag=&quot;&quot;&quot;$subtype$&quot;&quot;&quot;&gt;
+&lt;div class=&quot;tc-droppable-placeholder&quot;/&gt;
+&lt;div&gt;
+&lt;$transclude tiddler=&quot;&quot;&quot;$itemTemplate$&quot;&quot;&quot;&gt;
+&lt;$link to={{!!title}}&gt;
+&lt;$transclude field=&quot;caption&quot;&gt;
+&lt;$view field=&quot;title&quot;/&gt;
+&lt;/$transclude&gt;
+&lt;/$link&gt;
+&lt;/$transclude&gt;
+&lt;/div&gt;
+&lt;/$droppable&gt;
+&lt;/$list&gt;
+&lt;/$type$&gt;
+&lt;$tiddler tiddler=&quot;&quot;&gt;
+&lt;$droppable actions=&lt;&lt;list-links-draggable-drop-actions&gt;&gt; tag=&quot;div&quot;&gt;
+&lt;div class=&quot;tc-droppable-placeholder&quot;&gt;
+&amp;nbsp;
+&lt;/div&gt;
+&lt;div style=&quot;height:0.5em;&quot;/&gt;
+&lt;/$droppable&gt;
+&lt;/$tiddler&gt;
+&lt;/$vars&gt;
+&lt;/span&gt;
+\end
+
+\define list-tagged-draggable-drop-actions(tag)
+&lt;!-- Save the current ordering of the tiddlers with this tag --&gt;
+&lt;$set name=&quot;order&quot; filter=&quot;[&lt;__tag__&gt;tagging[]]&quot;&gt;
+&lt;!-- Remove any list-after or list-before fields from the tiddlers with this tag --&gt;
+&lt;$list filter=&quot;[&lt;__tag__&gt;tagging[]]&quot;&gt;
+&lt;$action-deletefield $field=&quot;list-before&quot;/&gt;
+&lt;$action-deletefield $field=&quot;list-after&quot;/&gt;
+&lt;/$list&gt;
+&lt;!-- Save the new order to the Tag Tiddler --&gt;
+&lt;$action-listops $tiddler=&lt;&lt;__tag__&gt;&gt; $field=&quot;list&quot; $filter=&quot;+[enlist&lt;order&gt;] +[insertbefore:currentTiddler&lt;actionTiddler&gt;]&quot;/&gt;
+&lt;!-- Make sure the newly added item has the right tag --&gt;
+&lt;!-- Removing this line makes dragging tags within the dropdown work as intended --&gt;
+&lt;!--&lt;$action-listops $tiddler=&lt;&lt;actionTiddler&gt;&gt; $tags=&lt;&lt;__tag__&gt;&gt;/&gt;--&gt;
+&lt;!-- Using the following 5 lines as replacement makes dragging titles from outside into the dropdown apply the tag --&gt;
+&lt;$list filter=&quot;[&lt;actionTiddler&gt;!contains:tags&lt;__tag__&gt;]&quot;&gt;
+&lt;$fieldmangler tiddler=&lt;&lt;actionTiddler&gt;&gt;&gt;
+&lt;$action-sendmessage $message=&quot;tm-add-tag&quot; $param=&lt;&lt;__tag__&gt;&gt;/&gt;
+&lt;/$fieldmangler&gt;
+&lt;/$list&gt;
+&lt;/$set&gt;
+\end
+
+\define list-tagged-draggable(tag,subFilter,emptyMessage,itemTemplate,elementTag:&quot;div&quot;)
+\whitespace trim
+&lt;span class=&quot;tc-tagged-draggable-list&quot;&gt;
+&lt;$set name=&quot;tag&quot; value=&lt;&lt;__tag__&gt;&gt;&gt;
+&lt;$list filter=&quot;[&lt;__tag__&gt;tagging[]$subFilter$]&quot; emptyMessage=&lt;&lt;__emptyMessage__&gt;&gt;&gt;
+&lt;$elementTag$ class=&quot;tc-menu-list-item&quot;&gt;
+&lt;$droppable actions=&quot;&quot;&quot;&lt;$macrocall $name=&quot;list-tagged-draggable-drop-actions&quot; tag=&lt;&lt;__tag__&gt;&gt;/&gt;&quot;&quot;&quot;&gt;
+&lt;$elementTag$ class=&quot;tc-droppable-placeholder&quot;/&gt;
+&lt;$elementTag$&gt;
+&lt;$transclude tiddler=&quot;&quot;&quot;$itemTemplate$&quot;&quot;&quot;&gt;
+&lt;$link to={{!!title}}&gt;
+&lt;$view field=&quot;title&quot;/&gt;
+&lt;/$link&gt;
+&lt;/$transclude&gt;
+&lt;/$elementTag$&gt;
+&lt;/$droppable&gt;
+&lt;/$elementTag$&gt;
+&lt;/$list&gt;
+&lt;$tiddler tiddler=&quot;&quot;&gt;
+&lt;$droppable actions=&quot;&quot;&quot;&lt;$macrocall $name=&quot;list-tagged-draggable-drop-actions&quot; tag=&lt;&lt;__tag__&gt;&gt;/&gt;&quot;&quot;&quot;&gt;
+&lt;$elementTag$ class=&quot;tc-droppable-placeholder&quot;/&gt;
+&lt;$elementTag$ style=&quot;height:0.5em;&quot;&gt;
+&lt;/$elementTag$&gt;
+&lt;/$droppable&gt;
+&lt;/$tiddler&gt;
+&lt;/$set&gt;
+&lt;/span&gt;
+\end
+
+\define list-tagged-draggable2(tag,subFilter,emptyMessage,itemTemplate,elementTag:&quot;div&quot;)
+\whitespace trim
+&lt;span class=&quot;tc-tagged-draggable-list&quot;&gt;
+&lt;$set name=&quot;tag&quot; value={{!!tags}}&gt;
+&lt;$list filter=&quot;[&lt;__tag__&gt;tagging[]$subFilter$]&quot; emptyMessage=&lt;&lt;__emptyMessage__&gt;&gt;&gt;
+&lt;$elementTag$ class=&quot;tc-menu-list-item&quot;&gt;
+&lt;$droppable actions=&quot;&quot;&quot;&lt;$macrocall $name=&quot;list-tagged-draggable-drop-actions&quot; tag=&lt;&lt;__tag__&gt;&gt;/&gt;&quot;&quot;&quot;&gt;
+&lt;$elementTag$ class=&quot;tc-droppable-placeholder&quot;/&gt;
+&lt;$elementTag$&gt;
+&lt;$transclude tiddler=&quot;&quot;&quot;$itemTemplate$&quot;&quot;&quot;&gt;
+&lt;$link to={{!!title}}&gt;
+&lt;$view field=&quot;title&quot;/&gt;
+&lt;/$link&gt;
+&lt;/$transclude&gt;
+&lt;/$elementTag$&gt;
+&lt;/$droppable&gt;
+&lt;/$elementTag$&gt;
+&lt;/$list&gt;
+&lt;$tiddler tiddler=&quot;&quot;&gt;
+&lt;$droppable actions=&quot;&quot;&quot;&lt;$macrocall $name=&quot;list-tagged-draggable-drop-actions&quot; tag=&lt;&lt;__tag__&gt;&gt;/&gt;&quot;&quot;&quot;&gt;
+&lt;$elementTag$ class=&quot;tc-droppable-placeholder&quot;/&gt;
+&lt;$elementTag$ style=&quot;height:0.5em;&quot;&gt;
+&lt;/$elementTag$&gt;
+&lt;/$droppable&gt;
+&lt;/$tiddler&gt;
+&lt;/$set&gt;
+&lt;/span&gt;
+\end</pre>
+</div>
 <div created="20191029032000350" modified="20191106191848570" title="$:/DefaultTiddlers">
 <pre>Hey!</pre>
 </div>
@@ -14011,7 +14147,7 @@ very-muted-foreground: #888888</pre>
 <div created="20191029024854454" modified="20200408185222484" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/System</pre>
 </div>
-<div created="20191029023556653" modified="20200408185642157" title="$:/state/tab/sidebar--595412856">
+<div created="20191029023556653" modified="20200408201349158" title="$:/state/tab/sidebar--595412856">
 <pre>TableOfContentsSideBar</pre>
 </div>
 <div created="20200408110505272" modified="20200408152625275" title="$:/state/tab1--1056071170">
@@ -14137,7 +14273,7 @@ very-muted-foreground: #888888</pre>
 <div created="20200402102202466" modified="20200405111137836" title="$:/state/toc/TableOfContents/Linux-XresourcesColors-756472543">
 <pre>close</pre>
 </div>
-<div created="20200408154827770" list="TemplateTasks [[Draft of 'BulletTasks']] Bullets Hey!" modified="20200408193503798" title="$:/StoryList">
+<div created="20200408154827770" list="$:/core/macros/list [[Draft of 'TemplateTasks']] [[Draft of 'BulletTasks']] Bullets Hey!" modified="20200408201440729" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20191106193335831" list="$:/core/ui/Buttons/more-page-actions $:/core/ui/Buttons/home $:/core/ui/Buttons/close-all $:/core/ui/Buttons/fold-all $:/core/ui/Buttons/unfold-all $:/core/ui/Buttons/permaview $:/core/ui/Buttons/new-tiddler $:/plugins/tiddlywiki/markdown/new-markdown-button $:/core/ui/Buttons/new-journal $:/core/ui/Buttons/new-image $:/core/ui/Buttons/import $:/core/ui/Buttons/export-page $:/core/ui/Buttons/control-panel $:/core/ui/Buttons/advanced-search $:/core/ui/Buttons/manager $:/core/ui/Buttons/tag-manager $:/core/ui/Buttons/language $:/core/ui/Buttons/palette $:/core/ui/Buttons/theme $:/core/ui/Buttons/storyview $:/core/ui/Buttons/encryption $:/core/ui/Buttons/timestamp $:/core/ui/Buttons/full-screen $:/core/ui/Buttons/print $:/core/ui/Buttons/save-wiki $:/core/ui/Buttons/refresh" modified="20191106193335831" title="$:/tags/PageControls">
@@ -15550,6 +15686,21 @@ Also I need to change the Arch after instalation to add this new networkconfigur
 </div>
 <div caption="Tasks" created="20200408162110718" draft.of="BulletTasks" draft.title="BulletTasks" modified="20200408194812413" tags="TemplateTasks" title="Draft of 'BulletTasks'">
 <pre>{{BulletTasks||TemplateTasks}}</pre>
+</div>
+<div created="20200408161749865" draft.of="TemplateTasks" draft.title="TemplateTasks" modified="20200408201710001" tags="TemplateTasks" title="Draft of 'TemplateTasks'">
+<pre>!! ''To do''
+
+{{!!tags}}
+
+&lt;&lt;list-tagged-draggable2 tag:&quot;&quot;  subFilter:&quot;!has[draft.of]!tag[done]&quot; itemTemplate:&quot;TaskManagement&quot; emptyMessage:&quot;You don't have any active tasks&quot;&gt;&gt;
+
+!! ''Done''
+
+&lt;$list filter=&quot;[!has[draft.of]tag[Task]tag[done]sort[created]]&quot;&gt;
+&lt;div&gt;
+&lt;$checkbox tag=&quot;done&quot;&gt; ~~&lt;$link to={{!!title}}&gt;&lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;~~&lt;/$checkbox&gt;
+&lt;/div&gt;
+&lt;/$list&gt;</pre>
 </div>
 <div created="20191106230408624" modified="20191115015154736" tags="i3wm" title="Enable tap to click in i3wm" type="text/x-markdown">
 <pre>https://cravencode.com/post/essentials/enable-tap-to-click-in-i3wm/</pre>
