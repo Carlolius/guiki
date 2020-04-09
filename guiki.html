@@ -49,7 +49,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE." />
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <title> MyGüiki — a little bit less messy. 
 
-9 Apr 2020 at 20:28
+9 Apr 2020 at 20:36
 
 </title>
 <!--~~ This is a Tiddlywiki file. The points of interest in the file are marked with this pattern ~~-->
@@ -829,6 +829,8 @@ Error message and password prompt
 
 <li>Coc extensions to json</li>
 
+<li>Conexión a Spotify</li>
+
 <li>conky</li>
 
 <li>Conky</li>
@@ -836,6 +838,8 @@ Error message and password prompt
 <li>Dalle</li>
 
 <li>Dracula</li>
+
+<li>Draft of 'TemplateTasks'</li>
 
 <li>Enable tap to click in i3wm</li>
 
@@ -14175,7 +14179,7 @@ very-muted-foreground: #888888</pre>
 <div created="20191029022322335" modified="20200404092513529" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/General</pre>
 </div>
-<div created="20200409182254334" modified="20200409182836624" title="$:/state/tab-503542749">
+<div created="20200409182254334" modified="20200409183258614" title="$:/state/tab-503542749">
 <pre>BulletTFGTasks</pre>
 </div>
 <div created="20191107025147342" modified="20191107025200504" title="$:/state/tab-801928395">
@@ -14319,7 +14323,7 @@ very-muted-foreground: #888888</pre>
 <div created="20200402102202466" modified="20200405111137836" title="$:/state/toc/TableOfContents/Linux-XresourcesColors-756472543">
 <pre>close</pre>
 </div>
-<div created="20200409175105820" list="TFG Caos BulletTFG Hey!" modified="20200409182825648" title="$:/StoryList">
+<div created="20200409175105820" list="[[Draft of 'TemplateTasks']] BulletTFG [[Conexión a Spotify]] Hey!" modified="20200409183155091" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20191106193335831" list="$:/core/ui/Buttons/more-page-actions $:/core/ui/Buttons/home $:/core/ui/Buttons/close-all $:/core/ui/Buttons/fold-all $:/core/ui/Buttons/unfold-all $:/core/ui/Buttons/permaview $:/core/ui/Buttons/new-tiddler $:/plugins/tiddlywiki/markdown/new-markdown-button $:/core/ui/Buttons/new-journal $:/core/ui/Buttons/new-image $:/core/ui/Buttons/import $:/core/ui/Buttons/export-page $:/core/ui/Buttons/control-panel $:/core/ui/Buttons/advanced-search $:/core/ui/Buttons/manager $:/core/ui/Buttons/tag-manager $:/core/ui/Buttons/language $:/core/ui/Buttons/palette $:/core/ui/Buttons/theme $:/core/ui/Buttons/storyview $:/core/ui/Buttons/encryption $:/core/ui/Buttons/timestamp $:/core/ui/Buttons/full-screen $:/core/ui/Buttons/print $:/core/ui/Buttons/save-wiki $:/core/ui/Buttons/refresh" modified="20191106193335831" title="$:/tags/PageControls">
@@ -15151,8 +15155,8 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20200120143059997" modified="20200120143115318" title="$:/temp/RemoteAssetSearch/$:/config/OfficialPluginLibrary">
 <pre></pre>
 </div>
-<div created="20191031012809632" modified="20200409182430982" title="$:/temp/search">
-<pre>tfg</pre>
+<div created="20191031012809632" modified="20200409183154284" title="$:/temp/search">
+<pre>tem</pre>
 </div>
 <div created="20191115005309412" modified="20191115005309412" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.21/index.html" url="https://tiddlywiki.com/library/v5.1.21/index.html">
 <pre>loaded</pre>
@@ -15743,6 +15747,19 @@ Also I need to change the Arch after instalation to add this new networkconfigur
 <div created="20200409164542982" modified="20200409164608406" tags="BulletTasks" title="Coc extensions to json">
 <pre>Poñer as extensións de coc no seu settings</pre>
 </div>
+<div created="20200409183138136" modified="20200409183646537" tags="BulletTFG" title="Conexión a Spotify">
+<pre>!! ''To do''
+
+&lt;&lt;list-tagged-draggable tag:&quot;TFGSpotify&quot;  subFilter:&quot;!has[draft.of]!tag[done]&quot; itemTemplate:&quot;TaskManagement&quot; emptyMessage:&quot;You don't have any active tasks&quot;&gt;&gt;
+
+!! ''Done''
+
+&lt;$list filter=&quot;[!has[draft.of]tag[TFGSpotify]tag[done]sort[created]]&quot;&gt;
+&lt;div&gt;
+&lt;$checkbox tag=&quot;done&quot;&gt; ~~&lt;$link to={{!!title}}&gt;&lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;~~&lt;/$checkbox&gt;
+&lt;/div&gt;
+&lt;/$list&gt;</pre>
+</div>
 <div created="20191121171700940" modified="20200409164029430" tags="BulletTasks" title="conky">
 <pre></pre>
 </div>
@@ -15773,6 +15790,19 @@ Also I need to change the Arch after instalation to add this new networkconfigur
 *.color14:    #9AEDFE
 *.color7:     #BFBFBF
 *.color15:    #E6E6E6</pre>
+</div>
+<div color="#e6f100" created="20200408161749865" draft.of="TemplateTasks" draft.title="TemplateTasks" icon="$:/core/images/plugin-generic-theme" modified="20200409183619614" tags="TemplateTasks" title="Draft of 'TemplateTasks'">
+<pre>!! ''To do''
+
+&lt;&lt;list-tagged-draggable tag:&quot;CAMBIAR&quot;  subFilter:&quot;!has[draft.of]!tag[done]&quot; itemTemplate:&quot;TaskManagement&quot; emptyMessage:&quot;You don't have any active tasks&quot;&gt;&gt;
+
+!! ''Done''
+
+&lt;$list filter=&quot;[!has[draft.of]tag[CAMBIAR]tag[done]sort[created]]&quot;&gt;
+&lt;div&gt;
+&lt;$checkbox tag=&quot;done&quot;&gt; ~~&lt;$link to={{!!title}}&gt;&lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;~~&lt;/$checkbox&gt;
+&lt;/div&gt;
+&lt;/$list&gt;</pre>
 </div>
 <div created="20191106230408624" modified="20191115015154736" tags="i3wm" title="Enable tap to click in i3wm" type="text/x-markdown">
 <pre>https://cravencode.com/post/essentials/enable-tap-to-click-in-i3wm/</pre>
@@ -16184,7 +16214,7 @@ Queremos: Disco ssd, Ram 4gb.
 ### RAM
 [Gskill pccomp](https://www.pccomponentes.com/gskill-so-dimm-ddr3l-1600-pc3-12800-4gb-cl11)</pre>
 </div>
-<div created="20200409175402821" modified="20200409182738352" tags="BulletTFGToday BulletTFG" title="Organizar" type="text/x-markdown">
+<div created="20200409175402821" modified="20200409183122571" tags="BulletTFGToday BulletTFG" title="Organizar" type="text/x-markdown">
 <pre>Poñer a funcionar a organización de todo este percal</pre>
 </div>
 <div created="20191031020422364" modified="20191125223949304" tags="Linux Installation Arch" title="Packages" type="text/x-markdown">
@@ -16486,12 +16516,8 @@ Partially done, the functions that I use for the cases shouldn't work outside th
 &lt;/div&gt;
 &lt;/$list&gt;</pre>
 </div>
-<div created="20200403101139330" modified="20200403101212873" tags="TableOfContents" title="TFG" type="text/vnd.tiddlywiki">
-<pre>&lt;div class=&quot;tc-table-of-contents&quot;&gt;
-
-&lt;&lt;toc-selective-expandable &quot;TFG&quot; &quot;sort[title]&quot;&gt;&gt;
-
-&lt;/div&gt;</pre>
+<div color="#316e76" created="20200409182945901" modified="20200409183008174" title="TFG">
+<pre></pre>
 </div>
 <div created="20200303120000081" modified="20200309194705843" tags="Notes" title="Things to see, Edimburg" type="text/x-markdown">
 <pre>##Recommended by:
