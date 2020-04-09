@@ -49,7 +49,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE." />
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <title> MyGüiki — a little bit less messy. 
 
-9 Apr 2020 at 18:04
+9 Apr 2020 at 18:05
 
 </title>
 <!--~~ This is a Tiddlywiki file. The points of interest in the file are marked with this pattern ~~-->
@@ -920,8 +920,6 @@ Error message and password prompt
 <li>TableOfContents</li>
 
 <li>TableOfContentsSideBar</li>
-
-<li>Task</li>
 
 <li>TaskManagement</li>
 
@@ -14551,7 +14549,7 @@ very-muted-foreground: #888888</pre>
 <div created="20200409154127358" modified="20200409160227464" title="$:/state/toc/TableOfContents/Workometer-To do-756472543">
 <pre>open</pre>
 </div>
-<div created="20200409142712835" list="$:/TagManager Task Calcurse Bullets" modified="20200409160401032" title="$:/StoryList">
+<div created="20200409142712835" list="$:/TagManager BulletTasks Bullets" modified="20200409160440604" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20191106193335831" list="$:/core/ui/Buttons/more-page-actions $:/core/ui/Buttons/home $:/core/ui/Buttons/close-all $:/core/ui/Buttons/fold-all $:/core/ui/Buttons/unfold-all $:/core/ui/Buttons/permaview $:/core/ui/Buttons/new-tiddler $:/plugins/tiddlywiki/markdown/new-markdown-button $:/core/ui/Buttons/new-journal $:/core/ui/Buttons/new-image $:/core/ui/Buttons/import $:/core/ui/Buttons/export-page $:/core/ui/Buttons/control-panel $:/core/ui/Buttons/advanced-search $:/core/ui/Buttons/manager $:/core/ui/Buttons/tag-manager $:/core/ui/Buttons/language $:/core/ui/Buttons/palette $:/core/ui/Buttons/theme $:/core/ui/Buttons/storyview $:/core/ui/Buttons/encryption $:/core/ui/Buttons/timestamp $:/core/ui/Buttons/full-screen $:/core/ui/Buttons/print $:/core/ui/Buttons/save-wiki $:/core/ui/Buttons/refresh" modified="20191106193335831" title="$:/tags/PageControls">
@@ -15854,7 +15852,7 @@ Create /etc/hosts
 `reboot`
 </pre>
 </div>
-<div created="20191122030346724" modified="20200217011204836" tags="Task done" title="automount">
+<div created="20191122030346724" modified="20200409160523689" tags="BulletTasks done" title="automount">
 <pre></pre>
 </div>
 <div created="20191223234056729" modified="20191224004543504" tags="XresourcesColors" title="Base 16">
@@ -15875,18 +15873,8 @@ Site with several cheatsheets [Devhits](https://devhints.io/bash).</pre>
 <pre>&lt;&lt;tabs &quot;[tag[Bullets]]&quot; &quot;BulletTasks&quot; &quot;$:/state/tab&quot;&gt;&gt;
 </pre>
 </div>
-<div caption="Tasks" color="#e6f100" created="20200408162110718" icon="$:/core/images/plugin-generic-theme" modified="20200408220424292" tags="BulletTasks Bullets" title="BulletTasks">
-<pre>!! ''To do''
-
-&lt;&lt;list-tagged-draggable tag:&quot;Task&quot;  subFilter:&quot;!has[draft.of]!tag[done]&quot; itemTemplate:&quot;TaskManagement&quot; emptyMessage:&quot;You don't have any active tasks&quot;&gt;&gt;
-
-!! ''Done''
-
-&lt;$list filter=&quot;[!has[draft.of]tag[Task]tag[done]sort[created]]&quot;&gt;
-&lt;div&gt;
-&lt;$checkbox tag=&quot;done&quot;&gt; ~~&lt;$link to={{!!title}}&gt;&lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;~~&lt;/$checkbox&gt;
-&lt;/div&gt;
-&lt;/$list&gt;</pre>
+<div color="#e6f100" created="20191122023345984" icon="$:/core/images/plugin-generic-theme" list="conky [[change colors Xresources]] touchpad [[Netctl configuration tiddler]] automount zsh [[Change network configuration]] ffmpeg [[Keep old kernels &amp; survive other failures]] [[Pass password manager]] [[Script for locksreen]] [[Script for update all]] Xidlehook xrandr" modified="20200409160523686" title="BulletTasks">
+<pre></pre>
 </div>
 <div caption="TFG" color="#e6f100" created="20200408204722652" icon="$:/core/images/plugin-generic-theme" modified="20200408220430651" tags="Bullets BulletTFG" title="BulletTFG">
 <pre></pre>
@@ -15897,7 +15885,7 @@ Site with several cheatsheets [Devhits](https://devhints.io/bash).</pre>
 <div caption="Vim" created="20200408204752388" modified="20200408215854221" tags="Bullets" title="BulletVim">
 <pre></pre>
 </div>
-<div created="20200409154018176" modified="20200409160417760" shorttext="Facer funcionar calcurse" tags="Task" title="Calcurse">
+<div created="20200409154018176" modified="20200409160523693" shorttext="Facer funcionar calcurse" tags="BulletTasks" title="Calcurse">
 <pre></pre>
 </div>
 <div created="20200403101302932" modified="20200403103040810" tags="TFG" title="Caos" type="text/x-markdown">
@@ -15927,10 +15915,10 @@ Site with several cheatsheets [Devhits](https://devhints.io/bash).</pre>
 
 [Raveberry](https://github.com/raveberry/raveberry/)</pre>
 </div>
-<div created="20191122023315290" modified="20191125002545899" tags="Task done" title="change colors Xresources" type="text/x-markdown">
+<div created="20191122023315290" modified="20200409160523690" tags="BulletTasks done" title="change colors Xresources" type="text/x-markdown">
 <pre>Add colors of the green over black scheme of KDE Konsole</pre>
 </div>
-<div created="20191221161002710" modified="20191221161351674" tags="Task" title="Change network configuration" type="text/x-markdown">
+<div created="20191221161002710" modified="20200409160523691" tags="BulletTasks" title="Change network configuration" type="text/x-markdown">
 <pre>## Rui said that:  
 **dhcpcd + iwd + systemd-resolve**  
 is the best. Gotta check that
@@ -15949,7 +15937,7 @@ Also I need to change the Arch after instalation to add this new networkconfigur
 <div created="20200409153825854" modified="20200409154208413" shorttext="Mover as configuracións de coc as suas settings" tags="[[To do]]" title="Coc extensions to json">
 <pre></pre>
 </div>
-<div created="20191121171700940" modified="20200215205353550" tags="Task" title="conky">
+<div created="20191121171700940" modified="20200409160523691" tags="BulletTasks" title="conky">
 <pre></pre>
 </div>
 <div created="20200120173536769" modified="20200120173602979" tags="Programs" title="Conky" type="text/x-markdown">
@@ -15983,7 +15971,7 @@ Also I need to change the Arch after instalation to add this new networkconfigur
 <div created="20191106230408624" modified="20191115015154736" tags="i3wm" title="Enable tap to click in i3wm" type="text/x-markdown">
 <pre>https://cravencode.com/post/essentials/enable-tap-to-click-in-i3wm/</pre>
 </div>
-<div created="20200402101943562" modified="20200402102609145" tags="Task" title="ffmpeg" type="text/x-markdown">
+<div created="20200402101943562" modified="20200409160523691" tags="BulletTasks" title="ffmpeg" type="text/x-markdown">
 <pre>Create a tiddler explaining how ffmpeg can be used a bit.
 
 * To convert video
@@ -16018,7 +16006,7 @@ Also I need to change the Arch after instalation to add this new networkconfigur
 
 &lt;/div&gt;</pre>
 </div>
-<div created="20191223012113472" modified="20200217005752344" tags="Task done" title="Keep old kernels &amp; survive other failures" type="text/x-markdown">
+<div created="20191223012113472" modified="20200409160523691" tags="BulletTasks done" title="Keep old kernels &amp; survive other failures" type="text/x-markdown">
 <pre>1. Keep in memory another version of kernel (stable) to boot in case of failure. **DONE**
 1. Adjust GRUB for load **non LTS kernel**.</pre>
 </div>
@@ -16351,7 +16339,7 @@ This is all if you only have one account for your Neomutt, but if you have more,
 [Polyglot](https://github.com/sheerun/vim-polyglot)  
 [Vim coc settings](https://github.com/rstacruz/vim-coc-settings)</pre>
 </div>
-<div created="20191122025541724" modified="20191221161647388" tags="Task" title="Netctl configuration tiddler" type="text/x-markdown">
+<div created="20191122025541724" modified="20200409160523692" tags="BulletTasks" title="Netctl configuration tiddler" type="text/x-markdown">
 <pre>1. How to detect interface
 1. How to first connect
 1. How to connect cable
@@ -16442,7 +16430,7 @@ xidlehook  </pre>
 <div created="20191231102602171" modified="20191231103831969" tags="Programs" title="Pass" type="text/x-markdown">
 <pre></pre>
 </div>
-<div created="20191226152056083" modified="20191231102708917" tags="Task" title="Pass password manager" type="text/x-markdown">
+<div created="20191226152056083" modified="20200409160523692" tags="BulletTasks" title="Pass password manager" type="text/x-markdown">
 <pre>Change from keepass to [pass](https://www.passwordstore.org/) looks like easy and powerfull. Usable to decrypt passwords in config files.</pre>
 </div>
 <div created="20191124025133077" modified="20191124025202722" tags="XresourcesColors" title="Personal first try" type="text/plain">
@@ -16572,13 +16560,13 @@ Shortcut | Action
 ---|
 :set show_hidden! | Show hidden files</pre>
 </div>
-<div created="20191222040746654" modified="20191222041211911" tags="Task" title="Script for locksreen" type="text/x-markdown">
+<div created="20191222040746654" modified="20200409160523692" tags="BulletTasks" title="Script for locksreen" type="text/x-markdown">
 <pre>Make a script to use with:  
 - py3status  
 - shortcut  
 - automatic with xidlehook</pre>
 </div>
-<div created="20191204184250946" modified="20191222173002489" tags="Task" title="Script for update all" type="text/x-markdown">
+<div created="20191204184250946" modified="20200409160523692" tags="BulletTasks" title="Script for update all" type="text/x-markdown">
 <pre>One Script where I can choose what to update or update all.
 Something like an alias **&quot;update&quot;**, show a script where I can choose to update all with **A** or update different stuff with different numbers:
 
@@ -16668,9 +16656,6 @@ Partially done, the functions that I use for the cases shouldn't work outside th
 <div caption="Things" created="20200220144530538" list-before="$:/core/ui/SideBar/Open" modified="20200220144857611" tags="configuration $:/tags/SideBar" title="TableOfContentsSideBar">
 <pre>{{TableOfContents}}</pre>
 </div>
-<div color="#e6f100" created="20191122023345984" icon="$:/core/images/plugin-generic-theme" list="conky [[change colors Xresources]] touchpad [[Netctl configuration tiddler]] automount zsh [[Change network configuration]] ffmpeg [[Keep old kernels &amp; survive other failures]] [[Pass password manager]] [[Script for locksreen]] [[Script for update all]] Xidlehook xrandr" modified="20200408153412347" title="Task">
-<pre></pre>
-</div>
 <div created="20191120013408348" modified="20200408173752251" tags="configuration" title="TaskManagement" type="text/vnd.tiddlywiki">
 <pre>&lt;$checkbox tag=&quot;done&quot;&gt; &lt;$link to={{!!title}}&gt;&lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;&lt;/$checkbox&gt;</pre>
 </div>
@@ -16748,7 +16733,7 @@ Shortcut | Action
 <div created="20200409144311735" dpbd-collapse_in="" list="[[Coc extensions to json]] Calcurse [[Fondo Güiki]] [[Vim spellcheck]] [[Plugins upd]]" modified="20200409154758254" tags="Workometer" title="To do">
 <pre></pre>
 </div>
-<div created="20191122025446265" modified="20191203000803063" tags="Task done" title="touchpad">
+<div created="20191122025446265" modified="20200409160523693" tags="BulletTasks done" title="touchpad">
 <pre></pre>
 </div>
 <div created="20191115130001294" modified="20200403152824159" tags="Cheatsheets" title="Vim cheatsheet" type="text/x-markdown">
@@ -16820,14 +16805,14 @@ m | Create folder / file</pre>
 <div created="20200409143958781" dpbd-listwidth-num="4" dpbd-widthismax="yes" list="[[To do]] Done" modified="20200409154802947" tags="TableOfContents" title="Workometer">
 <pre>&lt;$transclude tiddler=&quot;$:/plugins/reidgould/dpbd/templates/view/Board&quot; mode=&quot;inline&quot; /&gt;</pre>
 </div>
-<div created="20200404092527733" modified="20200404092633148" tags="Task" title="Xidlehook" type="text/x-markdown">
+<div created="20200404092527733" modified="20200409160523693" tags="BulletTasks" title="Xidlehook" type="text/x-markdown">
 <pre>Fix the xidlehook:
 
 1. Make it easier to deactivate
 1. Make it stop while fullscreen
 1. Adapt it to work in different cases</pre>
 </div>
-<div created="20191125224336088" modified="20200216134815075" tags="Task" title="xrandr" type="text/x-markdown">
+<div created="20191125224336088" modified="20200409160523693" tags="BulletTasks" title="xrandr" type="text/x-markdown">
 <pre>Check how it works and all the stuff that it can do.  
 [Arandr](https://christian.amsuess.com/tools/arandr/) it's a GUI for Xrandr.</pre>
 </div>
@@ -16838,7 +16823,7 @@ m | Create folder / file</pre>
 
 &lt;/div&gt;</pre>
 </div>
-<div created="20191125002633220" modified="20191203000806142" tags="Task done" title="zsh">
+<div created="20191125002633220" modified="20200409160523693" tags="BulletTasks done" title="zsh">
 <pre></pre>
 </div>
 
