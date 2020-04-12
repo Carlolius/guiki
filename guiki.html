@@ -49,7 +49,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE." />
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <title> MyGüiki — a little bit less messy. 
 
-12 Apr 2020 at 12:43
+12 Apr 2020 at 13:17
 
 </title>
 <!--~~ This is a Tiddlywiki file. The points of interest in the file are marked with this pattern ~~-->
@@ -16600,7 +16600,7 @@ Partially done, the functions that I use for the cases shouldn't work outside th
 <div color="#e6f100" created="20200409181439056" icon="$:/core/images/plugin-generic-theme" modified="20200409181444150" title="Tasks">
 <pre></pre>
 </div>
-<div color="#e6f100" created="20200408161749865" icon="$:/core/images/plugin-generic-theme" modified="20200412104302097" tags="TemplateTasks" title="TemplateTasks">
+<div color="#e6f100" created="20200408161749865" icon="$:/core/images/plugin-generic-theme" modified="20200412111703151" tags="TemplateTasks" title="TemplateTasks">
 <pre>!! ''To do''
 
 &lt;&lt;list-tagged-draggable tag:&quot;CAMBIAR&quot;  subFilter:&quot;!has[draft.of]!tag[done]&quot; itemTemplate:&quot;TaskManagement&quot; emptyMessage:&quot;You don't have any active tasks&quot;&gt;&gt;
@@ -16615,7 +16615,13 @@ Partially done, the functions that I use for the cases shouldn't work outside th
 
 {{!!title}}
 
-&lt;$macrocall $name=&quot;list-tagged-draggable&quot; tag={{!!title}} subFilter=&quot;!has[draft.of]!tag[done]&quot; itemTemplate=&quot;TaskManagement&quot; emptyMessage=&quot;You don't have any active tasks&quot;/&gt;</pre>
+{{currenttiddler}}
+
+{{!!currenttiddler}}
+
+[currenttiddler[title]]
+
+&lt;$macrocall $name=&quot;list-tagged-draggable&quot; tag={{}} subFilter=&quot;!has[draft.of]!tag[done]&quot; itemTemplate=&quot;TaskManagement&quot; emptyMessage=&quot;You don't have any active tasks&quot;/&gt;</pre>
 </div>
 <div color="#316e76" created="20200409182945901" modified="20200410161335431" tags="TableOfContents" title="TFG">
 <pre></pre>
