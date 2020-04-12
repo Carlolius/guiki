@@ -49,7 +49,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE." />
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <title> MyGüiki — a little bit less messy. 
 
-12 Apr 2020 at 17:49
+12 Apr 2020 at 17:50
 
 </title>
 <!--~~ This is a Tiddlywiki file. The points of interest in the file are marked with this pattern ~~-->
@@ -852,8 +852,6 @@ Error message and password prompt
 <li>Done</li>
 
 <li>Dracula</li>
-
-<li>Draft of 'BulletToday'</li>
 
 <li>Enable tap to click in i3wm</li>
 
@@ -14372,7 +14370,7 @@ very-muted-foreground: #888888</pre>
 <div created="20200402102202466" modified="20200405111137836" title="$:/state/toc/TableOfContents/Linux-XresourcesColors-756472543">
 <pre>close</pre>
 </div>
-<div created="20200412104118981" list="Done [[Draft of 'BulletToday']] TemplateTasks Hey!" modified="20200412154854384" title="$:/StoryList">
+<div created="20200412104118981" list="Done BulletToday TemplateTasks Hey!" modified="20200412154854384" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20191106193335831" list="$:/core/ui/Buttons/more-page-actions $:/core/ui/Buttons/home $:/core/ui/Buttons/close-all $:/core/ui/Buttons/fold-all $:/core/ui/Buttons/unfold-all $:/core/ui/Buttons/permaview $:/core/ui/Buttons/new-tiddler $:/plugins/tiddlywiki/markdown/new-markdown-button $:/core/ui/Buttons/new-journal $:/core/ui/Buttons/new-image $:/core/ui/Buttons/import $:/core/ui/Buttons/export-page $:/core/ui/Buttons/control-panel $:/core/ui/Buttons/advanced-search $:/core/ui/Buttons/manager $:/core/ui/Buttons/tag-manager $:/core/ui/Buttons/language $:/core/ui/Buttons/palette $:/core/ui/Buttons/theme $:/core/ui/Buttons/storyview $:/core/ui/Buttons/encryption $:/core/ui/Buttons/timestamp $:/core/ui/Buttons/full-screen $:/core/ui/Buttons/print $:/core/ui/Buttons/save-wiki $:/core/ui/Buttons/refresh" modified="20191106193335831" title="$:/tags/PageControls">
@@ -15759,7 +15757,7 @@ New Task
 &lt;/div&gt;
 &lt;/$list&gt;</pre>
 </div>
-<div caption="Today" color="#e6f100" created="20200408204617229" icon="$:/core/images/plugin-generic-theme" modified="20200412154704557" tags="Tasks" title="BulletToday">
+<div caption="Today" color="#e6f100" created="20200408204617229" icon="$:/core/images/plugin-generic-theme" modified="20200412154908167" tags="Tasks" title="BulletToday">
 <pre>{{||TemplateTasks}}
 
 ---
@@ -15859,32 +15857,6 @@ Also I need to change the Arch after instalation to add this new networkconfigur
 *.color14:    #9AEDFE
 *.color7:     #BFBFBF
 *.color15:    #E6E6E6</pre>
-</div>
-<div caption="Today" color="#e6f100" created="20200408204617229" draft.of="BulletToday" draft.title="BulletToday" icon="$:/core/images/plugin-generic-theme" modified="20200412154711482" tags="Tasks" title="Draft of 'BulletToday'">
-<pre>{{||TemplateTasks}}
-
----
----
----
----
-[[Today|BulletToday]]
-
-&lt;$button&gt;
-&lt;$action-sendmessage $message=&quot;tm-new-tiddler&quot; title=&quot;TaskName&quot; tags=&quot;BulletToday&quot; text=&lt;&lt;Added on &quot;DD MMM YYYY&quot;&gt;&gt;/&gt;
-New Task
-&lt;/$button&gt;
-
-!! ''To do''
-
-&lt;&lt;list-tagged-draggable tag:BulletToday  subFilter:&quot;!has[draft.of]!tag[done]&quot; itemTemplate:&quot;TaskManagement&quot; emptyMessage:&quot;You don't have any active tasks&quot;&gt;&gt;
-
-!! ''Done''
-
-&lt;$list filter=&quot;[!has[draft.of]tag[BulletToday]tag[done]sort[created]]&quot;&gt;
-&lt;div&gt;
-&lt;$checkbox tag=&quot;done&quot;&gt; ~~&lt;$link to={{!!title}}&gt;&lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;~~&lt;/$checkbox&gt;
-&lt;/div&gt;
-&lt;/$list&gt;</pre>
 </div>
 <div created="20191106230408624" modified="20191115015154736" tags="i3wm" title="Enable tap to click in i3wm" type="text/x-markdown">
 <pre>https://cravencode.com/post/essentials/enable-tap-to-click-in-i3wm/</pre>
@@ -16639,12 +16611,8 @@ Partially done, the functions that I use for the cases shouldn't work outside th
 <div color="#e6f100" created="20200409181439056" icon="$:/core/images/plugin-generic-theme" modified="20200409181444150" title="Tasks">
 <pre></pre>
 </div>
-<div color="#e6f100" created="20200408161749865" icon="$:/core/images/plugin-generic-theme" modified="20200412154904277" tags="TemplateTasks" title="TemplateTasks">
-<pre>{{!!title}}
-
-{{!!tags}}
-
-!! ''To do''
+<div color="#e6f100" created="20200408161749865" icon="$:/core/images/plugin-generic-theme" modified="20200412155048902" tags="TemplateTasks" title="TemplateTasks">
+<pre>!! ''To do''
 
 &lt;$macrocall $name=&quot;list-tagged-draggable&quot; tag={{!!title}} subFilter=&quot;!has[draft.of]!tag[done]&quot; itemTemplate=&quot;TaskManagement&quot; emptyMessage=&quot;You don't have any active tasks&quot;/&gt;
 
