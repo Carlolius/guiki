@@ -49,7 +49,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE." />
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <title> MyGüiki — a little bit less messy. 
 
-12 Apr 2020 at 13:17
+12 Apr 2020 at 13:18
 
 </title>
 <!--~~ This is a Tiddlywiki file. The points of interest in the file are marked with this pattern ~~-->
@@ -14167,7 +14167,7 @@ very-muted-foreground: #888888</pre>
 <div created="20200120175244512" modified="20200120175300441" title="$:/state/tab--1529993356">
 <pre>$:/core/ui/TiddlerInfo/Fields</pre>
 </div>
-<div created="20200408171456288" modified="20200408171505076" title="$:/state/tab--1622148265">
+<div created="20200408171456288" modified="20200412111712152" title="$:/state/tab--1622148265">
 <pre>$:/core/ui/TiddlerInfo/Fields</pre>
 </div>
 <div created="20200121122129303" modified="20200121122129303" title="$:/state/tab--1708325585">
@@ -16600,28 +16600,20 @@ Partially done, the functions that I use for the cases shouldn't work outside th
 <div color="#e6f100" created="20200409181439056" icon="$:/core/images/plugin-generic-theme" modified="20200409181444150" title="Tasks">
 <pre></pre>
 </div>
-<div color="#e6f100" created="20200408161749865" icon="$:/core/images/plugin-generic-theme" modified="20200412111703151" tags="TemplateTasks" title="TemplateTasks">
+<div color="#e6f100" created="20200408161749865" icon="$:/core/images/plugin-generic-theme" modified="20200412111828584" tags="TemplateTasks" title="TemplateTasks">
 <pre>!! ''To do''
 
 &lt;&lt;list-tagged-draggable tag:&quot;CAMBIAR&quot;  subFilter:&quot;!has[draft.of]!tag[done]&quot; itemTemplate:&quot;TaskManagement&quot; emptyMessage:&quot;You don't have any active tasks&quot;&gt;&gt;
 
 !! ''Done''
 
-&lt;$list filter=&quot;[!has[draft.of]tag[CAMBIAR]tag[done]sort[created]]&quot;&gt;
+&lt;$list filter=&quot;[!has[draft.of]tag[draft.of]tag[done]sort[created]]&quot;&gt;
 &lt;div&gt;
 &lt;$checkbox tag=&quot;done&quot;&gt; ~~&lt;$link to={{!!title}}&gt;&lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;~~&lt;/$checkbox&gt;
 &lt;/div&gt;
 &lt;/$list&gt;
 
-{{!!title}}
-
-{{currenttiddler}}
-
-{{!!currenttiddler}}
-
-[currenttiddler[title]]
-
-&lt;$macrocall $name=&quot;list-tagged-draggable&quot; tag={{}} subFilter=&quot;!has[draft.of]!tag[done]&quot; itemTemplate=&quot;TaskManagement&quot; emptyMessage=&quot;You don't have any active tasks&quot;/&gt;</pre>
+&lt;$macrocall $name=&quot;list-tagged-draggable&quot; tag={{!!draft.of}} subFilter=&quot;!has[draft.of]!tag[done]&quot; itemTemplate=&quot;TaskManagement&quot; emptyMessage=&quot;You don't have any active tasks&quot;/&gt;</pre>
 </div>
 <div color="#316e76" created="20200409182945901" modified="20200410161335431" tags="TableOfContents" title="TFG">
 <pre></pre>
