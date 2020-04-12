@@ -49,7 +49,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE." />
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <title> MyGüiki — a little bit less messy. 
 
-12 Apr 2020 at 16:51
+12 Apr 2020 at 16:53
 
 </title>
 <!--~~ This is a Tiddlywiki file. The points of interest in the file are marked with this pattern ~~-->
@@ -16600,7 +16600,7 @@ Partially done, the functions that I use for the cases shouldn't work outside th
 <div color="#e6f100" created="20200409181439056" icon="$:/core/images/plugin-generic-theme" modified="20200409181444150" title="Tasks">
 <pre></pre>
 </div>
-<div color="#e6f100" created="20200408161749865" icon="$:/core/images/plugin-generic-theme" modified="20200412145125876" tags="TemplateTasks" title="TemplateTasks">
+<div color="#e6f100" created="20200408161749865" icon="$:/core/images/plugin-generic-theme" modified="20200412145304991" tags="TemplateTasks" title="TemplateTasks">
 <pre>!! ''To do''
 
 &lt;&lt;list-tagged-draggable tag:&quot;CAMBIAR&quot;  subFilter:&quot;!has[draft.of]!tag[done]&quot; itemTemplate:&quot;TaskManagement&quot; emptyMessage:&quot;You don't have any active tasks&quot;&gt;&gt;
@@ -16624,7 +16624,7 @@ Second
 
 
 
-&lt;$list filter=&quot;[!has[draft.of]title[title]tag[done]sort[created]]&quot;&gt;
+&lt;$list filter=&quot;[!has[draft.of]title&lt;currentTiddler&gt;tag[done]sort[created]]&quot;&gt;
 &lt;div&gt;
 &lt;$checkbox tag=&quot;done&quot;&gt; ~~&lt;$link to={{!!title}}&gt;&lt;$view field=&quot;title&quot;/&gt;&lt;/$link&gt;~~&lt;/$checkbox&gt;
 &lt;/div&gt;
