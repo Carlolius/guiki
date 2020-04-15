@@ -49,7 +49,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE." />
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <title> MyGüiki — a little bit less messy. 
 
-15 Apr 2020 at 16:02
+15 Apr 2020 at 16:05
 
 </title>
 <!--~~ This is a Tiddlywiki file. The points of interest in the file are marked with this pattern ~~-->
@@ -14320,8 +14320,8 @@ very-muted-foreground: #888888</pre>
 <div created="20200128130401739" modified="20200219193657167" title="$:/state/toc/TableOfContents-Cheatsheets--1335084432">
 <pre>close</pre>
 </div>
-<div created="20200303162225075" modified="20200414232138804" title="$:/state/toc/TableOfContents-Cheatsheets-756472543">
-<pre>open</pre>
+<div created="20200303162225075" modified="20200415140223646" title="$:/state/toc/TableOfContents-Cheatsheets-756472543">
+<pre>close</pre>
 </div>
 <div created="20191113154625876" modified="20191115015121340" title="$:/state/toc/TableOfContents-i3wm--118161433">
 <pre>close</pre>
@@ -14347,8 +14347,8 @@ very-muted-foreground: #888888</pre>
 <div created="20200121123144121" modified="20200219193446759" title="$:/state/toc/TableOfContents-Linux--1335084432">
 <pre>close</pre>
 </div>
-<div created="20200220144912299" modified="20200415135858515" title="$:/state/toc/TableOfContents-Linux-756472543">
-<pre>close</pre>
+<div created="20200220144912299" modified="20200415140224016" title="$:/state/toc/TableOfContents-Linux-756472543">
+<pre>open</pre>
 </div>
 <div created="20200210160825262" modified="20200219190152480" title="$:/state/toc/TableOfContents-Notes--118161433">
 <pre>close</pre>
@@ -14395,8 +14395,8 @@ very-muted-foreground: #888888</pre>
 <div created="20200121123145911" modified="20200121123147294" title="$:/state/toc/TableOfContents/Linux-Programs--1335084432">
 <pre>close</pre>
 </div>
-<div created="20200327183547537" modified="20200414231548366" title="$:/state/toc/TableOfContents/Linux-Programs-756472543">
-<pre>close</pre>
+<div created="20200327183547537" modified="20200415140225727" title="$:/state/toc/TableOfContents/Linux-Programs-756472543">
+<pre>open</pre>
 </div>
 <div created="20191124025203940" modified="20200219190154162" title="$:/state/toc/TableOfContents/Linux-XresourcesColors--118161433">
 <pre>close</pre>
@@ -14404,7 +14404,7 @@ very-muted-foreground: #888888</pre>
 <div created="20200402102202466" modified="20200405111137836" title="$:/state/toc/TableOfContents/Linux-XresourcesColors-756472543">
 <pre>close</pre>
 </div>
-<div created="20200415135906664" list="TFGIdeas Hey!" modified="20200415135906664" title="$:/StoryList">
+<div created="20200415135906664" list="Pulseaudio Hey!" modified="20200415140226878" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20191106193335831" list="$:/core/ui/Buttons/more-page-actions $:/core/ui/Buttons/home $:/core/ui/Buttons/close-all $:/core/ui/Buttons/fold-all $:/core/ui/Buttons/unfold-all $:/core/ui/Buttons/permaview $:/core/ui/Buttons/new-tiddler $:/plugins/tiddlywiki/markdown/new-markdown-button $:/core/ui/Buttons/new-journal $:/core/ui/Buttons/new-image $:/core/ui/Buttons/import $:/core/ui/Buttons/export-page $:/core/ui/Buttons/control-panel $:/core/ui/Buttons/advanced-search $:/core/ui/Buttons/manager $:/core/ui/Buttons/tag-manager $:/core/ui/Buttons/language $:/core/ui/Buttons/palette $:/core/ui/Buttons/theme $:/core/ui/Buttons/storyview $:/core/ui/Buttons/encryption $:/core/ui/Buttons/timestamp $:/core/ui/Buttons/full-screen $:/core/ui/Buttons/print $:/core/ui/Buttons/save-wiki $:/core/ui/Buttons/refresh" modified="20191106193335831" title="$:/tags/PageControls">
@@ -16470,15 +16470,17 @@ flameshot | Screenshot capturer
 1. [Screen, use same screen different users](https://screen.so/#/home)
 1. [Calcurse, calendar for terminal](https://calcurse.org/)</pre>
 </div>
-<div created="20200414231558474" modified="20200414233213147" tags="Programs" title="Pulseaudio" type="text/x-markdown">
+<div created="20200414231558474" modified="20200415140525466" tags="Programs" title="Pulseaudio" type="text/x-markdown">
 <pre># Extra features
 
 Redirect audio from phone to computer throught bleutooth.  
-Edit `/etc/pulse/system.pa` and add this following lines:
+Edit `~/.config/pulse/system.pa` and add this following lines:
 
 	### Redirect audio from the phone to the comuputer over bluetooth
+	.include /etc/pulse/system.pa
 	load-module module-bluetooth-policy
 	load-module module-bluetooth-discover
+
 
 
 [Found in Reddit](https://www.reddit.com/r/linux/comments/g10h4k/pulseaudio_can_turn_your_computer_into_bluetooth/)  
