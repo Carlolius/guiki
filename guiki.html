@@ -49,7 +49,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE." />
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <title> MyGüiki — a little bit less messy. 
 
-4 May 2020 at 23:32
+4 May 2020 at 23:33
 
 </title>
 <!--~~ This is a Tiddlywiki file. The points of interest in the file are marked with this pattern ~~-->
@@ -16058,8 +16058,9 @@ No index se debería de ver algo así como:
 <div created="20200409185031576" modified="20200409185039923" tags="BulletTasks" title="Mercar auriculares">
 <pre></pre>
 </div>
-<div created="20200504213203912" modified="20200504213251570" tags="Notes" title="Mobile as webcam" type="text/x-markdown">
-<pre>	ffmpeg -i http://192.168.1.104:8080/video -vf format=yuv420p -f v4l2 /dev/video0</pre>
+<div created="20200504213203912" modified="20200504213354613" tags="Notes" title="Mobile as webcam" type="text/x-markdown">
+<pre>	sudo modprobe v4l2loopback
+	ffmpeg -i http://192.168.1.104:8080/video -vf format=yuv420p -f v4l2 /dev/video0</pre>
 </div>
 <div created="20200422140043373" modified="20200422140331639" tags="Culture" title="Movies" type="text/x-markdown">
 <pre># Ready
