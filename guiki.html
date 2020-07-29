@@ -49,7 +49,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE." />
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <title> MyGüiki — a little bit less messy. 
 
-23 Jul 2020 at 20:32
+29 Jul 2020 at 15:31
 
 </title>
 <!--~~ This is a Tiddlywiki file. The points of interest in the file are marked with this pattern ~~-->
@@ -992,6 +992,8 @@ Error message and password prompt
 <li>Neovim as IDE</li>
 
 <li>Netctl configuration tiddler</li>
+
+<li>No boot after Nvidia drivers update</li>
 
 <li>Notes</li>
 
@@ -14327,7 +14329,7 @@ very-muted-foreground: #888888</pre>
 <div created="20191031011955754" modified="20200720122608293" title="$:/state/plugin-info-896098052-$:/plugins/tiddlywiki/markdown--436478829">
 <pre>contents</pre>
 </div>
-<div created="20191029025421827" modified="20200717105112943" title="$:/state/showeditpreview">
+<div created="20191029025421827" modified="20200729133143751" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
 <div created="20191029023642754" modified="20200505215530147" title="$:/state/ShowPaletteEditor">
@@ -14507,8 +14509,8 @@ very-muted-foreground: #888888</pre>
 <div created="20200121123144121" modified="20200219193446759" title="$:/state/toc/TableOfContents-Linux--1335084432">
 <pre>close</pre>
 </div>
-<div created="20200220144912299" modified="20200720154752316" title="$:/state/toc/TableOfContents-Linux-756472543">
-<pre>close</pre>
+<div created="20200220144912299" modified="20200729132429668" title="$:/state/toc/TableOfContents-Linux-756472543">
+<pre>open</pre>
 </div>
 <div created="20200210160825262" modified="20200219190152480" title="$:/state/toc/TableOfContents-Notes--118161433">
 <pre>close</pre>
@@ -14534,8 +14536,8 @@ very-muted-foreground: #888888</pre>
 <div created="20191115014920467" modified="20200121171305238" title="$:/state/toc/TableOfContents/Linux-Arch--118161433">
 <pre>close</pre>
 </div>
-<div created="20200402102204657" modified="20200720154623435" title="$:/state/toc/TableOfContents/Linux-Arch-756472543">
-<pre>close</pre>
+<div created="20200402102204657" modified="20200729133153644" title="$:/state/toc/TableOfContents/Linux-Arch-756472543">
+<pre>open</pre>
 </div>
 <div created="20200720154624886" modified="20200720154625441" title="$:/state/toc/TableOfContents/Linux-ColorSchemes-756472543">
 <pre>close</pre>
@@ -14570,7 +14572,7 @@ very-muted-foreground: #888888</pre>
 <div created="20200402102202466" modified="20200422140532181" title="$:/state/toc/TableOfContents/Linux-XresourcesColors-756472543">
 <pre>open</pre>
 </div>
-<div created="20200723164958181" list="BulletDinaQTasks [[Repasar ER]] DinaQ Questions Hey!" modified="20200723183206937" title="$:/StoryList">
+<div created="20200729132431702" list="Hey!" modified="20200729133154386" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20191106193335831" list="$:/core/ui/Buttons/more-page-actions $:/core/ui/Buttons/home $:/core/ui/Buttons/close-all $:/core/ui/Buttons/fold-all $:/core/ui/Buttons/unfold-all $:/core/ui/Buttons/permaview $:/core/ui/Buttons/new-tiddler $:/plugins/tiddlywiki/markdown/new-markdown-button $:/core/ui/Buttons/new-journal $:/core/ui/Buttons/new-image $:/core/ui/Buttons/import $:/core/ui/Buttons/export-page $:/core/ui/Buttons/control-panel $:/core/ui/Buttons/advanced-search $:/core/ui/Buttons/manager $:/core/ui/Buttons/tag-manager $:/core/ui/Buttons/language $:/core/ui/Buttons/palette $:/core/ui/Buttons/theme $:/core/ui/Buttons/storyview $:/core/ui/Buttons/encryption $:/core/ui/Buttons/timestamp $:/core/ui/Buttons/full-screen $:/core/ui/Buttons/print $:/core/ui/Buttons/save-wiki $:/core/ui/Buttons/refresh" modified="20191106193335831" title="$:/tags/PageControls">
@@ -15405,8 +15407,8 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20200120143059997" modified="20200120143115318" title="$:/temp/RemoteAssetSearch/$:/config/OfficialPluginLibrary">
 <pre></pre>
 </div>
-<div created="20191031012809632" modified="20200720122507868" title="$:/temp/search">
-<pre></pre>
+<div created="20191031012809632" modified="20200729132422088" title="$:/temp/search">
+<pre>man</pre>
 </div>
 <div created="20191115005309412" modified="20191115005309412" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.21/index.html" url="https://tiddlywiki.com/library/v5.1.21/index.html">
 <pre>loaded</pre>
@@ -16806,6 +16808,18 @@ This is all if you only have one account for your Neomutt, but if you have more,
 
 This is deprecated in favour of this [Change network configuration](file:///home/carlos/guiki/guiki.html#Change%20network%20configuration)</pre>
 </div>
+<div created="20200729132435058" modified="20200729133019678" tags="Problems" title="No boot after Nvidia drivers update" type="text/x-markdown">
+<pre>## Problem:
+
+After updating the Nvidia drivers the sistem won't boot because they aren't recompiled to be used with the installed kernel.
+
+## Solution:
+
+Install Nvidia dkms drivers, after a kernel update the drivers will be recompilled again, so the system will keep booting normally.  
+If after install the drivers or reinstall them the system still doesn't boot, reinstall the kernel, then the dkms drivers will do the recompilling work.  
+Something like this might work:  
+`sudo pacman -S linux`</pre>
+</div>
 <div color="#ff7e00" created="20200210160727083" icon="$:/core/images/file" modified="20200414234138072" tags="TableOfContents" title="Notes">
 <pre>&lt;div class=&quot;tc-table-of-contents&quot;&gt;
 
@@ -16945,12 +16959,14 @@ xidlehook  </pre>
 *.color15:      #ffffff
 </pre>
 </div>
-<div created="20200212002935493" modified="20200327183050185" tags="Problems" title="Power loss while updating kernel" type="text/x-markdown">
-<pre>##Problem:
+<div created="20200212002935493" modified="20200729133145617" tags="Problems" title="Power loss while updating kernel" type="text/x-markdown">
+<pre>## Problem:
+
 The system whent off while you were **upgrading kernel**, because a lost of power, accidental keybinding... whatever.  
 The system will not boot because the kernel is **corrupted**.
 
-##Solution:
+## Solution:
+
 1. Create a Live USB, [Etcher](https://www.balena.io/etcher/) it's a good program to do it.  
 1. Boot your Live USB.
 1. Mount your root partition.  
