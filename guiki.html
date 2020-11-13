@@ -49,7 +49,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE." />
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <title> MyGüiki — a little bit less messy. 
 
-8 Nov 2020 at 23:03
+13 Nov 2020 at 23:50
 
 </title>
 <!--~~ This is a Tiddlywiki file. The points of interest in the file are marked with this pattern ~~-->
@@ -1036,6 +1036,8 @@ Error message and password prompt
 <li>Questions</li>
 
 <li>Ranger</li>
+
+<li>Recover Hard Drive</li>
 
 <li>Refactor traballo e tfg</li>
 
@@ -14548,8 +14550,8 @@ very-muted-foreground: #888888</pre>
 <div created="20191115014920467" modified="20200121171305238" title="$:/state/toc/TableOfContents/Linux-Arch--118161433">
 <pre>close</pre>
 </div>
-<div created="20200402102204657" modified="20201108215645974" title="$:/state/toc/TableOfContents/Linux-Arch-756472543">
-<pre>open</pre>
+<div created="20200402102204657" modified="20201113221642653" title="$:/state/toc/TableOfContents/Linux-Arch-756472543">
+<pre>close</pre>
 </div>
 <div created="20200720154624886" modified="20200720154625441" title="$:/state/toc/TableOfContents/Linux-ColorSchemes-756472543">
 <pre>close</pre>
@@ -14563,11 +14565,11 @@ very-muted-foreground: #888888</pre>
 <div created="20191115015115205" modified="20200217012103493" title="$:/state/toc/TableOfContents/Linux-Installation--118161433">
 <pre>close</pre>
 </div>
-<div created="20200305172632844" modified="20201108215745148" title="$:/state/toc/TableOfContents/Linux-Installation-756472543">
-<pre>open</pre>
-</div>
-<div created="20200327183108012" modified="20200402102256015" title="$:/state/toc/TableOfContents/Linux-Problems-756472543">
+<div created="20200305172632844" modified="20201113221545595" title="$:/state/toc/TableOfContents/Linux-Installation-756472543">
 <pre>close</pre>
+</div>
+<div created="20200327183108012" modified="20201113221547755" title="$:/state/toc/TableOfContents/Linux-Problems-756472543">
+<pre>open</pre>
 </div>
 <div created="20200120171452321" modified="20200217152523378" title="$:/state/toc/TableOfContents/Linux-Programs--118161433">
 <pre>close</pre>
@@ -14584,7 +14586,7 @@ very-muted-foreground: #888888</pre>
 <div created="20200402102202466" modified="20200422140532181" title="$:/state/toc/TableOfContents/Linux-XresourcesColors-756472543">
 <pre>open</pre>
 </div>
-<div created="20201108215647548" list="Hey!" modified="20201108215934693" title="$:/StoryList">
+<div created="20201113221549031" list="Problems [[Recover Hard Drive]] Hey!" modified="20201113221558633" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20191106193335831" list="$:/core/ui/Buttons/more-page-actions $:/core/ui/Buttons/home $:/core/ui/Buttons/close-all $:/core/ui/Buttons/fold-all $:/core/ui/Buttons/unfold-all $:/core/ui/Buttons/permaview $:/core/ui/Buttons/new-tiddler $:/plugins/tiddlywiki/markdown/new-markdown-button $:/core/ui/Buttons/new-journal $:/core/ui/Buttons/new-image $:/core/ui/Buttons/import $:/core/ui/Buttons/export-page $:/core/ui/Buttons/control-panel $:/core/ui/Buttons/advanced-search $:/core/ui/Buttons/manager $:/core/ui/Buttons/tag-manager $:/core/ui/Buttons/language $:/core/ui/Buttons/palette $:/core/ui/Buttons/theme $:/core/ui/Buttons/storyview $:/core/ui/Buttons/encryption $:/core/ui/Buttons/timestamp $:/core/ui/Buttons/full-screen $:/core/ui/Buttons/print $:/core/ui/Buttons/save-wiki $:/core/ui/Buttons/refresh" modified="20191106193335831" title="$:/tags/PageControls">
@@ -17106,6 +17108,25 @@ Estudios:
 | Shortcut | Action |
 | -------- | ------ |
 set show_hidden! | Show hidden files</pre>
+</div>
+<div created="20201113221647778" modified="20201113225032844" tags="Problems" title="Recover Hard Drive" type="text/x-markdown">
+<pre># How to recover the lost data from a HDD
+## Mecanical drives, with flash drives might be using other tools
+
+### Option 1
+First of all the best thing to do is a copy of the disk, an image.  
+[Ddrescue ](https://www.gnu.org/software/ddrescue) is a tool created just for this, it's similar to `dd` but with better handling of the disk sectors.  
+Command example:  
+`ddrescue -d -r3 /dev/sde /path/to/image/file.img /path/to/map/file.logfile`  
+* -d, --idirect: Use direct disc access to read from infile, bypassing the kernel cache.
+* -r n, --retry-passes=n: Exit after the given number of retry passes. Defaults to 0.
+* file.img: The copy of the disk image file.
+* mapfile: Is something similar to a log that it can be used to resume some rescue task.
+
+[Tutorial](https://www.technibble.com/guide-using-ddrescue-recover-data/)
+
+### Option 2
+With [photorec](https://www.cgsecurity.org/wiki/PhotoRec_ES)</pre>
 </div>
 <div created="20200409202432001" modified="20200412160450416" tags="BulletTFGToday BulletTFGTasks done" title="Refactor traballo e tfg">
 <pre>Intercambiar o nome das carpetas tfg(vello) por traballo(novo) e subilo a gitlab</pre>
