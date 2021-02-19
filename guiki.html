@@ -49,7 +49,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE." />
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <title> MyGüiki — a little bit less messy. 
 
-5 Jan 2021 at 11:11
+19 Feb 2021 at 13:42
 
 </title>
 <!--~~ This is a Tiddlywiki file. The points of interest in the file are marked with this pattern ~~-->
@@ -585,6 +585,8 @@ Error message and password prompt
 
 <li>$:/state/toc/TableOfContents/Linux-Programs-756472543</li>
 
+<li>$:/state/toc/TableOfContents/Linux-Tutorials-756472543</li>
+
 <li>$:/state/toc/TableOfContents/Linux-XresourcesColors--118161433</li>
 
 <li>$:/state/toc/TableOfContents/Linux-XresourcesColors-756472543</li>
@@ -1002,6 +1004,8 @@ Error message and password prompt
 <li>MyGüiki</li>
 
 <li>Neomutt</li>
+
+<li>NeoVim, LaTeX with LanguageTool</li>
 
 <li>Network Configuration</li>
 
@@ -14607,13 +14611,16 @@ very-muted-foreground: #888888</pre>
 <div created="20200327183547537" modified="20200821183942562" title="$:/state/toc/TableOfContents/Linux-Programs-756472543">
 <pre>close</pre>
 </div>
+<div created="20210219123722384" modified="20210219123723036" title="$:/state/toc/TableOfContents/Linux-Tutorials-756472543">
+<pre>close</pre>
+</div>
 <div created="20191124025203940" modified="20200219190154162" title="$:/state/toc/TableOfContents/Linux-XresourcesColors--118161433">
 <pre>close</pre>
 </div>
 <div created="20200402102202466" modified="20200422140532181" title="$:/state/toc/TableOfContents/Linux-XresourcesColors-756472543">
 <pre>open</pre>
 </div>
-<div created="20210105100036295" list="[[Manual password generator]] Hey!" modified="20210105100036296" title="$:/StoryList">
+<div created="20210219123723854" list="Hey!" modified="20210219123723854" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20191106193335831" list="$:/core/ui/Buttons/more-page-actions $:/core/ui/Buttons/home $:/core/ui/Buttons/close-all $:/core/ui/Buttons/fold-all $:/core/ui/Buttons/unfold-all $:/core/ui/Buttons/permaview $:/core/ui/Buttons/new-tiddler $:/plugins/tiddlywiki/markdown/new-markdown-button $:/core/ui/Buttons/new-journal $:/core/ui/Buttons/new-image $:/core/ui/Buttons/import $:/core/ui/Buttons/export-page $:/core/ui/Buttons/control-panel $:/core/ui/Buttons/advanced-search $:/core/ui/Buttons/manager $:/core/ui/Buttons/tag-manager $:/core/ui/Buttons/language $:/core/ui/Buttons/palette $:/core/ui/Buttons/theme $:/core/ui/Buttons/storyview $:/core/ui/Buttons/encryption $:/core/ui/Buttons/timestamp $:/core/ui/Buttons/full-screen $:/core/ui/Buttons/print $:/core/ui/Buttons/save-wiki $:/core/ui/Buttons/refresh" modified="20191106193335831" title="$:/tags/PageControls">
@@ -15448,8 +15455,8 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20200120143059997" modified="20200120143115318" title="$:/temp/RemoteAssetSearch/$:/config/OfficialPluginLibrary">
 <pre></pre>
 </div>
-<div created="20191031012809632" modified="20210105100034538" title="$:/temp/search">
-<pre>manu</pre>
+<div created="20191031012809632" modified="20210219123717771" title="$:/temp/search">
+<pre>vim</pre>
 </div>
 <div created="20191115005309412" modified="20191115005309412" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.21/index.html" url="https://tiddlywiki.com/library/v5.1.21/index.html">
 <pre>loaded</pre>
@@ -16830,6 +16837,26 @@ This is all if you only have one account for your Neomutt, but if you have more,
 [Mutt wizard by Luke Smith](https://github.com/LukeSmithxyz/mutt-wizard)  
 [Other site with good config](http://fengxia.co.s3-website-us-east-1.amazonaws.com/mbsync%20mu4e%20email.html)  
 [Neomutt website](https://neomutt.org/)</pre>
+</div>
+<div created="20210219123727052" modified="20210219124248515" tags="Tutorials" title="NeoVim, LaTeX with LanguageTool" type="text/x-markdown">
+<pre># Correct grammar using ~LanguageTool in ~LaTeX documents.
+
+How to use [LanguageTool](https://languagetool.org/) to check spell and grammar in ~LaTeX documents.
+
+To check grammar while writting in Neo(Vim) install [Vim LanguageTool plugin](https://github.com/dpelle/vim-LanguageTool) and follow the instructions to install ~LanguageTool in your system.  
+
+Then you just need to add to your vimrc or you plugin configuration where it's the jar executable, like this:  
+```
+&quot; Location of the languagetool-commandline.jar file
+let g:languagetool_jar='$HOME/Programas/languagetool/LanguageTool-5.2/languagetool-commandline.jar'
+```
+
+To use ~LanguageTool with ~LaTeX you need a Python package called [YaLafi](https://github.com/matze-dd/YaLafi). Just follow the installation instructions, download the `editors/yalafi-grammarous` configure it to your needs and then add to your vimrc or your plugin configuration the next line where the path is where you put the yalafi-grammorous sript.  
+```
+&quot; Config to use languagetool with Latex
+let g:languagetool_cmd = '$HOME/Programas/languagetool/yalafi'
+```
+</pre>
 </div>
 <div created="20201108215814030" modified="20201108220327906" tags="Installation Arch [[After installation]]" title="Network Configuration" type="text/x-markdown">
 <pre># How to manage the network configuration
