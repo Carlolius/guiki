@@ -49,7 +49,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE." />
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <title> MyGüiki — a little bit less messy. 
 
-23 Feb 2021 at 17:50
+26 Feb 2021 at 19:52
 
 </title>
 <!--~~ This is a Tiddlywiki file. The points of interest in the file are marked with this pattern ~~-->
@@ -14365,7 +14365,7 @@ very-muted-foreground: #888888</pre>
 <div created="20191029023642754" modified="20200505215530147" title="$:/state/ShowPaletteEditor">
 <pre>yes</pre>
 </div>
-<div created="20191031012352854" modified="20200721104141922" title="$:/state/sidebar">
+<div created="20191031012352854" modified="20210226185315793" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
 <div created="20200408215806223" modified="20200410105309758" title="$:/state/tab--1056071170">
@@ -14620,7 +14620,7 @@ very-muted-foreground: #888888</pre>
 <div created="20200402102202466" modified="20200422140532181" title="$:/state/toc/TableOfContents/Linux-XresourcesColors-756472543">
 <pre>open</pre>
 </div>
-<div created="20210223164939314" list="[[NeoVim, LaTeX with LanguageTool]] Hey!" modified="20210223164939314" title="$:/StoryList">
+<div created="20210226185006728" list="Neomutt Hey!" modified="20210226185006728" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20191106193335831" list="$:/core/ui/Buttons/more-page-actions $:/core/ui/Buttons/home $:/core/ui/Buttons/close-all $:/core/ui/Buttons/fold-all $:/core/ui/Buttons/unfold-all $:/core/ui/Buttons/permaview $:/core/ui/Buttons/new-tiddler $:/plugins/tiddlywiki/markdown/new-markdown-button $:/core/ui/Buttons/new-journal $:/core/ui/Buttons/new-image $:/core/ui/Buttons/import $:/core/ui/Buttons/export-page $:/core/ui/Buttons/control-panel $:/core/ui/Buttons/advanced-search $:/core/ui/Buttons/manager $:/core/ui/Buttons/tag-manager $:/core/ui/Buttons/language $:/core/ui/Buttons/palette $:/core/ui/Buttons/theme $:/core/ui/Buttons/storyview $:/core/ui/Buttons/encryption $:/core/ui/Buttons/timestamp $:/core/ui/Buttons/full-screen $:/core/ui/Buttons/print $:/core/ui/Buttons/save-wiki $:/core/ui/Buttons/refresh" modified="20191106193335831" title="$:/tags/PageControls">
@@ -14680,11 +14680,11 @@ very-muted-foreground: #888888</pre>
         },
         &quot;$:/info/browser/screen/width&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/width&quot;,
-            &quot;text&quot;: &quot;1920&quot;
+            &quot;text&quot;: &quot;1280&quot;
         },
         &quot;$:/info/browser/screen/height&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/height&quot;,
-            &quot;text&quot;: &quot;1080&quot;
+            &quot;text&quot;: &quot;800&quot;
         },
         &quot;$:/info/browser/language&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/language&quot;,
@@ -15455,8 +15455,8 @@ This plugin also requires the JSZip plugin ([[$:/plugins/tiddlywiki/jszip]]) to 
 <div created="20200120143059997" modified="20200120143115318" title="$:/temp/RemoteAssetSearch/$:/config/OfficialPluginLibrary">
 <pre></pre>
 </div>
-<div created="20191031012809632" modified="20210219123717771" title="$:/temp/search">
-<pre>vim</pre>
+<div created="20191031012809632" modified="20210226185005427" title="$:/temp/search">
+<pre>neom</pre>
 </div>
 <div created="20191115005309412" modified="20191115005309412" tags="$:/tags/ServerConnection" title="$:/temp/ServerConnection/https://tiddlywiki.com/library/v5.1.21/index.html" url="https://tiddlywiki.com/library/v5.1.21/index.html">
 <pre>loaded</pre>
@@ -16600,20 +16600,21 @@ No index se debería de ver algo así como:
 
 Con mucho queso.</pre>
 </div>
-<div created="20191112173328197" modified="20200217152518375" tags="Programs Installation" title="Neomutt" type="text/x-markdown">
+<div created="20191112173328197" modified="20210226185231230" tags="Programs Installation" title="Neomutt" type="text/x-markdown">
 <pre>Based on [this manual](https://webgefrickel.de/blog/a-modern-mutt-setup), [this other](http://stevelosh.com/blog/2012/10/the-homely-mutt/#how-i-use-email) and the ArchWiki pages of [Mutt](https://wiki.archlinux.org/index.php/Mutt), [Isync](https://wiki.archlinux.org/index.php/Isync) and [Msmtp](https://wiki.archlinux.org/index.php/Msmtp).
 
-###**Installation**
+## Installation
+
 `pacman -S neomutt msmtp isync w3m`
 
-###**Secure password**
+## Secure password
 Create an [app password for Gmail](https://support.google.com/mail/answer/185833?) then write it in a file `gmail` and encript it with:  
 `gpg2 -e -o gmail.gpg gmail`  
 You might need to [create your keyring](https://help.github.com/en/github/authenticating-to-github/generating-a-new-gpg-key).  
 Then you can decrypt in the config files with something like:  
 `gpg2 --quiet --for-your-eyes-only --no-tty --decrypt ~/path/to/gmail.gpg`
 
-###**Configure Isync**
+### Configure Isync
 Isync is the name of the [mbsync](http://isync.sourceforge.net/mbsync.html) packag, it syncronizes email accounts with a folder in your computer `~/Mail` you need this to be able to read your email when you're offline with Neomutt. To syncronize your accounts without using Neomutt or to test it `mbsync -a`
 
 Configuration file `~/.mbsyncrc`  
@@ -16795,7 +16796,7 @@ Example for **Hotmail** and **Outlook365** accounts:
 
 The other accounts and the ones that have specific settings are quite similar to this ones.
 
-###**Configure Msmtp**
+### Configure Msmtp 
 Configuration file `~/.msmtprc`  
 It need to have just &quot;user read/write&quot; permisions `chmod 600 ~/.msmtprc`  
 
@@ -16826,14 +16827,14 @@ It need to have just &quot;user read/write&quot; permisions `chmod 600 ~/.msmtpr
 	passwordeval    &quot;gpg2 -q --for-your-eyes-only --no-tty -d ~/Mail/passwords/hotmail.gpg&quot;
 
 
-###**Configure Neomutt**
+### Configure Neomutt
 Before long in [GitHub](https://github.com/Carlolius/dots) you can see my config files.  
 Neomutt has one config file `neomuttrc` this is quite long with a lot of different settings here you can see how to configure it in [the Neomutt website](https://neomutt.org/man/neomuttrc).  
 I also use 2 more files that I source from `neomuttrc` that are for the `colors` and the `keybindings` to simplify the main file.  
 Finally if you wanna see the attachments or the emails that you recieve in HTML form you must use a script that you even need to understand, [here](https://bitbucket.org/sjl/dotfiles/src/tip/mutt/view_attachment.sh).  
 This is all if you only have one account for your Neomutt, but if you have more, when you change the mailbox or you wanna reply some email you desire that is the sending email is the same as the recieved one. For this you must use `folder-hook` and create different files for your different accounts.
 
-###**Useful links**
+### Useful links
 [Mutt wizard by Luke Smith](https://github.com/LukeSmithxyz/mutt-wizard)  
 [Other site with good config](http://fengxia.co.s3-website-us-east-1.amazonaws.com/mbsync%20mu4e%20email.html)  
 [Neomutt website](https://neomutt.org/)</pre>
