@@ -49,7 +49,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE." />
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
 <title> MyGüiki — a little bit less messy. 
 
-26 Feb 2021 at 19:52
+28 Feb 2021 at 21:17
 
 </title>
 <!--~~ This is a Tiddlywiki file. The points of interest in the file are marked with this pattern ~~-->
@@ -286,6 +286,12 @@ Error message and password prompt
 <li>$:/state/sidebar</li>
 
 <li>$:/state/tab-1749438307</li>
+
+<li>$:/state/tab-2065006209</li>
+
+<li>$:/state/tab/sidebar--595412856</li>
+
+<li>$:/state/toc/TableOfContents-TFG-756472543</li>
 
 <li>$:/status/RequireReloadDueToPluginChange</li>
 
@@ -586,8 +592,6 @@ Error message and password prompt
 <li>TFGCaos</li>
 
 <li>TFGIdeas</li>
-
-<li>TFGSpotify</li>
 
 <li>Things to read in the future</li>
 
@@ -14338,19 +14342,28 @@ very-muted-foreground: #888888</pre>
 <div created="20210228200020222" modified="20210228200028378" title="$:/state/plugin-info--896887961-$:/plugins/tiddlywiki/markdown">
 <pre>no</pre>
 </div>
-<div created="20210228195942298" modified="20210228195942298" title="$:/state/showeditpreview">
+<div created="20210228195942298" modified="20210228200545149" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
-<div created="20210228195618315" modified="20210228195918961" title="$:/state/sidebar">
+<div created="20210228195618315" modified="20210228201757849" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
-<div created="20210228200016009" modified="20210228200016009" title="$:/state/tab-1749438307">
-<pre>$:/core/ui/ControlPanel/Plugins</pre>
+<div created="20210228200016009" modified="20210228201946905" title="$:/state/tab-1749438307">
+<pre>$:/core/ui/ControlPanel/Saving</pre>
+</div>
+<div created="20210228201951269" modified="20210228202450974" title="$:/state/tab-2065006209">
+<pre>$:/core/ui/ControlPanel/Saving/GitHub</pre>
+</div>
+<div created="20210228201800745" modified="20210228201810409" title="$:/state/tab/sidebar--595412856">
+<pre>TableOfContentsSideBar</pre>
+</div>
+<div created="20210228201828220" modified="20210228201911715" title="$:/state/toc/TableOfContents-TFG-756472543">
+<pre>close</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210228200140634" list="Hey!" modified="20210228200140634" title="$:/StoryList">
+<div created="20210228200446261" list="Hey!" modified="20210228201944710" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20191106193335831" list="$:/core/ui/Buttons/more-page-actions $:/core/ui/Buttons/home $:/core/ui/Buttons/close-all $:/core/ui/Buttons/fold-all $:/core/ui/Buttons/unfold-all $:/core/ui/Buttons/permaview $:/core/ui/Buttons/new-tiddler $:/plugins/tiddlywiki/markdown/new-markdown-button $:/core/ui/Buttons/new-journal $:/core/ui/Buttons/new-image $:/core/ui/Buttons/import $:/core/ui/Buttons/export-page $:/core/ui/Buttons/control-panel $:/core/ui/Buttons/advanced-search $:/core/ui/Buttons/manager $:/core/ui/Buttons/tag-manager $:/core/ui/Buttons/language $:/core/ui/Buttons/palette $:/core/ui/Buttons/theme $:/core/ui/Buttons/storyview $:/core/ui/Buttons/encryption $:/core/ui/Buttons/timestamp $:/core/ui/Buttons/full-screen $:/core/ui/Buttons/print $:/core/ui/Buttons/save-wiki $:/core/ui/Buttons/refresh" modified="20191106193335831" title="$:/tags/PageControls">
@@ -15498,35 +15511,36 @@ No index se debería de ver algo así como:
 
 Con mucho queso.</pre>
 </div>
-<div created="20191112173328197" modified="20210226185231230" tags="Programs Installation" title="Neomutt" type="text/x-markdown">
-<pre>Based on [this manual](https://webgefrickel.de/blog/a-modern-mutt-setup), [this other](http://stevelosh.com/blog/2012/10/the-homely-mutt/#how-i-use-email) and the ArchWiki pages of [Mutt](https://wiki.archlinux.org/index.php/Mutt), [Isync](https://wiki.archlinux.org/index.php/Isync) and [Msmtp](https://wiki.archlinux.org/index.php/Msmtp).
+<div created="20191112173328197" modified="20210228201736406" tags="Programs Installation" title="Neomutt" type="text/x-markdown">
+<pre>Based on [this manual](https://webgefrickel.de/blog/a-modern-mutt-setup), [this other](http://stevelosh.com/blog/2012/10/the-homely-mutt/#how-i-use-email) and the ~ArchWiki pages of [Mutt](https://wiki.archlinux.org/index.php/Mutt), [Isync](https://wiki.archlinux.org/index.php/Isync) and [Msmtp](https://wiki.archlinux.org/index.php/Msmtp).
 
 ## Installation
 
 `pacman -S neomutt msmtp isync w3m`
 
 ## Secure password
-Create an [app password for Gmail](https://support.google.com/mail/answer/185833?) then write it in a file `gmail` and encript it with:  
-`gpg2 -e -o gmail.gpg gmail`  
-You might need to [create your keyring](https://help.github.com/en/github/authenticating-to-github/generating-a-new-gpg-key).  
-Then you can decrypt in the config files with something like:  
-`gpg2 --quiet --for-your-eyes-only --no-tty --decrypt ~/path/to/gmail.gpg`
+Create an [app password for Gmail](https://support.google.com/mail/answer/185833?).  
+Now I use [pass](https://www.passwordstore.org/) to keep my paswords, it's compatible with Neomutt.
 
 ### Configure Isync
-Isync is the name of the [mbsync](http://isync.sourceforge.net/mbsync.html) packag, it syncronizes email accounts with a folder in your computer `~/Mail` you need this to be able to read your email when you're offline with Neomutt. To syncronize your accounts without using Neomutt or to test it `mbsync -a`
+Isync is the name of the [mbsync](http://isync.sourceforge.net/mbsync.html) package, it syncronizes email accounts with a folder in your computer `~/Mail` you need this to be able to read your email when you're offline with Neomutt. To syncronize your accounts without using Neomutt or to test it `mbsync -a`
 
 Configuration file `~/.mbsyncrc`  
 
 This is a configuration example for Spanish Gmail accounts:  
 
-	IMAPStore gmail-remote
+	# Gmail account
+	IMAPAccount gmail
 	Host imap.gmail.com
 	Port  993
 	User carloshcr2@gmail.com
-	PassCmd &quot;gpg2 -q --for-your-eyes-only --no-tty -d ~/Mail/passwords/gmail.gpg&quot;
+	PassCmd &quot;pass Email/gmailneomutt&quot;
 	SSLType IMAPS
 	CertificateFile /etc/ssl/certs/ca-certificates.crt
-
+	
+	IMAPStore gmail-remote
+	Account gmail
+	
 	MaildirStore gmail-local
 	# The way to manage the sort of the mail folders.
 	Subfolders Verbatim
@@ -15534,20 +15548,20 @@ This is a configuration example for Spanish Gmail accounts:
 	# Inbox is the same folder as the parent folder so it's well indented in Neomutt Sidebar.
 	# It might fail if there aren't emails at the inbox, manually create the cur, new and tmp folders.
 	Inbox ~/Mail/gmail/
-
+	
 	Channel gmail-default
 	# Apply deletion changes in master (remote) and slave (local).
 	Expunge Both
 	Master :gmail-remote:
 	Slave :gmail-local:
 	# Syncronize everything except the &quot;!&quot; ones. Dunno why need to write the ones in channels.
-	Patterns * !&quot;[Gmail]/*&quot; !Borradores !Destacados !Enviados !Importantes !Papelera !Spam
+	Patterns * !&quot;[Gmail]/*&quot; !Borradores !Destacados !Enviados !Importantes !Papelera !Spam !Electrotecnia !Tecnologia !&quot;Clase/Electrotecnia&quot; !&quot;Clase/Tecnologia&quot;
 	# Automatically create missing mailboxes, both locally and on the server
 	Create Both
 	# Save the synchronization state files in the relevant directory
 	SyncState *
 	MaxMessages 0
-
+	
 	# Channels are used to &quot;translate&quot; from the name on the server (master) and the client (local).
 	# Name of the channel, used later.
 	Channel gmail-drafts
@@ -15559,7 +15573,7 @@ This is a configuration example for Spanish Gmail accounts:
 	Create Both
 	SyncState *
 	MaxMessages 0
-
+	
 	Channel gmail-starred
 	Expunge Both
 	Master :gmail-remote:&quot;[Gmail]/Destacados&quot;
@@ -15567,7 +15581,7 @@ This is a configuration example for Spanish Gmail accounts:
 	Create Both
 	SyncState *
 	MaxMessages 0
-
+	
 	Channel gmail-sent
 	Expunge Both
 	Master :gmail-remote:&quot;[Gmail]/Enviados&quot;
@@ -15575,7 +15589,7 @@ This is a configuration example for Spanish Gmail accounts:
 	Create Both
 	SyncState *
 	MaxMessages 0
-
+	
 	Channel gmail-important
 	Expunge Both
 	Master :gmail-remote:&quot;[Gmail]/Importantes&quot;
@@ -15583,7 +15597,7 @@ This is a configuration example for Spanish Gmail accounts:
 	Create Both
 	SyncState *
 	MaxMessages 0
-
+	
 	Channel gmail-trash
 	Expunge Both
 	Master :gmail-remote:&quot;[Gmail]/Papelera&quot;
@@ -15591,7 +15605,7 @@ This is a configuration example for Spanish Gmail accounts:
 	Create Both
 	SyncState *
 	MaxMessages 0
-
+	
 	Channel gmail-spam
 	Expunge Both
 	Master :gmail-remote:&quot;[Gmail]/Spam&quot;
@@ -15599,7 +15613,23 @@ This is a configuration example for Spanish Gmail accounts:
 	Create Both
 	SyncState *
 	MaxMessages 0
-
+	
+	Channel gmail-electrotecnia
+	Expunge Both
+	Master :gmail-remote:&quot;Clase/Electrotecnia&quot;
+	Slave :gmail-local:Electrotecnia
+	Create Both
+	SyncState *
+	MaxMessages 0
+	
+	Channel gmail-tecnologia
+	Expunge Both
+	Master :gmail-remote:&quot;Clase/Tecnologia&quot;
+	Slave :gmail-local:Tecnologia
+	Create Both
+	SyncState *
+	MaxMessages 0
+	
 	# Groups are used to syncronize all the channels.
 	Group gmail
 	Channel gmail-default
@@ -15609,8 +15639,10 @@ This is a configuration example for Spanish Gmail accounts:
 	Channel gmail-important
 	Channel gmail-trash
 	Channel gmail-spam
-
-	# End profile gmail
+	Channel gmail-electrotecnia
+	Channel gmail-tecnologia
+	
+	#### End profile gmail ####
 
 Example for **Hotmail** and **Outlook365** accounts:  
 
@@ -15619,20 +15651,20 @@ Example for **Hotmail** and **Outlook365** accounts:
 	# Address to connect to
 	Host outlook.office365.com
 	User carloshcr2@hotmail.com
-	PassCmd &quot;gpg2 -q --for-your-eyes-only --no-tty -d ~/Mail/passwords/hotmail.gpg&quot;
+	PassCmd &quot;pass Email/hotmail&quot;
 	SSLType IMAPS
 	CertificateFile /etc/ssl/certs/ca-certificates.crt
-
+	
 	IMAPStore hotmail-remote
 	Account hotmail
-
+	
 	# LOCAL STORAGE
 	MaildirStore hotmail-local
 	# The trailing &quot;/&quot; is important
 	SubFolders Verbatim
 	Path ~/Mail/hotmail/
 	Inbox ~/Mail/hotmail/
-
+	
 	Channel hotmail-default
 	Expunge Both
 	Master :hotmail-remote:
@@ -15641,7 +15673,7 @@ Example for **Hotmail** and **Outlook365** accounts:
 	Create Both
 	SyncState *
 	MaxMessages 0
-
+	
 	Channel hotmail-inbox
 	Expunge Both
 	Master :hotmail-remote:&quot;Inbox&quot;
@@ -15649,7 +15681,7 @@ Example for **Hotmail** and **Outlook365** accounts:
 	Create Both
 	SyncState *
 	MaxMessages 0
-
+	
 	Channel hotmail-deleted
 	Expunge Both
 	Master :hotmail-remote:&quot;Deleted&quot;
@@ -15657,7 +15689,7 @@ Example for **Hotmail** and **Outlook365** accounts:
 	Create Both
 	SyncState *
 	MaxMessages 0
-
+	
 	Channel hotmail-drafts
 	Expunge Both
 	Master :hotmail-remote:&quot;Drafts&quot;
@@ -15665,7 +15697,7 @@ Example for **Hotmail** and **Outlook365** accounts:
 	Create Both
 	SyncState *
 	MaxMessages 0
-
+	
 	Channel hotmail-junk
 	Expunge Both
 	Master :hotmail-remote:&quot;Junk&quot;
@@ -15673,7 +15705,7 @@ Example for **Hotmail** and **Outlook365** accounts:
 	Create Both
 	SyncState *
 	MaxMessages 0
-
+	
 	Channel hotmail-sent
 	Expunge Both
 	Master :hotmail-remote:&quot;Sent&quot;
@@ -15681,7 +15713,7 @@ Example for **Hotmail** and **Outlook365** accounts:
 	Create Both
 	SyncState *
 	MaxMessages 0
-
+	
 	Group hotmail
 	Channel hotmail-default
 	Channel hotmail-inbox
@@ -15689,7 +15721,7 @@ Example for **Hotmail** and **Outlook365** accounts:
 	Channel hotmail-drafts
 	Channel hotmail-junk
 	Channel hotmail-sent
-
+	
 	#### End profile hotmail ####
 
 The other accounts and the ones that have specific settings are quite similar to this ones.
@@ -15700,33 +15732,32 @@ It need to have just &quot;user read/write&quot; permisions `chmod 600 ~/.msmtpr
 
 	# Set default values for all following accounts.
 	defaults
-	auth            on
-	tls             on
-	tls_trust_file  /etc/ssl/certs/ca-certificates.crt
-	logfile         ~/.msmtp.log
-
+	auth 		on
+	tls 		on
+	tls_trust_file 	/etc/ssl/certs/ca-certificates.crt
+	logfile 	~/.msmtp.log
+	
 	# Gmail
-	account         gmail
-	host            smtp.gmail.com
-	port            587
-	from            carloshcr2@gmail.com
-	user            carloshcr2
-	passwordeval    &quot;gpg2 -q --for-your-eyes-only --no-tty -d ~/Mail/passwords/gmail.gpg&quot;
-
+	account 	gmail
+	host 		smtp.gmail.com
+	port 		587
+	from 		carloshcr2@gmail.com
+	user 		carloshcr2
+	passwordeval 	&quot;pass Email/gmail&quot;
+	
 	# Set a default account
 	account default : gmail
 	
 	# Hotmail
-	account         hotmail
-	host            smtp.Office365.com
-	port            587
-	from            carloshcr2@hotmail.com
-	user            carloshcr2
-	passwordeval    &quot;gpg2 -q --for-your-eyes-only --no-tty -d ~/Mail/passwords/hotmail.gpg&quot;
-
+	account 	hotmail
+	host 		smtp.Office365.com
+	port 		587
+	from 		carloshcr2@hotmail.com
+	user 		carloshcr2
+	passwordeval 	&quot;pass Email/hotmail&quot;
 
 ### Configure Neomutt
-Before long in [GitHub](https://github.com/Carlolius/dots) you can see my config files.  
+Before log in [GitHub](https://github.com/Carlolius/dots) you can see my config files.  
 Neomutt has one config file `neomuttrc` this is quite long with a lot of different settings here you can see how to configure it in [the Neomutt website](https://neomutt.org/man/neomuttrc).  
 I also use 2 more files that I source from `neomuttrc` that are for the `colors` and the `keybindings` to simplify the main file.  
 Finally if you wanna see the attachments or the emails that you recieve in HTML form you must use a script that you even need to understand, [here](https://bitbucket.org/sjl/dotfiles/src/tip/mutt/view_attachment.sh).  
@@ -16336,9 +16367,6 @@ New task here
 * Redirixir automaticamente dende un domino a ip local do wifi ao que se está conectado con [Oracle Cloud](https://www.oracle.com/es/index.html) **Cloud acount name: carlol**
 * Diferentes tipos de usuarios, invitados (sen rexistro) e usuarios normales que se teñen que rexistrar, estes poden obter estadísticas do seu uso, gardar &quot;creditos&quot; e demáis.
 </pre>
-</div>
-<div color="#316e76" created="20200410161528839" icon="$:/core/images/edit-button" list="[[Conectar api]] BD" modified="20200416211456246" title="TFGSpotify">
-<pre></pre>
 </div>
 <div created="20200413191021278" modified="20200413191048275" tags="Notes" title="Things to read in the future" type="text/x-markdown">
 <pre>[Blockchain based apps like google photos substitution](https://browser.blockstack.org/sign-up?redirect=%2F)  
